@@ -1,0 +1,25 @@
+@use '../abstracts/grid-settings' as settings;
+@use 'sass:map';
+// Bootstrap 5.2 requires this legacy import boundary; own styles use @use.
+@import 'bootstrap/scss/functions';
+$grid-breakpoints: settings.$grid-breakpoints;
+$container-max-widths: settings.$container-max-widths;
+$grid-gutter-width: settings.$grid-gutter-width;
+$font-family-sans-serif: 'Manrope', sans-serif;
+$body-bg: #faf8f5;
+$body-color: #292722;
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/utilities';
+$utilities: (
+  'display': map.get($utilities, 'display'),
+  'flex-direction': map.get($utilities, 'flex-direction'),
+  'justify-content': map.get($utilities, 'justify-content'),
+  'align-items': map.get($utilities, 'align-items'),
+  'order': map.get($utilities, 'order')
+);
+@import 'bootstrap/scss/utilities/api';

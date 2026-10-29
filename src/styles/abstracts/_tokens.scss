@@ -1,0 +1,33 @@
+$colors: (
+  background: #faf8f5, surface: #fff, secondary: #f2ede6,
+  text: #292722, muted: #635f58, accent: #e96500, bright: #ff6d00,
+  'yellow': #fc0, action: #ab4800, border: #ddd5ca,
+  brand-slate: #4f5a6c, brand-red: #f00, brand-gold: #f7c735, brand-orange: #ff9c00
+);
+$spaces: (1: .25rem, 2: .5rem, 3: .75rem, 4: 1rem, 5: 1.5rem, 6: 2rem, 7: 3rem, 8: 4rem);
+
+@mixin properties {
+  @each $name, $value in $colors { --color-#{$name}: #{$value}; }
+  @each $name, $value in $spaces { --space-#{$name}: #{$value}; }
+  --font-body: 'Manrope', sans-serif;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-display: clamp(2.25rem, 5vw, 4rem);
+  --leading-body: 1.65;
+  --leading-heading: 1.2;
+  --radius-sm: .375rem;
+  --radius-md: .75rem;
+  --radius-lg: 1.5rem;
+  --shadow-soft: 0 .5rem 2rem rgb(41 39 34 / 6%);
+  --duration-fast: 160ms;
+  --duration-normal: 300ms;
+  --z-base: 0;
+  --z-header: 10;
+  --z-overlay: 1000;
+  --layout-reading: 48rem;
+  --layout-control: 2.75rem;
+  --layout-logo: 3.5rem;
+}

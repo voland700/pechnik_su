@@ -1,0 +1,35 @@
+{
+  "name": "pechnik-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "overrides": { "vite-svg-2-webfont": { "vite": "^7.3.2" } },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build && node scripts/finalize-css.mjs && node scripts/verify-dist.mjs",
+    "preview": "astro preview",
+    "verify:dist": "node scripts/verify-dist.mjs",
+    "fonts:prepare": "node scripts/prepare-fonts.mjs"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "6.1.15",
+    "astro": "6.4.8",
+    "bootstrap": "5.2.3",
+    "sweetalert2": "11.26.25",
+    "swiper": "14.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@fontsource/manrope": "5.3.0",
+    "@types/node": "^24.0.0",
+    "autoprefixer": "10.6.2",
+    "cssnano": "7.1.9",
+    "postcss": "8.5.32",
+    "sass": "1.107.0",
+    "typescript": "~5.9.3",
+    "vite-svg-2-webfont": "8.5.0"
+  },
+  "browserslist": [">= 0.5%", "last 2 versions", "Firefox ESR", "not dead", "not op_mini all"]
+}

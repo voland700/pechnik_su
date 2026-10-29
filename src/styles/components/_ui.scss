@@ -1,0 +1,11 @@
+.button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--layout-control); padding: var(--space-3) var(--space-5); border: 1px solid transparent; border-radius: var(--radius-sm); background: var(--color-action); color: var(--color-surface); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; transition: background var(--duration-fast), transform var(--duration-fast); }
+.button:hover:not(:disabled) { background: var(--color-text); color: var(--color-surface); }
+.button:active:not(:disabled) { transform: translateY(1px); }
+.button--secondary { background: var(--color-surface); border-color: var(--color-border); color: var(--color-text); }
+.button:disabled { opacity: .45; cursor: not-allowed; }
+.icon { display: inline-block; flex: none; fill: currentColor; }
+.p-icon { font-size: var(--text-xl); }
+.demo-slider { overflow: hidden; border-radius: var(--radius-md); background: var(--color-secondary); }
+.demo-slider .swiper-slide { padding: var(--space-7); min-height: 17rem; overflow: hidden; }
+.demo-slider__controls { display: flex; gap: var(--space-3); padding: var(--space-4); }
+.demo-slider__number { color: var(--color-action); font-size: var(--text-2xl); font-weight: 700; }

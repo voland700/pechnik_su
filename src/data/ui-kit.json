@@ -1,0 +1,16 @@
+{
+  "palette": [
+    { "token": "background", "name": "Основной фон", "value": "#FAF8F5" },
+    { "token": "surface", "name": "Поверхность", "value": "#FFFFFF" },
+    { "token": "secondary", "name": "Вторичный фон", "value": "#F2EDE6" },
+    { "token": "text", "name": "Текст", "value": "#292722" },
+    { "token": "accent", "name": "Акцент", "value": "#E96500" },
+    { "token": "bright", "name": "Оранжевый", "value": "#FF6D00" },
+    { "token": "yellow", "name": "Жёлтый", "value": "#FFCC00" }
+  ],
+  "slides": [
+    { "title": "Тепло начинается с деталей", "text": "Тестовый слайд. Слои движутся с разной скоростью — это Parallax." },
+    { "title": "Компоненты, готовые к развитию", "text": "Локальные данные, семантическая разметка и независимые модули." },
+    { "title": "Статический результат", "text": "HTML, CSS, JavaScript и шрифты для обычного веб-сервера." }
+  ]
+}

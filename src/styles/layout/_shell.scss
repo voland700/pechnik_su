@@ -1,0 +1,5 @@
+.site-header { padding-block: var(--space-5); border-bottom: 1px solid var(--color-border); background: var(--color-surface); }
+.site-header__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.brand { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--color-text); text-decoration: none; font-size: var(--text-xl); font-weight: 700; }
+.brand__logo { width: var(--layout-logo); height: auto; }
+.site-footer { padding-block: var(--space-6); border-top: 1px solid var(--color-border); color: var(--color-muted); }

@@ -1,0 +1,18 @@
+---
+import Button from '../ui/Button.astro';
+interface Props { slides: { title: string; text: string }[]; }
+const { slides } = Astro.props;
+---
+<div class="swiper demo-slider" data-demo-slider role="region" aria-label="Демонстрация Parallax" aria-roledescription="карусель">
+  <div class="swiper-wrapper">
+    {slides.map((slide, index) => <div class="swiper-slide">
+      <p class="demo-slider__number" data-swiper-parallax="-100">0{index + 1}</p>
+      <h3 data-swiper-parallax="-200">{slide.title}</h3>
+      <p data-swiper-parallax="-300">{slide.text}</p>
+    </div>)}
+  </div>
+  <div class="demo-slider__controls">
+    <Button variant="secondary" data-slider-prev aria-label="Предыдущий слайд">Назад</Button>
+    <Button data-slider-next aria-label="Следующий слайд">Вперёд</Button>
+  </div>
+</div>

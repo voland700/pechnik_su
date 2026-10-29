@@ -1,0 +1,5 @@
+@use 'grid-settings' as settings;
+// Bootstrap mixins generate CSS only when included. The grid is emitted separately.
+@use 'bootstrap/scss/mixins/breakpoints' as bs;
+@mixin up($name) { @include bs.media-breakpoint-up($name, settings.$grid-breakpoints) { @content; } }
+@mixin down($name) { @include bs.media-breakpoint-down($name, settings.$grid-breakpoints) { @content; } }

@@ -1,0 +1,8 @@
+---
+import logo from '../../../assets/logo.svg?url';
+const { href = import.meta.env.BASE_URL } = Astro.props;
+---
+<a class="brand" href={href} aria-label="Pechnik.su — техническая страница">
+  <img class="brand__logo" src={logo} width="197" height="197" alt="" />
+  <span>Pechnik.su</span>
+</a>

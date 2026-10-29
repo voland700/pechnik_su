@@ -1,0 +1,23 @@
+---
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  decorative?: boolean;
+  label?: string;
+}
+const { name, size = 24, class: className, decorative = true, label } = Astro.props;
+const sources = import.meta.glob<string>('../../assets/icons/inline/*.svg', {
+  eager: true, query: '?raw', import: 'default',
+});
+const source = sources[`../../assets/icons/inline/${name}.svg`];
+if (!source) throw new Error(`Unknown inline icon: ${name}`);
+if (!decorative && !label?.trim()) throw new Error(`Icon ${name} requires an accessible label`);
+// Only trusted, repository-owned SVGs are allowed in this directory.
+const body = source.replace(/^.*?<svg\b[^>]*>/s, '').replace(/<\/svg>\s*$/, '');
+const viewBox = source.match(/viewBox="([^"]+)"/)?.[1];
+---
+<svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} width={size} height={size}
+  class:list={['icon', className]} aria-hidden={decorative ? 'true' : undefined}
+  role={decorative ? undefined : 'img'} aria-label={decorative ? undefined : label}
+  focusable="false" set:html={body} />

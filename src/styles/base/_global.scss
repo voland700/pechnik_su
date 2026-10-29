@@ -1,0 +1,20 @@
+@use '../abstracts' as a;
+:root { @include a.properties; }
+body { font-family: var(--font-body); line-height: var(--leading-body); }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: var(--leading-heading); margin-block: 0 var(--space-4); }
+h1 { font-size: var(--text-display); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+h5 { font-size: var(--text-base); }
+h6 { font-size: var(--text-sm); }
+p { margin-block: 0 var(--space-4); }
+a { color: var(--color-action); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: .15em; }
+img, svg { max-width: 100%; vertical-align: middle; }
+img { height: auto; }
+:focus-visible { outline: 3px solid var(--color-action); outline-offset: 4px; }
+::selection { background: var(--color-yellow); color: var(--color-text); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
