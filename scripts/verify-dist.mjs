@@ -7,15 +7,18 @@ const entries = (await readdir(root, { recursive: true })).map((p) => p.replaceA
 const files = entries.filter((p) => /\.(html|css|js|mjs)$/.test(p));
 const htmlFiles = files.filter((p) => p.endsWith('.html'));
 assert(htmlFiles.length > 0, 'No static HTML');
-assert(entries.includes('assets/css/style.css'));
-assert(entries.includes('assets/css/style.min.css'));
+assert(entries.includes('css/style.css'));
+assert(entries.includes('css/style.min.css'));
+assert(entries.includes('js/main.js'));
 assert.equal(entries.filter((p) => p.endsWith('.css')).length, 2, 'Unexpected CSS splitting');
 assert(entries.some((p) => /pechnik-icons.*\.woff2$/.test(p)), 'No WOFF2 icon font');
 assert(entries.some((p) => /pechnik-icons.*\.woff$/.test(p)), 'No WOFF fallback');
 assert(entries.some((p) => /manrope-cyrillic-300.*\.woff2$/.test(p)), 'No local text font');
-const css = await readFile(resolve(root, 'assets/css/style.css'), 'utf8');
+const css = await readFile(resolve(root, 'css/style.css'), 'utf8');
 assert(css.includes('.p-icon-search') && css.includes('.p-icon-cart') && css.includes('.p-icon-arrow'));
 let checked = 0;
+// Only these intentionally unimplemented CMS page routes may lack local HTML.
+const plannedRoutes = new Set(['/about/', '/articles/', '/installation/', '/works/', '/delivery/', '/contacts/', '/offers/', '/catalog/', '/cart/', '/personal/', '/login/', '/search/']);
 for (const entry of files) {
   const path = resolve(root, entry);
   const text = await readFile(path, 'utf8');
@@ -30,6 +33,7 @@ for (const entry of files) {
       ? [...text.matchAll(/url\(\s*["']?([^\s"')]+)["']?\s*\)/g)].map((m) => m[1])
       : [...text.matchAll(/(?:from\s*|import\s*\()\s*["']([^"']+)["']/g)].map((m) => m[1]);
   for (const ref of refs) {
+    if (entry.endsWith('.html') && plannedRoutes.has(ref)) continue;
     if (/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(ref)) continue;
     const clean = decodeURIComponent(ref.split(/[?#]/)[0]);
     if (!clean) continue;

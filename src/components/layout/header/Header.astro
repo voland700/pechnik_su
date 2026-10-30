@@ -1,0 +1,55 @@
+---
+import Logo from '../Logo.astro';
+import TopNavigation from './TopNavigation.astro';
+import SearchForm from './SearchForm.astro';
+import CartLink from './CartLink.astro';
+import WorkingHours from './WorkingHours.astro';
+import StoreContacts from './StoreContacts.astro';
+import { navigation, type NavigationItem } from '../../../data/navigation';
+import { contacts, type StoreContact } from '../../../data/contacts';
+export interface Props {
+  activeMenu?: string;
+  cartCount?: number;
+  isAuthenticated?: boolean;
+  homeUrl?: string;
+  catalogUrl?: string;
+  cartUrl?: string;
+  accountUrl?: string;
+  loginUrl?: string;
+  searchAction?: string;
+  searchParameter?: string;
+  menuItems?: NavigationItem[];
+  stores?: StoreContact[];
+  id?: string;
+}
+const { activeMenu, cartCount = 0, isAuthenticated = false, homeUrl = import.meta.env.BASE_URL,
+  catalogUrl = '/catalog/', cartUrl = '/cart/', accountUrl = '/personal/', loginUrl = '/login/',
+  searchAction = '/search/', searchParameter = 'q', menuItems = navigation, stores = contacts, id = 'site-header' } = Astro.props;
+const accountLabel = isAuthenticated ? 'Личный кабинет' : 'Вход';
+const accountHref = isAuthenticated ? accountUrl : loginUrl;
+---
+<header class="shop-header" data-header>
+  <div class="shop-header__top"><div class="container shop-header__top-inner">
+    <TopNavigation items={menuItems} activeMenu={activeMenu} />
+    <div class="shop-header__service"><a class="shop-header__account" href={accountHref}>{accountLabel}</a><button class="callback-button" type="button" data-action="callback">Обратный звонок</button></div>
+  </div></div>
+  <div class="shop-header__main" data-header-main><div class="container shop-header__main-inner">
+    <button class="shop-header__burger" type="button" aria-label="Открыть меню" aria-controls={`${id}-menu`} aria-expanded="false" data-menu-open><span></span><span></span><span></span></button>
+    <Logo href={homeUrl} />
+    <a class="catalog-link" href={catalogUrl}><span class="catalog-link__icon" aria-hidden="true">▦</span> Каталог</a>
+    <SearchForm action={searchAction} parameter={searchParameter} />
+    <div class="shop-header__hours"><WorkingHours /></div>
+    <CartLink href={cartUrl} count={cartCount} />
+  </div></div>
+  <div class="shop-header__contacts"><div class="container"><StoreContacts stores={stores} /></div></div>
+  <dialog class="mobile-menu" id={`${id}-menu`} aria-labelledby={`${id}-menu-title`} data-mobile-menu>
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__heading"><strong id={`${id}-menu-title`}>Печной центр</strong><button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-menu-close autofocus>×</button></div>
+      <TopNavigation items={menuItems} activeMenu={activeMenu} mobile />
+      <a class="catalog-link mobile-menu__catalog" href={catalogUrl}>Каталог товаров</a>
+      <div class="mobile-menu__service"><a class="shop-header__account" href={accountHref}>{accountLabel}</a><button class="callback-button" type="button" data-action="callback">Обратный звонок</button></div>
+      <WorkingHours />
+      <StoreContacts stores={stores} />
+    </div>
+  </dialog>
+</header>

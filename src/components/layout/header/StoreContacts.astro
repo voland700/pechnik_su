@@ -1,0 +1,14 @@
+---
+import type { StoreContact } from '../../../data/contacts';
+interface Props { stores: StoreContact[]; }
+const { stores } = Astro.props;
+---
+<div class="store-contacts row">{stores.map(store => <section class="store-contacts__store col-12 col-lg-6" aria-label={store.name}>
+  <div class="store-contacts__heading"><h2 class="store-contacts__name">{store.name}</h2>{store.note && <span class="store-contacts__note">{store.note}</span>}</div>
+  <address class="store-contacts__address">{store.address}</address>
+  <div class="store-contacts__departments">{store.departments.map(department => <div class="store-contacts__department">
+    <span class="store-contacts__label">{department.label}</span>
+    <div class="store-contacts__phones">{department.phones.map(phone => <a href={phone.href}>{phone.label}</a>)}</div>
+  </div>)}</div>
+  {store.additional && <p class="store-contacts__additional">{store.additional}</p>}
+</section>)}</div>

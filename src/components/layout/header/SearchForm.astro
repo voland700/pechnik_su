@@ -1,0 +1,9 @@
+---
+import Icon from '../../ui/Icon.astro';
+interface Props { action?: string; parameter?: string; }
+const { action = '/search/', parameter = 'q' } = Astro.props;
+---
+<form class="header-search" role="search" method="get" action={action}>
+  <label class="header-search__label"><span class="visually-hidden">Поиск по каталогу</span><input class="header-search__input" type="search" name={parameter} placeholder="Поиск по каталогу" /></label>
+  <button class="header-search__submit" type="submit" aria-label="Найти товары"><Icon name="search" size={22} /></button>
+</form>

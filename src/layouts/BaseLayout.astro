@@ -1,6 +1,7 @@
 ---
 import '../styles/main.scss';
 import 'virtual:vite-svg-2-webfont.css';
+import Header from '../components/layout/header/Header.astro';
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 ---
@@ -15,8 +16,8 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <a class="skip-link" href="#main">К содержимому</a>
-    <slot name="header" />
-    <main id="main" tabindex="-1"><slot /></main>
+    <slot name="header"><Header /></slot>
+    <main id="main" class="site-main" tabindex="-1"><slot /></main>
     <slot name="footer" />
     <script>
       import '../scripts/main';

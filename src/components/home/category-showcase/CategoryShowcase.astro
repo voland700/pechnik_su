@@ -1,0 +1,15 @@
+---
+import CategoryCard from './CategoryCard.astro';
+import type { ShowcaseItem } from '../../../types/showcase';
+interface Props { items: ShowcaseItem[]; title?: string; }
+const { items = [], title = 'Каталог товаров' } = Astro.props;
+const headingId = `category-showcase-${crypto.randomUUID()}`;
+---
+{items.length > 0 && <section class="category-showcase" aria-labelledby={headingId}>
+  <div class="container">
+    <h2 class="category-showcase__heading" id={headingId}>{title}</h2>
+    <ul class="category-showcase__grid">
+      {items.map(item => <li class="category-showcase__item"><CategoryCard item={item} /></li>)}
+    </ul>
+  </div>
+</section>}

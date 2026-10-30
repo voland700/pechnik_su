@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/header/Header.astro';
+---
+<BaseLayout title="Header check" description="Temporary test fixture">
+  <Fragment slot="header">
+    <Header id="test-zero" cartCount={0} activeMenu="delivery" />
+    <Header id="test-seven" cartCount={7} isAuthenticated activeMenu="contacts" />
+    <Header id="test-hundred" cartCount={100} activeMenu="offers" />
+  </Fragment>
+</BaseLayout>

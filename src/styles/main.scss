@@ -3,6 +3,11 @@
 @use 'base/fonts';
 @use 'base/global';
 @use 'layout/shell';
+@use 'layout/header';
+@use 'components/store-contacts';
+@use 'components/mobile-menu';
 @use 'components/ui';
+@use 'components/hero-slider';
+@use 'components/category-showcase';
 @use 'pages/ui-kit';
 @use 'utils/accessibility';

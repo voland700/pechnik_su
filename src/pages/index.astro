@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Logo from '../components/layout/Logo.astro';
+import HeroSlider from '../components/home/hero-slider/HeroSlider.astro';
+import { sliderData } from '../data/hero-slider';
+import CategoryShowcase from '../components/home/category-showcase/CategoryShowcase.astro';
+import { showcaseData } from '../data/showcase';
 import Icon from '../components/ui/Icon.astro';
 import Button from '../components/ui/Button.astro';
 import DemoSlider from '../components/common/DemoSlider.astro';
@@ -8,9 +11,8 @@ import data from '../data/ui-kit.json';
 const image = `${import.meta.env.BASE_URL}images/demo/warmth.svg`;
 ---
 <BaseLayout title="Pechnik.su — технический UI Kit" description="Техническая демонстрация Astro Starter: шрифты, сетка, иконки и интерактивные компоненты.">
-  <header slot="header" class="site-header">
-    <div class="container site-header__inner"><Logo /><a href="#interactive">Проверить компоненты <Icon name="arrow" size={20} /></a></div>
-  </header>
+  <HeroSlider slides={sliderData} autoplay />
+  <CategoryShowcase items={showcaseData} />
   <div class="container">
     <div class="kit-intro">
       <p class="kit-intro__eyebrow">Frontend starter / 01</p>

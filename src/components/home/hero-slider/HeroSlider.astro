@@ -1,0 +1,28 @@
+---
+import Icon from '../../ui/Icon.astro';
+import HeroSlide from './HeroSlide.astro';
+import type { HeroSlideData } from '../../../types/hero-slider';
+import { defaultHeroOverlay } from './content';
+interface Props {
+  slides: HeroSlideData[];
+  autoplay?: boolean;
+  delay?: number;
+  loop?: boolean;
+  showNavigation?: boolean;
+  showPagination?: boolean;
+  defaultOverlay?: string;
+}
+const { slides = [], autoplay = false, delay = 6000, loop = true, showNavigation = true, showPagination = true, defaultOverlay = defaultHeroOverlay } = Astro.props;
+const multiple = slides.length > 1;
+---
+{slides.length > 0 && <section class="container swiper hero-slider" data-hero-slider data-autoplay={autoplay} data-delay={Math.max(6000, delay)} data-loop={loop} role="region" aria-label="Акции и предложения" aria-roledescription="карусель">
+  <div class="swiper-wrapper">{slides.map((slide, index) => <HeroSlide slide={slide} index={index} defaultOverlay={defaultOverlay} />)}</div>
+  {multiple && <div class="hero-slider__controls">
+    {showNavigation && <div class="hero-slider__navigation">
+      <button type="button" class="hero-slider__arrow hero-slider__arrow--prev" data-hero-prev aria-label="Предыдущий слайд"><Icon name="arrow" size={20} /></button>
+      <button type="button" class="hero-slider__arrow" data-hero-next aria-label="Следующий слайд"><Icon name="arrow" size={20} /></button>
+    </div>}
+    {showPagination && <div class="hero-slider__pagination" data-hero-pagination></div>}
+    {autoplay && <button type="button" class="hero-slider__toggle" data-hero-toggle aria-label="Остановить автопереключение">Пауза</button>}
+  </div>}
+</section>}

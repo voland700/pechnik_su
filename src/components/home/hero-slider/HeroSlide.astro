@@ -1,0 +1,28 @@
+---
+import type { HeroSlideData } from '../../../types/hero-slider';
+import { descriptionHtml, imageUrl, safeUrl, safeOverlay, defaultHeroOverlay } from './content';
+interface Props { slide: HeroSlideData; index: number; defaultOverlay: string; }
+const { slide, index, defaultOverlay } = Astro.props;
+const href = safeUrl(slide.link);
+const background = imageUrl(slide.backgraund);
+const image = imageUrl(slide.img);
+const position = /^[\d.%\s-]+$|^(?:left|right|center|top|bottom)(?:\s+(?:left|right|center|top|bottom))?$/.test(slide.backgroundPosition ?? '') ? slide.backgroundPosition : 'center';
+---
+<article class="swiper-slide hero-slider__slide">
+  {background && <div class="hero-slider__background" data-swiper-parallax="-1%" data-swiper-parallax-duration="1000">
+    <img src={background} alt="" width="1280" height="500" style={{ objectPosition: position }} loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />
+  </div>}
+  <div class="hero-slider__overlay" style={{ background: safeOverlay(slide.overlay) ?? safeOverlay(defaultOverlay) ?? defaultHeroOverlay }}></div>
+  <div class="hero-slider__content">
+    <div class="hero-slider__text">
+      <h2 class="hero-slider__title" data-swiper-parallax="-40" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700">
+        {href ? <a href={href}>{slide.name}</a> : slide.name}
+      </h2>
+      {slide.text && <div class="hero-slider__description" data-swiper-parallax="-60" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="850" set:html={descriptionHtml(slide.text)} />}
+      {href && <div data-swiper-parallax="-80" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="950"><a class="button hero-slider__button" href={href}>Подробнее<span class="visually-hidden">: {slide.name}</span></a></div>}
+    </div>
+    {image && <div class="hero-slider__visual" data-swiper-parallax-opacity="0" data-swiper-parallax-scale="0.95" data-swiper-parallax-duration="900">
+      <img class="hero-slider__image" src={image} alt={slide.name} width={slide.imageWidth} height={slide.imageHeight} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+    </div>}
+  </div>
+</article>

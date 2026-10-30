@@ -1,0 +1,17 @@
+---
+import type { ShowcaseItem } from '../../../types/showcase';
+import { safeUrl } from '../../../utils/url';
+import { categoryImage } from './images';
+interface Props { item: ShowcaseItem; }
+const { item } = Astro.props;
+const candidate = safeUrl(item.url);
+const href = candidate === '#' ? undefined : candidate;
+const Tag = href ? 'a' : 'div';
+const image = categoryImage(item.img);
+---
+<Tag class:list={['category-card', { 'category-card__link': !!href }]} href={href}>
+  <div class="category-card__media">
+    {image && <img class="category-card__image" src={image.src} width={image.width} height={image.height} alt="" loading="lazy" decoding="async" />}
+  </div>
+  <h3 class="category-card__title">{item.name}</h3>
+</Tag>

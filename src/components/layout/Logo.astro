@@ -1,8 +1,9 @@
 ---
 import logo from '../../../assets/logo.svg?url';
+interface Props { href?: string; }
 const { href = import.meta.env.BASE_URL } = Astro.props;
 ---
-<a class="brand" href={href} aria-label="Pechnik.su — техническая страница">
+<a class="brand" href={href} aria-label="Печной центр Pechnik.su — главная">
   <img class="brand__logo" src={logo} width="197" height="197" alt="" />
-  <span>Pechnik.su</span>
+  <span class="brand__text">Печной центр<small class="brand__domain">Pechnik.su</small></span>
 </a>

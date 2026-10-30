@@ -1,0 +1,8 @@
+---
+import type { NavigationItem } from '../../../data/navigation';
+interface Props { items: NavigationItem[]; activeMenu?: string; mobile?: boolean; }
+const { items, activeMenu, mobile = false } = Astro.props;
+---
+<nav class:list={['header-nav', { 'header-nav--mobile': mobile }]} aria-label={mobile ? 'Мобильная навигация' : 'Информационное меню'}>
+  <ul class="header-nav__list">{items.map(item => <li><a href={item.url} class:list={['header-nav__link', { active: item.id === activeMenu }]} aria-current={item.id === activeMenu ? 'page' : undefined}>{item.label}</a></li>)}</ul>
+</nav>

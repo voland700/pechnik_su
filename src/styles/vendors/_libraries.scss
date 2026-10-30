@@ -1,6 +1,7 @@
 @use 'swiper/css';
 @use 'swiper/css/a11y';
 @use 'swiper/css/parallax';
+@use 'swiper/css/effect-fade';
 @use '@fancyapps/ui/dist/fancybox/fancybox.css';
 @use 'sweetalert2/dist/sweetalert2.css';
 .swal2-popup { font-family: var(--font-body); border-radius: var(--radius-lg); }

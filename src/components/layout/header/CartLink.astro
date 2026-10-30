@@ -1,0 +1,10 @@
+---
+import Icon from '../../ui/Icon.astro';
+interface Props { href?: string; count?: number; }
+const { href = '/cart/', count = 0 } = Astro.props;
+const quantity = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : 0;
+---
+<a class="header-cart" href={href} data-cart-link aria-label={`Корзина, товаров: ${quantity}`}>
+  <span class="header-cart__icon"><Icon name="cart" size={28} /><span class:list={['header-cart__count', { 'header-cart__count--filled': quantity > 0 }]} data-cart-count>{quantity}</span></span>
+  <span class="header-cart__label">Корзина</span>
+</a>

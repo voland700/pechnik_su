@@ -1,0 +1,132 @@
+[
+  {
+    "width": 390,
+    "initial": {
+      "overflow": false,
+      "contacts": false,
+      "phones": [
+        "tel:+79168818399",
+        "tel:+79853088316",
+        "tel:+79099928462",
+        "tel:+79612673880"
+      ],
+      "search": {
+        "top": 68,
+        "width": 351
+      },
+      "status": "Сейчас работаем"
+    },
+    "sticky": {
+      "top": -700,
+      "bottom": -569,
+      "searchTop": -632,
+      "searchBottom": -582,
+      "contactsBottom": 0
+    },
+    "passed": true
+  },
+  {
+    "width": 768,
+    "initial": {
+      "overflow": false,
+      "contacts": false,
+      "phones": [
+        "tel:+79168818399",
+        "tel:+79853088316",
+        "tel:+79099928462",
+        "tel:+79612673880"
+      ],
+      "search": {
+        "top": 83.96875,
+        "width": 696
+      },
+      "status": "Сейчас работаем"
+    },
+    "sticky": {
+      "top": -700,
+      "bottom": -549.03125,
+      "searchTop": -616.03125,
+      "searchBottom": -566.03125,
+      "contactsBottom": 0
+    },
+    "passed": true
+  },
+  {
+    "width": 1024,
+    "initial": {
+      "overflow": false,
+      "contacts": true,
+      "phones": [
+        "tel:+79168818399",
+        "tel:+79853088316",
+        "tel:+79099928462",
+        "tel:+79612673880"
+      ],
+      "search": {
+        "top": 95,
+        "width": 936
+      },
+      "status": "Сейчас работаем"
+    },
+    "sticky": {
+      "top": -700,
+      "bottom": -538,
+      "searchTop": -605,
+      "searchBottom": -555,
+      "contactsBottom": -307.84375
+    },
+    "passed": true
+  },
+  {
+    "width": 1440,
+    "initial": {
+      "overflow": false,
+      "contacts": true,
+      "phones": [
+        "tel:+79168818399",
+        "tel:+79853088316",
+        "tel:+79099928462",
+        "tel:+79612673880"
+      ],
+      "search": {
+        "top": 82,
+        "width": 664.859375
+      },
+      "status": "Сейчас работаем"
+    },
+    "sticky": {
+      "top": -643,
+      "bottom": -542,
+      "searchTop": -618,
+      "searchBottom": -568,
+      "contactsBottom": -377.328125
+    },
+    "passed": true
+  },
+  {
+    "width": 1920,
+    "initial": {
+      "overflow": false,
+      "contacts": true,
+      "phones": [
+        "tel:+79168818399",
+        "tel:+79853088316",
+        "tel:+79099928462",
+        "tel:+79612673880"
+      ],
+      "search": {
+        "top": 82,
+        "width": 664.859375
+      },
+      "status": "Сейчас работаем"
+    },
+    "sticky": {
+      "top": -643,
+      "bottom": -542,
+      "searchTop": -618,
+      "searchBottom": -568,
+      "contactsBottom": -377.328125
+    },
+    "passed": true
+  }
+]

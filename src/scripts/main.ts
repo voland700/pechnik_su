@@ -1,5 +1,11 @@
 async function initialize() {
   const tasks: Promise<unknown>[] = [];
+  if (document.querySelector('[data-hero-slider]')) {
+    tasks.push(import('./modules/hero-slider').then(({ initHeroSliders }) => initHeroSliders()));
+  }
+  if (document.querySelector('[data-header]')) {
+    tasks.push(import('./modules/header').then(({ initHeader }) => initHeader()));
+  }
   if (document.querySelector('[data-fancybox]')) {
     tasks.push(import('./modules/fancybox').then(({ initFancybox }) => initFancybox()));
   }

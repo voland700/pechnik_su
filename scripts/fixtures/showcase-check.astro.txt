@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryShowcase from '../components/home/category-showcase/CategoryShowcase.astro';
+import { showcaseData } from '../data/showcase';
+const item = showcaseData[0];
+---
+<BaseLayout title="Showcase fixtures" description="Temporary checks">
+  <div data-empty><CategoryShowcase items={[]} /></div>
+  <div data-mixed><CategoryShowcase title="Проверка состояний" items={[
+    { ...item, url: '/#main' }, { ...item, url: '' }, { ...item, url: undefined },
+    { ...item, url: 'javascript:alert(1)' }, { ...item, url: '#' },
+  ]} /></div>
+  <CategoryShowcase title="Повторный экземпляр" items={[item]} />
+</BaseLayout>

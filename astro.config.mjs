@@ -6,6 +6,12 @@ export default defineConfig({
   output: 'static',
   build: { inlineStylesheets: 'never' },
   vite: {
+    environments: { client: { build: { rollupOptions: { output: {
+      entryFileNames: 'js/main.js',
+      chunkFileNames: 'js/[name]-[hash].js',
+      assetFileNames: (asset) => asset.names?.some((name) => name.endsWith('.css'))
+        ? 'css/style.css' : 'assets/[name]-[hash][extname]',
+    } } } } },
     plugins: [webfont({
       context: fileURLToPath(new URL('./src/assets/icons/font', import.meta.url)),
       fontName: 'pechnik-icons',
@@ -23,7 +29,7 @@ export default defineConfig({
       assetsInlineLimit: 0,
       rollupOptions: { output: {
         assetFileNames: (asset) => asset.names?.some((name) => name.endsWith('.css'))
-          ? 'assets/css/style.css' : 'assets/[name]-[hash][extname]',
+          ? 'css/style.css' : 'assets/[name]-[hash][extname]',
       } },
     },
   },

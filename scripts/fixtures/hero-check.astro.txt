@@ -1,0 +1,11 @@
+---
+// Copy temporarily to src/pages/hero-check.astro for edge-case checks; do not publish.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSlider from '../components/home/hero-slider/HeroSlider.astro';
+import { sliderData } from '../data/hero-slider';
+---
+<BaseLayout title="Hero fixtures" description="Temporary checks">
+  <div data-empty><HeroSlider slides={[]} /></div>
+  <div data-single><HeroSlider slides={[sliderData[0]]} autoplay /></div>
+  <div data-minimal><HeroSlider slides={[{ name: 'Только заголовок', link: 'javascript:alert(1)', text: '<p onclick="alert(1)">Текст <span style="color:red">акцент</span></p><img src=x onerror=alert(1)>', overlay: '#123456' }]} /></div>
+</BaseLayout>
