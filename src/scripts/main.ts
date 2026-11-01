@@ -1,5 +1,11 @@
 async function initialize() {
   const tasks: Promise<unknown>[] = [];
+  if (document.querySelector('[data-featured-tabs]')) {
+    tasks.push(import('./modules/featured-products-tabs').then(({ initFeaturedProductsTabs }) => initFeaturedProductsTabs()));
+  }
+  if (document.querySelector('[data-product-card]')) {
+    tasks.push(import('./modules/product-card').then(({ initProductCards }) => initProductCards()));
+  }
   if (document.querySelector('[data-hero-slider]')) {
     tasks.push(import('./modules/hero-slider').then(({ initHeroSliders }) => initHeroSliders()));
   }

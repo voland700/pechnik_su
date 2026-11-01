@@ -1,0 +1,49 @@
+---
+import type { ProductItem } from '../../types/product';
+import { normalizeFlag, productText, PRODUCT_QUANTITY_MAX } from '../../types/product';
+import { safeUrl } from '../../utils/url';
+import { productImage } from './images';
+import Button from '../ui/Button.astro';
+interface Props { product: ProductItem; }
+const { product } = Astro.props;
+const price = productText(product.price);
+const oldPrice = productText(product.old_price);
+const discount = productText(product.discount);
+const purchaseEnabled = normalizeFlag(product.canBuy) && price.length > 0;
+const href = safeUrl(productText(product.url));
+const placeholder = !href || href === '#';
+const image = productImage(productText(product.img));
+const badges = [
+  { flag: product.new, modifier: 'new', label: 'НОВИНКА' },
+  { flag: product.hit, modifier: 'hit', label: 'ХИТ' },
+  { flag: product.sale, modifier: 'sale', label: 'АКЦИЯ' },
+].filter(({ flag }) => normalizeFlag(flag));
+---
+<article class:list={['product-card', { 'product-card--unavailable': !purchaseEnabled, 'product-card--price-request': !price }]} data-product-card>
+  <div class="product-card__media">
+    <a class="product-card__image-link" href={placeholder ? undefined : href} role={placeholder ? 'link' : undefined} aria-disabled={placeholder ? 'true' : undefined} aria-label={product.name}>
+      {image ? <img class="product-card__image" src={image.src} width={image.width} height={image.height} alt={product.name} loading="lazy" decoding="async" /> : <span class="product-card__fallback">Изображение недоступно</span>}
+    </a>
+    <div class="product-card__badges">{badges.map(({ modifier, label }) => <span class={`product-card__badge product-card__badge--${modifier}`}>{label}</span>)}</div>
+    <div class="product-card__media-footer">
+      {normalizeFlag(product.inStock) && <span class="product-card__availability">В наличии</span>}
+      {discount && <span class="product-card__discount">{discount}</span>}
+    </div>
+  </div>
+  <div class="product-card__body">
+    <h3 class="product-card__title"><a href={placeholder ? undefined : href} role={placeholder ? 'link' : undefined} aria-disabled={placeholder ? 'true' : undefined}>{product.name}</a></h3>
+    <div class="product-card__prices">
+      {price ? <><span class="product-card__price"><span class="visually-hidden">Цена: </span>{price} руб.</span>{oldPrice && <span class="product-card__old-price"><span class="visually-hidden">Старая цена: </span><s>{oldPrice} руб.</s></span>}</> : <span class="product-card__price-request">Цена по запросу</span>}
+    </div>
+    <!-- method=dialog prevents network submission even before JS or without JS. -->
+    <form class="product-card__actions" method="dialog" data-product-form data-purchase-enabled={String(purchaseEnabled)} aria-label={`Выбор количества: ${product.name}`}>
+      <input type="hidden" name="productId" value={product.id} />
+      <div class="product-card__quantity">
+        <button class="product-card__quantity-button" type="button" data-quantity-step="-1" aria-label="Уменьшить количество" disabled={!purchaseEnabled}>−</button>
+        <input class="product-card__quantity-input" type="number" name="quantity" value="1" min="1" max={PRODUCT_QUANTITY_MAX} step="1" inputmode="numeric" aria-label="Количество товара" disabled={!purchaseEnabled} />
+        <button class="product-card__quantity-button" type="button" data-quantity-step="1" aria-label="Увеличить количество" disabled={!purchaseEnabled}>+</button>
+      </div>
+      <Button type="submit" class="product-card__add-button" disabled={!purchaseEnabled}>В корзину</Button>
+    </form>
+  </div>
+</article>

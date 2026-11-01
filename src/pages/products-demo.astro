@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/catalog/ProductCard.astro';
+import { productsDemo } from '../data/products-demo';
+---
+<BaseLayout title="ProductCard — демонстрация Pechnik.su" description="Демонстрационные состояния карточки товара, количества и доступности покупки.">
+  <section class="container products-demo" aria-labelledby="products-demo-title">
+    <h1 id="products-demo-title">Карточка товара</h1>
+    <p>Тестовые данные и цены для проверки интерфейса. Не являются коммерческим предложением. Ссылки на товары — заглушки. Отправка формы создаёт только техническое событие, корзина не изменяется.</p>
+    <p><a href={`${import.meta.env.BASE_URL}`}>Вернуться в UI Kit</a></p>
+    <h2>Пять карточек в полном контейнере</h2>
+    <p>На desktop от 1200 px — пять карточек в ряду. На меньших экранах — четыре, три, две или одна.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 products-demo__grid">{productsDemo.map(({ label, product }) => <div class="col products-demo__item"><p>{label}</p><ProductCard product={product} /></div>)}</div>
+    <h2>Ширина родительского контейнера</h2>
+    <p>Измените ширину блока за нижний правый угол: компактные количество и кнопка остаются в одном ряду.</p>
+    <div class="products-demo__resize"><ProductCard product={productsDemo[5].product} /></div>
+    <noscript><p>Для изменения количества кнопками и проверки технического события включите JavaScript.</p></noscript>
+  </section>
+</BaseLayout>

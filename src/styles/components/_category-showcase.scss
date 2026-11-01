@@ -9,7 +9,7 @@
 .category-card__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .category-card__title { margin: 0; text-align: center; font-size: var(--text-sm); line-height: 1.45; font-weight: 600; overflow-wrap: anywhere; }
 .category-card__link { transition: border-color var(--duration-normal), box-shadow var(--duration-normal), transform var(--duration-normal), color var(--duration-normal); }
-.category-card__link:hover { color: var(--color-action); border-color: var(--color-action); box-shadow: var(--shadow-soft); transform: translateY(-2px); }
+.category-card__link:hover, .category-card__link:focus-visible { color: var(--color-action); border-color: var(--color-action); box-shadow: var(--shadow-soft); transform: translateY(-2px); }
 .category-card__link:focus-visible { outline: 3px solid var(--color-action); outline-offset: 3px; }
 .category-card__link:active { color: var(--color-action); transform: translateY(0); box-shadow: none; }
 
@@ -22,5 +22,5 @@
 @include a.up(xl) { .category-showcase__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 @media (prefers-reduced-motion: reduce) {
   .category-card__link { transition: none; }
-  .category-card__link:hover, .category-card__link:active { transform: none; }
+  .category-card__link:hover, .category-card__link:focus-visible, .category-card__link:active { transform: none; }
 }

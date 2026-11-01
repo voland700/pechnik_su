@@ -1,0 +1,49 @@
+---
+import ProductCard from '../../catalog/ProductCard.astro';
+import type { FeaturedCategory } from '../../../types/featured-products';
+
+interface Props {
+  title?: string;
+  categories: FeaturedCategory[];
+  maxProducts?: number;
+  /** Zero-based category index. */
+  initialTab?: number;
+}
+const { title = 'Избранные товары', categories = [], maxProducts = 10, initialTab = 0 } = Astro.props;
+const limit = Number.isFinite(maxProducts) ? Math.min(10, Math.max(0, Math.floor(maxProducts))) : 10;
+const selected = Number.isInteger(initialTab) && initialTab >= 0 && initialTab < categories.length ? initialTab : 0;
+const id = `featured-products-${crypto.randomUUID()}`;
+---
+{categories.length > 0 && <section class="featured-products" data-featured-tabs aria-labelledby={`${id}-heading`}>
+  <div class="container">
+    <h2 class="featured-products__heading" id={`${id}-heading`}>{title}</h2>
+    <div class="featured-products__tabs" role="tablist" aria-label={title} aria-orientation="horizontal">
+      {categories.map(({ category }, index) => <button
+        type="button" role="tab" data-featured-tab
+        class:list={['featured-products__tab', { active: index === selected }]}
+        id={`${id}-tab-${index}`} aria-controls={`${id}-panel-${index}`}
+        aria-selected={index === selected} tabindex={index === selected ? 0 : -1}
+      >{category}</button>)}
+    </div>
+    <div class="featured-products__panels">
+      {categories.map(({ category, products }, index) => <div
+        class:list={['featured-products__panel', { behold: index === selected }]}
+        data-featured-panel id={`${id}-panel-${index}`} role="tabpanel"
+        aria-labelledby={`${id}-tab-${index}`} tabindex="0" hidden={index !== selected}
+      >
+        <h3 class="featured-products__category-heading">{category}</h3>
+        {products.slice(0, limit).length > 0
+          ? <div class="featured-products__grid">{products.slice(0, limit).map(item => <ProductCard product={item} />)}</div>
+          : <p class="featured-products__empty">В этой категории пока нет товаров</p>}
+      </div>)}
+    </div>
+  </div>
+  <noscript>
+    <style is:inline>
+      .featured-products .featured-products__tabs { display: none; }
+      .featured-products .featured-products__panel[hidden] { display: block !important; }
+      .featured-products .featured-products__panel { margin-block: var(--space-6); animation: none; }
+      .featured-products .featured-products__category-heading { display: block; }
+    </style>
+  </noscript>
+</section>}

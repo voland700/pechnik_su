@@ -4,6 +4,9 @@ import HeroSlider from '../components/home/hero-slider/HeroSlider.astro';
 import { sliderData } from '../data/hero-slider';
 import CategoryShowcase from '../components/home/category-showcase/CategoryShowcase.astro';
 import { showcaseData } from '../data/showcase';
+import FeaturedProductsTabs from '../components/home/featured-products/FeaturedProductsTabs.astro';
+import tabsData from '../../assets/tabsData.json';
+import type { FeaturedCategory } from '../types/featured-products';
 import Icon from '../components/ui/Icon.astro';
 import Button from '../components/ui/Button.astro';
 import DemoSlider from '../components/common/DemoSlider.astro';
@@ -13,12 +16,14 @@ const image = `${import.meta.env.BASE_URL}images/demo/warmth.svg`;
 <BaseLayout title="Pechnik.su — технический UI Kit" description="Техническая демонстрация Astro Starter: шрифты, сетка, иконки и интерактивные компоненты.">
   <HeroSlider slides={sliderData} autoplay />
   <CategoryShowcase items={showcaseData} />
+  <FeaturedProductsTabs categories={tabsData as FeaturedCategory[]} maxProducts={10} />
   <div class="container">
     <div class="kit-intro">
       <p class="kit-intro__eyebrow">Frontend starter / 01</p>
       <h1>Основа для тёплых решений.</h1>
       <p>Технический UI Kit Pechnik.su. Проверяем инфраструктуру будущего магазина: от типографики до интерактивных компонентов.</p>
       <p>Эта страница — демонстрация инструментов, а не утверждённый дизайн главной.</p>
+      <p><a href={`${import.meta.env.BASE_URL}products-demo/`}>ProductCard: демонстрация состояний карточки товара</a></p>
     </div>
     <section class="kit-section" aria-labelledby="palette">
       <p class="kit-section__label">01 / Дизайн-токены</p><h2 id="palette">Цветовая палитра</h2>
