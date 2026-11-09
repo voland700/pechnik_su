@@ -1,0 +1,15 @@
+---
+import type { PromotionItem } from '../../../types/promotion';
+import { safeUrl } from '../../../utils/url';
+import { promotionImage } from './images';
+interface Props { item: PromotionItem; }
+const { item } = Astro.props;
+const href = safeUrl(item.url) ?? '#';
+const image = promotionImage(item.img);
+---
+<a class="promotion-card promotion-card__link" href={href} data-demo-link={href === '#' || undefined}>
+  <div class="promotion-card__media">
+    {image ? <img class="promotion-card__image" src={image.src} width={image.width} height={image.height} alt="" loading="lazy" decoding="async" /> : <span class="promotion-card__fallback">Изображение недоступно</span>}
+  </div>
+  <h3 class="promotion-card__title">{item.name}</h3>
+</a>

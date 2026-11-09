@@ -1,0 +1,20 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import { ArticlesData, type ArticleItem } from '../../../data/articles';
+
+interface Props {
+  title?: string;
+  items?: readonly ArticleItem[];
+}
+const { title = 'Статьи о печах и каминах', items = ArticlesData } = Astro.props;
+const visibleItems = items.slice(0, 10);
+const headingId = `articles-${crypto.randomUUID()}`;
+---
+{visibleItems.length > 0 && <section class="articles-list" aria-labelledby={headingId}>
+  <div class="container">
+    <h2 class="articles-list__heading" id={headingId}>{title}</h2>
+    <ul class="articles-list__grid" role="list">
+      {visibleItems.map(item => <li class="articles-list__item"><ArticleCard item={item} /></li>)}
+    </ul>
+  </div>
+</section>}

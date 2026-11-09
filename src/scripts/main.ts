@@ -1,5 +1,14 @@
+// Only explicitly marked demo links: real CMS URLs keep native navigation.
+document.addEventListener('click', (event) => {
+  const link = event.target instanceof Element ? event.target.closest('a[data-demo-link]') : null;
+  if (link?.getAttribute('href') === '#') event.preventDefault();
+});
+
 async function initialize() {
   const tasks: Promise<unknown>[] = [];
+  if (document.querySelector('[data-brands-slider]')) {
+    tasks.push(import('./modules/brands-slider').then(({ initBrandsSliders }) => initBrandsSliders()));
+  }
   if (document.querySelector('[data-featured-tabs]')) {
     tasks.push(import('./modules/featured-products-tabs').then(({ initFeaturedProductsTabs }) => initFeaturedProductsTabs()));
   }

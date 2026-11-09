@@ -7,66 +7,22 @@ import { showcaseData } from '../data/showcase';
 import FeaturedProductsTabs from '../components/home/featured-products/FeaturedProductsTabs.astro';
 import tabsData from '../../assets/tabsData.json';
 import type { FeaturedCategory } from '../types/featured-products';
-import Icon from '../components/ui/Icon.astro';
-import Button from '../components/ui/Button.astro';
-import DemoSlider from '../components/common/DemoSlider.astro';
-import data from '../data/ui-kit.json';
-const image = `${import.meta.env.BASE_URL}images/demo/warmth.svg`;
+import PromotionsShowcase from '../components/home/promotions/PromotionsShowcase.astro';
+import { stocksListData } from '../data/promotions';
+import Advantages from '../components/home/advantages/Advantages.astro';
+import { advantagesData } from '../data/advantages';
+import CompletedWorks from '../components/home/completed-works/CompletedWorks.astro';
+import BrandsSlider from '../components/home/brands/BrandsSlider.astro';
+import ArticlesList from '../components/home/articles/ArticlesList.astro';
 ---
-<BaseLayout title="Pechnik.su — технический UI Kit" description="Техническая демонстрация Astro Starter: шрифты, сетка, иконки и интерактивные компоненты.">
+<BaseLayout title="Печной Центр — печи, камины и материалы" description="Печи, камины, дымоходы и материалы для строительства и монтажа. Товары производителей и статьи Печного центра.">
+  <h1 class="visually-hidden">Печной Центр — печи, камины и материалы</h1>
   <HeroSlider slides={sliderData} autoplay />
   <CategoryShowcase items={showcaseData} />
   <FeaturedProductsTabs categories={tabsData as FeaturedCategory[]} maxProducts={10} />
-  <div class="container">
-    <div class="kit-intro">
-      <p class="kit-intro__eyebrow">Frontend starter / 01</p>
-      <h1>Основа для тёплых решений.</h1>
-      <p>Технический UI Kit Pechnik.su. Проверяем инфраструктуру будущего магазина: от типографики до интерактивных компонентов.</p>
-      <p>Эта страница — демонстрация инструментов, а не утверждённый дизайн главной.</p>
-      <p><a href={`${import.meta.env.BASE_URL}products-demo/`}>ProductCard: демонстрация состояний карточки товара</a></p>
-    </div>
-    <section class="kit-section" aria-labelledby="palette">
-      <p class="kit-section__label">01 / Дизайн-токены</p><h2 id="palette">Цветовая палитра</h2>
-      <div class="kit-palette">{data.palette.map((color) => <figure class="kit-swatch">
-        <div class:list={['kit-swatch__color', `kit-swatch__color--${color.token}`]}></div>
-        <figcaption>{color.name}<br /><code>{color.value}</code></figcaption>
-      </figure>)}</div>
-    </section>
-    <section class="kit-section" aria-labelledby="typography">
-      <p class="kit-section__label">02 / Локальный Manrope</p><h2 id="typography">Типографика</h2>
-      <p class="kit-sample kit-sample--light">300 Light — Кирпич, печи и домашнее тепло</p>
-      <p class="kit-sample kit-sample--regular">400 Regular — Кирпич, печи и домашнее тепло</p>
-      <p class="kit-sample kit-sample--semibold">600 SemiBold — Кирпич, печи и домашнее тепло</p>
-      <p class="kit-sample kit-sample--bold">700 Bold — Кирпич, печи и домашнее тепло</p>
-      <p>H1 представлен в начале страницы, H2 — заголовок этого раздела.</p>
-      <h3>H3 — Группа материалов</h3><h4>H4 — Характеристики</h4><h5>H5 — Дополнительные сведения</h5><h6>H6 — Примечание</h6>
-      <p>Пример основного текста с <strong>важным фрагментом</strong> и <a href="#grid">ссылкой на адаптивную сетку</a>. Размеры, интервалы и цвета управляются токенами.</p>
-    </section>
-    <section class="kit-section" aria-labelledby="buttons">
-      <p class="kit-section__label">03 / Собственные компоненты</p><h2 id="buttons">Кнопки и иконки</h2>
-      <div class="kit-stack"><Button data-demo-alert>Проверить уведомление <Icon name="arrow" size={20} /></Button><Button variant="secondary" data-demo-alert>Вторичная кнопка</Button><Button disabled>Недоступно</Button></div>
-      <p>Для проверки состояний наведите указатель или перейдите к кнопке клавишей Tab.</p>
-      <h3>Inline SVG</h3>
-      <div class="kit-stack"><Icon name="search" decorative={false} label="Поиск" /><Icon name="cart" size={32} decorative={false} label="Корзина" /><Icon name="arrow" size={40} decorative={false} label="Стрелка вправо" /></div>
-      <h3>SVG webfont</h3>
-      <div class="kit-stack">{['search', 'cart', 'arrow'].map((name) => <span><i class={`p-icon p-icon-${name}`} aria-hidden="true"></i> <code>{name}</code></span>)}</div>
-    </section>
-    <section class="kit-section" aria-labelledby="grid">
-      <p class="kit-section__label">04 / Bootstrap 5.2 Grid</p><h2 id="grid">Двенадцать колонок</h2>
-      <div class="row">{[1, 2, 3, 4].map((number) => <div class="col-12 col-sm-6 col-lg-3"><div class="kit-grid">Блок {number}<br /><code>12 → 6 → 3</code></div></div>)}</div>
-      <p>Сетка находится в <code>.container</code>. На широком экране блоки занимают по три колонки.</p>
-    </section>
-    <section class="kit-section" aria-labelledby="interactive">
-      <p class="kit-section__label">05 / Нативные модули</p><h2 id="interactive">Swiper + Parallax</h2>
-      <DemoSlider slides={data.slides} />
-      <noscript><p>Для переключения слайдов включите JavaScript.</p></noscript>
-    </section>
-    <section class="kit-section" aria-labelledby="gallery">
-      <p class="kit-section__label">06 / Fancybox</p><h2 id="gallery">Просмотр изображения</h2>
-      <p>Откройте локальную тестовую иллюстрацию. Без JavaScript ссылка откроет сам SVG.</p>
-      <a href={image} data-fancybox="demo" data-caption="Тестовая иллюстрация Pechnik.su" aria-label="Открыть иллюстрацию камина"><img class="kit-image" src={image} width="1200" height="700" alt="Схематичный камин с оранжевым и жёлтым пламенем" loading="lazy" /></a>
-    </section>
-  </div>
-  <div class="container-fluid"><div class="kit-grid">Проверка <code>.container-fluid</code>: контейнер занимает доступную ширину.</div></div>
-  <footer slot="footer" class="site-footer"><div class="container">Pechnik.su · технический Starter · Astro / SCSS / TypeScript</div></footer>
+  <PromotionsShowcase title="Акции и скидки" items={stocksListData} allPromotionsUrl="#" maxItems={4} />
+  <Advantages items={advantagesData} />
+  <CompletedWorks />
+  <BrandsSlider />
+  <ArticlesList />
 </BaseLayout>

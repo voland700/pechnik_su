@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandsSlider from '../components/home/brands/BrandsSlider.astro';
+import { brandsData } from '../data/brands';
+---
+<BaseLayout title="Brands test" description="Temporary QA fixture">
+<BrandsSlider items={[]} />
+<BrandsSlider items={brandsData.slice(0,1)} />
+<BrandsSlider items={brandsData.slice(0,3)} />
+<BrandsSlider />
+</BaseLayout>

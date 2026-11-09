@@ -1,0 +1,42 @@
+[
+  {
+    "width": 375,
+    "count": 8,
+    "columns": 1,
+    "overflow": false,
+    "interactive": 0,
+    "decorative": true,
+    "clipped": false,
+    "centered": true
+  },
+  {
+    "width": 768,
+    "count": 8,
+    "columns": 2,
+    "overflow": false,
+    "interactive": 0,
+    "decorative": true,
+    "clipped": false,
+    "centered": true
+  },
+  {
+    "width": 1024,
+    "count": 8,
+    "columns": 4,
+    "overflow": false,
+    "interactive": 0,
+    "decorative": true,
+    "clipped": false,
+    "centered": true
+  },
+  {
+    "width": 1440,
+    "count": 8,
+    "columns": 4,
+    "overflow": false,
+    "interactive": 0,
+    "decorative": true,
+    "clipped": false,
+    "centered": true
+  }
+]

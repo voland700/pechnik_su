@@ -1,0 +1,28 @@
+---
+import PromotionCard from './PromotionCard.astro';
+import Icon from '../../ui/Icon.astro';
+import type { PromotionItem } from '../../../types/promotion';
+import { safeUrl } from '../../../utils/url';
+interface Props {
+  title?: string;
+  items: readonly PromotionItem[];
+  allPromotionsUrl?: string;
+  maxItems?: number;
+}
+const { title = 'Акции и скидки', items = [], allPromotionsUrl = '#', maxItems = 4 } = Astro.props;
+const limit = Number.isFinite(maxItems) ? Math.min(4, Math.max(0, Math.floor(maxItems))) : 4;
+const visibleItems = items.slice(0, limit);
+const href = safeUrl(allPromotionsUrl) ?? '#';
+const headingId = `promotions-${crypto.randomUUID()}`;
+---
+{visibleItems.length > 0 && <section class="promotions-showcase" aria-labelledby={headingId}>
+  <div class="container">
+    <div class="promotions-showcase__header">
+      <h2 class="promotions-showcase__heading" id={headingId}>{title}</h2>
+      <a class="promotions-showcase__all-link" href={href} data-demo-link={href === '#' || undefined}>Все акции <Icon name="arrow" size={20} /></a>
+    </div>
+    <ul class="promotions-showcase__grid">
+      {visibleItems.map(item => <li class="promotions-showcase__item"><PromotionCard item={item} /></li>)}
+    </ul>
+  </div>
+</section>}

@@ -1,0 +1,38 @@
+---
+import Icon from '../../ui/Icon.astro';
+import { brandsData, type BrandItem } from '../../../data/brands';
+import { brandImage } from './images';
+import { safeUrl } from '../../../utils/url';
+
+interface Props {
+  title?: string;
+  items?: readonly BrandItem[];
+}
+const { title = 'Товары производителей', items = brandsData } = Astro.props;
+const headingId = `brands-${crypto.randomUUID()}`;
+---
+{items.length > 0 && <section class="brands-slider" aria-labelledby={headingId} data-brands-slider>
+  <div class="container">
+    <h2 class="brands-slider__heading" id={headingId}>{title}</h2>
+    <div class="brands-slider__track">
+      <button class="brands-slider__arrow brands-slider__arrow--prev" type="button" data-brands-prev aria-label="Предыдущие производители" disabled>
+        <Icon name="arrow" size={20} />
+      </button>
+      <div class="swiper brands-slider__viewport" data-brands-viewport role="region" aria-labelledby={headingId} aria-roledescription="карусель" tabindex="0">
+        <div class="swiper-wrapper">
+          {items.map(item => {
+            const image = brandImage(item.img);
+            return <div class="swiper-slide brands-slider__slide">
+              <a class="brands-slider__link" href={safeUrl(item.href) ?? '#'} aria-label={`Товары производителя ${item.name}`}>
+                {image ? <img class="brands-slider__image" src={image.src} width={image.width} height={image.height} alt="" loading="lazy" decoding="async" /> : <span>{item.name}</span>}
+              </a>
+            </div>;
+          })}
+        </div>
+      </div>
+      <button class="brands-slider__arrow" type="button" data-brands-next aria-label="Следующие производители" disabled>
+        <Icon name="arrow" size={20} />
+      </button>
+    </div>
+  </div>
+</section>}

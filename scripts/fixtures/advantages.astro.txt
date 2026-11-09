@@ -1,0 +1,8 @@
+---
+import Advantages from '../components/home/advantages/Advantages.astro';
+import { advantagesData } from '../data/advantages';
+---
+<Advantages items={[]} />
+{Array.from({length:8},(_,i)=><Advantages items={advantagesData.slice(0,i+1)} />)}
+<Advantages items={[...advantagesData,...advantagesData]} />
+<Advantages />

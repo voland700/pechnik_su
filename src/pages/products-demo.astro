@@ -7,7 +7,7 @@ import { productsDemo } from '../data/products-demo';
   <section class="container products-demo" aria-labelledby="products-demo-title">
     <h1 id="products-demo-title">Карточка товара</h1>
     <p>Тестовые данные и цены для проверки интерфейса. Не являются коммерческим предложением. Ссылки на товары — заглушки. Отправка формы создаёт только техническое событие, корзина не изменяется.</p>
-    <p><a href={`${import.meta.env.BASE_URL}`}>Вернуться в UI Kit</a></p>
+    <p><a href={`${import.meta.env.BASE_URL}ui-kit/`}>Вернуться в UI Kit</a></p>
     <h2>Пять карточек в полном контейнере</h2>
     <p>На desktop от 1200 px — пять карточек в ряду. На меньших экранах — четыре, три, две или одна.</p>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 products-demo__grid">{productsDemo.map(({ label, product }) => <div class="col products-demo__item"><p>{label}</p><ProductCard product={product} /></div>)}</div>

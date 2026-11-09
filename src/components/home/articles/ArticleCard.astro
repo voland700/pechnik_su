@@ -1,0 +1,21 @@
+---
+import type { ArticleItem } from '../../../data/articles';
+import { safeUrl } from '../../../utils/url';
+import { articleImage } from './images';
+
+interface Props { item: ArticleItem; }
+const { item } = Astro.props;
+const image = articleImage(item.img);
+const headingId = `article-${crypto.randomUUID()}`;
+---
+<article class="article-card">
+  <a class="article-card__link" href={safeUrl(item.href) ?? '#'} aria-labelledby={headingId}>
+    <div class="article-card__media">
+      {image ? <img class="article-card__image" src={image.src} width={image.width} height={image.height} alt="" loading="lazy" decoding="async" /> : <span class="article-card__fallback">Изображение недоступно</span>}
+    </div>
+    <div class="article-card__content">
+      <h3 class="article-card__title" id={headingId}>{item.name}</h3>
+      <p class="article-card__description">{item.text}</p>
+    </div>
+  </a>
+</article>

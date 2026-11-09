@@ -1,0 +1,21 @@
+---
+import { workExempleData, type CompletedWorkItem } from '../../../data/completed-works';
+import { safeUrl } from '../../../utils/url';
+
+interface Props {
+  title?: string;
+  items?: readonly CompletedWorkItem[];
+}
+const { title = 'Выполненные нами работы', items = workExempleData } = Astro.props;
+const headingId = `completed-works-${crypto.randomUUID()}`;
+---
+{items.length > 0 && <section class="completed-works" aria-labelledby={headingId}>
+  <div class="container">
+    <h2 class="completed-works__heading" id={headingId}>{title}</h2>
+    <ul class="completed-works__list" role="list">
+      {items.map(item => <li class="completed-works__item">
+        <a class="completed-works__link" href={safeUrl(item.href) ?? '#'}>{item.title}</a>
+      </li>)}
+    </ul>
+  </div>
+</section>}

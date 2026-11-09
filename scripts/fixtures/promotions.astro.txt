@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PromotionsShowcase from '../components/home/promotions/PromotionsShowcase.astro';
+import { stocksListData } from '../data/promotions';
+const many = Object.freeze([...stocksListData, ...stocksListData]);
+---
+<BaseLayout title="Test" description="Temporary fixture">
+  <PromotionsShowcase title="Empty" items={[]} />
+  <PromotionsShowcase title="Single" items={stocksListData.slice(0, 1)} />
+  <PromotionsShowcase title="Many" items={many} maxItems={99} />
+  <PromotionsShowcase title="Custom" items={many} maxItems={2} />
+  <PromotionsShowcase title="Real" items={[{...stocksListData[0], url:'#real-target'}]} allPromotionsUrl="#real-target" />
+  <div id="real-target">Target</div>
+</BaseLayout>

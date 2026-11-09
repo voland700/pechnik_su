@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticlesList from '../components/home/articles/ArticlesList.astro';
+import { ArticlesData } from '../data/articles';
+const stress={...ArticlesData[0],name:'Очень длинный заголовок '.repeat(15)+'ДлинноеСлово'.repeat(30),text:('Длинный анонс без потери содержимого. '.repeat(150))+'https://example.com/'+ 'longword'.repeat(100)};
+---
+<BaseLayout title="Articles test" description="Temporary QA fixture">
+<ArticlesList items={[]} />
+{Array.from({length:10},(_,i)=><ArticlesList items={ArticlesData.slice(0,i+1)} />)}
+<ArticlesList items={[...ArticlesData,...ArticlesData]} />
+<ArticlesList items={[stress]} />
+</BaseLayout>

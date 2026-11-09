@@ -1,0 +1,26 @@
+@use '../abstracts' as a;
+
+.articles-list { padding-block: var(--space-7); }
+.articles-list__heading { margin: 0 0 var(--space-6); text-align: center; font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl)); }
+.articles-list__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
+.articles-list__item { display: flex; min-width: 0; }
+.article-card { width: 100%; min-width: 0; }
+.article-card__link { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--space-4); height: 100%; min-width: 0; padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-text); text-decoration: none; transition: border-color var(--duration-fast); }
+.article-card__media { display: flex; align-items: center; justify-content: center; width: 8rem; height: 8rem; margin-inline: auto; }
+.article-card__image { display: block; width: 100%; height: 100%; object-fit: contain; }
+.article-card__fallback { color: var(--color-muted); font-size: var(--text-sm); text-align: center; }
+.article-card__content { min-width: 0; }
+.article-card__title { margin: 0 0 var(--space-2); font-size: var(--text-base); font-weight: 700; line-height: 1.4; text-align: center; overflow-wrap: anywhere; transition: color var(--duration-fast); }
+.article-card__description { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; line-clamp: 5; overflow: hidden; overflow-wrap: anywhere; margin: 0; color: var(--color-muted); font-size: var(--text-sm); line-height: var(--leading-body); }
+.article-card__link:hover, .article-card__link:focus-visible { border-color: var(--color-action); }
+.article-card__link:hover .article-card__title, .article-card__link:focus-visible .article-card__title { color: var(--color-action); }
+.article-card__link:active .article-card__title { color: var(--color-text); }
+
+@include a.up(md) {
+  .article-card__link { grid-template-columns: 7.5rem minmax(0, 1fr); }
+  .article-card__media { width: 7.5rem; height: 7.5rem; }
+  .article-card__title { text-align: left; }
+  .article-card__description { -webkit-line-clamp: 4; line-clamp: 4; }
+}
+@include a.up(lg) { .articles-list__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .article-card__link, .article-card__title { transition: none; } }

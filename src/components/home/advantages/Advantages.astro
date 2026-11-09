@@ -1,0 +1,24 @@
+---
+import Icon from '../../ui/Icon.astro';
+import { advantagesData, type AdvantageItem } from '../../../data/advantages';
+
+interface Props {
+  title?: string;
+  items?: readonly AdvantageItem[];
+}
+const { title = 'Наши преимущества', items = advantagesData } = Astro.props;
+const visibleItems = items.slice(0, 8);
+const headingId = `advantages-${crypto.randomUUID()}`;
+---
+{visibleItems.length > 0 && <section class="advantages" aria-labelledby={headingId}>
+  <div class="container">
+    <h2 class="advantages__heading" id={headingId}>{title}</h2>
+    <ul class="advantages__grid" role="list">
+      {visibleItems.map(item => <li class="advantages__item">
+        <Icon name={item.icon} size={120} class="advantages__image" />
+        <h3 class="advantages__title">{item.title}</h3>
+        <p class="advantages__description">{item.description}</p>
+      </li>)}
+    </ul>
+  </div>
+</section>}
