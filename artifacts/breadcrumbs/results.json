@@ -1,0 +1,194 @@
+[
+  {
+    "depth": 1,
+    "width": 375,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 1,
+    "width": 768,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 1,
+    "width": 1024,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 1,
+    "width": 1440,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 2,
+    "width": 375,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 2,
+    "width": 768,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 2,
+    "width": 1024,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 2,
+    "width": 1440,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 3,
+    "width": 375,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 3,
+    "width": 768,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 3,
+    "width": 1024,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 3,
+    "width": 1440,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 13,
+    "width": 375,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 13,
+    "width": 768,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 13,
+    "width": 1024,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 13,
+    "width": 1440,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 4,
+    "width": 375,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 4,
+    "width": 768,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 4,
+    "width": 1024,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 4,
+    "width": 1440,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 1,
+    "width": 375,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 1,
+    "width": 768,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 1,
+    "width": 1024,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  },
+  {
+    "depth": 1,
+    "width": 1440,
+    "overflow": false,
+    "bounds": true,
+    "wrap": "wrap",
+    "separator": "\"\""
+  }
+]

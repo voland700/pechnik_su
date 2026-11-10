@@ -1,0 +1,27 @@
+---
+import type { BreadcrumbItem } from '../../types/breadcrumbs';
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+{items.length > 0 && (
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol class="breadcrumbs__list" role="list">
+      <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
+      {items.map((item, index) => (
+        <li class="breadcrumbs__item">
+          {index === items.length - 1 ? (
+            <span class="breadcrumbs__current" aria-current="page">{item.label}</span>
+          ) : item.href?.trim() && item.href.trim() !== '#' ? (
+            <a class="breadcrumbs__link" href={item.href}>{item.label}</a>
+          ) : (
+            <span class="breadcrumbs__text">{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}

@@ -1,0 +1,11 @@
+---
+import type { CatalogNotice } from '../../types/catalog-section';
+interface Props { items?: CatalogNotice[]; }
+const { items = [] } = Astro.props;
+const notices = items.filter(item => typeof item === 'string' ? item.trim() : item.some(part => part.text.trim()));
+---
+{notices.length > 0 && <div class="catalog-notices">
+  {notices.map(notice => <p class="catalog-notices__item">
+    {typeof notice === 'string' ? notice : notice.map(part => part.strong ? <strong>{part.text}</strong> : part.text)}
+  </p>)}
+</div>}

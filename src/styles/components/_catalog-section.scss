@@ -1,0 +1,72 @@
+@use '../abstracts' as a;
+
+.catalog-notices {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.catalog-notices__item {
+  margin: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-inline-start-width: 3px;
+  background: var(--color-secondary);
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+.catalog-subcategories {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1px;
+  margin: 0 0 var(--space-5);
+  padding: 1px;
+  list-style: none;
+  background: var(--color-border);
+}
+.catalog-subcategories__item { min-width: 0; background: var(--color-surface); }
+.catalog-subcategories__link {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-3);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background-color var(--duration-fast), color var(--duration-fast);
+
+  &:hover { background: var(--color-background); color: var(--color-action); }
+  &:hover .catalog-subcategories__name,
+  &:focus-visible .catalog-subcategories__name { text-decoration: underline; }
+  &:focus-visible { outline-offset: -3px; }
+}
+.catalog-subcategories__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.catalog-subcategories__media img { width: 100%; height: 100%; object-fit: contain; }
+.catalog-subcategories__fallback { font-size: var(--text-sm); color: var(--color-muted); overflow-wrap: anywhere; }
+.catalog-subcategories__name { min-width: 0; font-size: var(--text-sm); overflow-wrap: anywhere; }
+
+@include a.up(md) {
+  .catalog-subcategories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .catalog-subcategories__link {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    padding: var(--space-4);
+    text-align: center;
+  }
+  .catalog-subcategories__media { max-width: 8rem; }
+  .catalog-subcategories__name { align-self: start; }
+}
+@include a.up(lg) {
+  .catalog-subcategories { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@include a.up(xl) {
+  .catalog-subcategories { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

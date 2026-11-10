@@ -1,0 +1,14 @@
+---
+import type { CatalogNavigationItem } from '../../types/catalog';
+import { safeUrl } from '../../utils/url';
+interface Props { items: CatalogNavigationItem[]; }
+const { items } = Astro.props;
+---
+<aside class="catalog-sidebar">
+  <nav aria-label="Разделы каталога">
+    <ul class="catalog-sidebar__list" role="list">
+      {items.map(item => <li><a class="catalog-sidebar__link" href={safeUrl(item.url) ?? '#'}>{item.name}</a></li>)}
+    </ul>
+  </nav>
+  <slot name="filter" />
+</aside>

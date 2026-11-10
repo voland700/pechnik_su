@@ -1,0 +1,9 @@
+---
+import CatalogCategoryCard from './CatalogCategoryCard.astro';
+import type { CatalogCategory } from '../../types/catalog';
+interface Props { items: CatalogCategory[]; }
+const { items } = Astro.props;
+---
+<div class="catalog-categories">
+  {items.map((item, index) => <CatalogCategoryCard item={item} eager={index < 2} />)}
+</div>

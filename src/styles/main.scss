@@ -4,9 +4,13 @@
 @use 'base/global';
 @use 'layout/shell';
 @use 'layout/header';
+@use 'layout/footer';
 @use 'components/store-contacts';
 @use 'components/mobile-menu';
 @use 'components/ui';
+@use 'components/breadcrumbs';
+@use 'components/catalog';
+@use 'components/catalog-section';
 @use 'components/hero-slider';
 @use 'components/category-showcase';
 @use 'components/product-card';

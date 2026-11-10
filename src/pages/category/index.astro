@@ -1,0 +1,24 @@
+---
+import CatalogLayout from '../../layouts/CatalogLayout.astro';
+import CatalogNotices from '../../components/catalog/CatalogNotices.astro';
+import CatalogSubcategories from '../../components/catalog/CatalogSubcategories.astro';
+import { rubtsovskCategories, rubtsovskNotices } from '../../data/rubtsovsk-casting';
+import { showcaseData } from '../../data/showcase';
+const heading = 'Печное литьё Рубцовское';
+const navigation = showcaseData.map(({ name }) => ({ name, url: '#' }));
+---
+<CatalogLayout
+  title={`${heading} — Pechnik.su`}
+  description="Рубцовское печное литьё: дверцы, решетки, задвижки, духовки, плиты и другие категории Печного Центра."
+  heading={heading}
+  breadcrumbs={[
+    { label: 'Каталог', href: '/catalog/' },
+    { label: 'Чугунное и печное литьё' },
+    { label: heading },
+  ]}
+  navigation={navigation}
+>
+  <CatalogNotices items={rubtsovskNotices} />
+  <CatalogSubcategories items={rubtsovskCategories} />
+  <!-- Future product content can follow independently of the optional blocks. -->
+</CatalogLayout>

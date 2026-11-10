@@ -1,0 +1,23 @@
+---
+import type { ImageMetadata } from 'astro';
+import type { CatalogSubcategory } from '../../types/catalog-section';
+import { safeUrl } from '../../utils/url';
+interface Props { items?: CatalogSubcategory[]; }
+const { items = [] } = Astro.props;
+const images = import.meta.glob<ImageMetadata>('../../../assets/images/categories/*.{jpg,jpeg,png,webp,avif,svg}', {
+  eager: true, import: 'default',
+});
+---
+{items.length > 0 && <ul class="catalog-subcategories" aria-label="Вложенные категории" role="list">
+  {items.map(item => {
+    const image = images[`../../../${item.img}`];
+    return <li class="catalog-subcategories__item">
+      <a class="catalog-subcategories__link" href={safeUrl(item.url) ?? '#'}>
+        <span class="catalog-subcategories__media">
+          {image ? <img src={image.src} width={image.width} height={image.height} alt="" loading="lazy" decoding="async" /> : <span class="catalog-subcategories__fallback">Изображение недоступно</span>}
+        </span>
+        <span class="catalog-subcategories__name">{item.name}</span>
+      </a>
+    </li>;
+  })}
+</ul>}

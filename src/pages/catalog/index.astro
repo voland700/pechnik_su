@@ -1,0 +1,12 @@
+---
+import CatalogLayout from '../../layouts/CatalogLayout.astro';
+import CatalogCategories from '../../components/catalog/CatalogCategories.astro';
+import { catalogData } from '../../data/catalog';
+import { showcaseData } from '../../data/showcase';
+const heading = 'Каталог товаров';
+// Temporary destinations are specific to this stage, not to the shared layout.
+const navigation = showcaseData.map(({ name }) => ({ name, url: '#' }));
+---
+<CatalogLayout title="Каталог товаров — Pechnik.su" description="Каталог Печного Центра: печи, камины, дымоходы, печной кирпич, литьё и аксессуары." heading={heading} breadcrumbs={[{ label: heading }]} navigation={navigation}>
+  <CatalogCategories items={catalogData} />
+</CatalogLayout>

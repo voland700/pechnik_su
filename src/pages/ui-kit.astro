@@ -3,15 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/ui/Icon.astro';
 import Button from '../components/ui/Button.astro';
 import DemoSlider from '../components/common/DemoSlider.astro';
+import Breadcrumbs from '../components/common/Breadcrumbs.astro';
 import data from '../data/ui-kit.json';
+const pageHeading = 'Основа для тёплых решений.';
 const image = `${import.meta.env.BASE_URL}images/demo/warmth.svg`;
 ---
 <BaseLayout title="UI Kit — Pechnik.su" description="Дизайн-токены, типографика, сетка и демонстрационные компоненты Pechnik.su.">
+  <div class="page-heading">
+    <div class="container">
+      <h1>{pageHeading}</h1>
+      <Breadcrumbs items={[{ label: 'Примеры оформления', href: '/' }, { label: pageHeading }]} />
+    </div>
+  </div>
   <div class="container">
     <div class="kit-intro">
       <p><a href={`${import.meta.env.BASE_URL}`}>На главную</a></p>
       <p class="kit-intro__eyebrow">Frontend starter / 01</p>
-      <h1>Основа для тёплых решений.</h1>
       <p>Технический UI Kit Pechnik.su. Проверяем инфраструктуру будущего магазина: от типографики до интерактивных компонентов.</p>
       <p>Эта страница — демонстрация инструментов, а не утверждённый дизайн главной.</p>
       <p><a href={`${import.meta.env.BASE_URL}products-demo/`}>ProductCard: демонстрация состояний карточки товара</a></p>
@@ -59,5 +66,4 @@ const image = `${import.meta.env.BASE_URL}images/demo/warmth.svg`;
     </section>
   </div>
   <div class="container-fluid"><div class="kit-grid">Проверка <code>.container-fluid</code>: контейнер занимает доступную ширину.</div></div>
-  <footer slot="footer" class="site-footer"><div class="container">Pechnik.su · технический Starter · Astro / SCSS / TypeScript</div></footer>
 </BaseLayout>

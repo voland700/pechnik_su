@@ -1,0 +1,31 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/common/Breadcrumbs.astro';
+import CatalogSidebar from '../components/catalog/CatalogSidebar.astro';
+import type { BreadcrumbItem } from '../types/breadcrumbs';
+import type { CatalogNavigationItem } from '../types/catalog';
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  breadcrumbs: BreadcrumbItem[];
+  navigation: CatalogNavigationItem[];
+}
+const { title, description, heading, breadcrumbs, navigation } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <div class="page-heading">
+    <div class="container">
+      <h1>{heading}</h1>
+      <Breadcrumbs items={breadcrumbs} />
+    </div>
+  </div>
+  <div class="container">
+    <div class="catalog-layout">
+      <CatalogSidebar items={navigation}>
+        <slot name="filter" slot="filter" />
+      </CatalogSidebar>
+      <div class="catalog-layout__content"><slot /></div>
+    </div>
+  </div>
+</BaseLayout>

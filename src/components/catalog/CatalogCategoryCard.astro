@@ -1,0 +1,20 @@
+---
+import type { CatalogCategory } from '../../types/catalog';
+import { categoryImage } from '../home/category-showcase/images';
+import { safeUrl } from '../../utils/url';
+interface Props { item: CatalogCategory; eager?: boolean; }
+const { item, eager = false } = Astro.props;
+const image = categoryImage(item.img);
+const href = safeUrl(item.url) ?? '#';
+---
+<article class="catalog-category">
+  <a class="catalog-category__image-link" href={href} aria-label={item.name}>
+    {image && <img src={image.src} width={image.width} height={image.height} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+  </a>
+  <div class="catalog-category__content">
+    <h2 class="catalog-category__title"><a href={href}>{item.name}</a></h2>
+    {item.children.length > 0 && <ul class="catalog-category__children" role="list">
+      {item.children.map(name => <li><a href={safeUrl(item.childUrls?.[name]) ?? '#'}>{name}</a></li>)}
+    </ul>}
+  </div>
+</article>

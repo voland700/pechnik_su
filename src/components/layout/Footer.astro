@@ -1,0 +1,53 @@
+---
+import vkImage from '../../../assets/vk.jpg';
+import paymentStrip from '../../../assets/images/icons/pay_icons.svg?raw';
+import { footerMenus, footerContacts, socialButtons, paymentIcons } from '../../data/footer';
+
+// Trusted local artwork, emitted once; each viewport below selects one logo.
+const paymentArtwork = paymentStrip.replace(/<svg\b[^>]*>/, '').replace(/<\/svg>\s*$/, '')
+  .replace(/\bid="([^"]+)"/g, 'id="footer-pay-$1"')
+  .replace(/url\(#([^)]+)\)/g, 'url(#footer-pay-$1)');
+const icons = import.meta.glob<string>('../../../assets/images/icons/*.svg', { eager: true, query: '?raw', import: 'default' });
+const icon = (name: string) => {
+  const source = icons[`../../../assets/images/icons/${name}.svg`];
+  if (!source) throw new Error(`Missing footer icon: ${name}`);
+  // Some supplied social SVGs omit xmlns; inline SVG preserves their appearance.
+  return source.replace(/\saria-hidden="[^"]*"/g, '').replace('<svg ', '<svg class="site-footer__icon" focusable="false" aria-hidden="true" ');
+};
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__main">
+      {footerMenus.map(menu => <nav aria-labelledby={`footer-${menu.id}`}>
+        <h2 class="site-footer__heading" id={`footer-${menu.id}`}>{menu.title}</h2>
+        <ul class="site-footer__menu">{menu.links.map(link => <li><a href={link.href}>{link.title}</a></li>)}</ul>
+      </nav>)}
+      <section aria-labelledby="footer-social">
+        <h2 class="site-footer__heading" id="footer-social">Будьте на связи!</h2>
+        <!-- Replace the contents of this container with the Bitrix VK component. -->
+        <div class="site-footer__vk-widget">
+          <img src={vkImage.src} width={vkImage.width} height={vkImage.height} alt="Сообщество Печного Центра «Ясенево» во ВКонтакте" loading="lazy" />
+        </div>
+        <ul class="site-footer__socials">{socialButtons.map(social => <li>
+          <a class="site-footer__social" href={social.link} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+            <Fragment set:html={icon(social.icon)} />
+          </a>
+        </li>)}</ul>
+      </section>
+      <section aria-labelledby="footer-contacts">
+        <h2 class="site-footer__heading" id="footer-contacts">Наши контакты</h2>
+        <ul class="site-footer__contacts">{footerContacts.map(contact => <li>
+          <Fragment set:html={icon(contact.icon)} />
+          {contact.href ? <a href={contact.href}>{contact.text}</a> : <span>{contact.text}</span>}
+        </li>)}</ul>
+      </section>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">2015 © Печной Центр Ясенево</p>
+      <svg class="site-footer__definitions" aria-hidden="true" width="0" height="0"><defs><g id="footer-payment-art" set:html={paymentArtwork} /></defs></svg>
+      <ul class="site-footer__payments" aria-label="Способы оплаты">{paymentIcons.map(payment => <li>
+        <svg width={payment.width} height="22" viewBox={`${payment.x} 0 ${payment.width} 22`} role="img" aria-label={payment.label} focusable="false"><use href="#footer-payment-art" /></svg>
+      </li>)}</ul>
+    </div>
+  </div>
+</footer>
