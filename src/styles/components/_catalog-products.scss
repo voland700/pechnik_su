@@ -1,0 +1,21 @@
+@use '../abstracts' as a;
+
+.catalog-products {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
+.catalog-products__item { min-width: 0; }
+
+@include a.up(sm) {
+  .catalog-products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@include a.up(md) {
+  .catalog-products { gap: var(--space-4); }
+}
+@include a.up(lg) {
+  .catalog-products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@include a.up(xl) {
+  .catalog-products { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

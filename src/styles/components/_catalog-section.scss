@@ -1,5 +1,12 @@
 @use '../abstracts' as a;
 
+.catalog-description {
+  margin-top: var(--space-6);
+  overflow-wrap: anywhere;
+
+  > :last-child { margin-bottom: 0; }
+}
+
 .catalog-notices {
   display: grid;
   gap: var(--space-3);
@@ -33,9 +40,11 @@
   padding: var(--space-3);
   color: var(--color-text);
   text-decoration: none;
-  transition: background-color var(--duration-fast), color var(--duration-fast);
+  transition: color var(--duration-fast);
 
-  &:hover { background: var(--color-background); color: var(--color-action); }
+  &:hover { color: var(--color-action); }
+  &:hover .shine::before,
+  &:focus-visible .shine::before { animation: shine .4s both; }
   &:hover .catalog-subcategories__name,
   &:focus-visible .catalog-subcategories__name { text-decoration: underline; }
   &:focus-visible { outline-offset: -3px; }

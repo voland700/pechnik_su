@@ -1,0 +1,50 @@
+@use '../abstracts' as a;
+
+.catalog-filter { margin-top: var(--space-5); border: 1px solid var(--color-border); background: var(--color-surface); font-size: var(--text-sm); min-width: 0; }
+.catalog-filter__title { font-size: var(--text-base); margin: 0; padding: var(--space-4); }
+.catalog-filter__group { border-top: 1px solid var(--color-border); }
+.catalog-filter__heading { margin: 0; font-size: inherit; }
+.catalog-filter__toggle { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); width: 100%; min-height: var(--layout-control); padding: var(--space-4); border: 0; background: transparent; color: var(--color-text); font: inherit; text-align: left; overflow-wrap: anywhere; cursor: pointer; }
+.catalog-filter__toggle:hover { background: var(--color-background); }
+.catalog-filter__toggle:focus-visible { outline-offset: -4px; }
+.catalog-filter__chevron { flex: none; width: .45rem; height: .45rem; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); transition: transform var(--duration-fast); }
+.catalog-filter__toggle[aria-expanded='true'] .catalog-filter__chevron { transform: rotate(225deg); }
+.catalog-filter__body { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows var(--duration-normal), visibility var(--duration-normal); }
+.catalog-filter__body.is-open { grid-template-rows: 1fr; visibility: visible; }
+.catalog-filter__body-inner { min-height: 0; overflow: hidden; }
+.catalog-filter__values, .catalog-filter__range { min-width: 0; margin: 0; border: 0; padding: 0 var(--space-4) var(--space-4); }
+.catalog-filter__values { max-height: 14rem; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
+.catalog-filter__option { display: flex; align-items: center; gap: var(--space-2); min-height: 2rem; padding-block: var(--space-1); cursor: pointer; overflow-wrap: anywhere; }
+.catalog-filter__option input { flex: none; width: 1rem; height: 1rem; margin: 0; accent-color: var(--color-action); cursor: inherit; }
+.catalog-filter__option:hover { color: var(--color-action); }
+.catalog-filter__option:has(:disabled) { opacity: .45; cursor: not-allowed; }
+.catalog-filter__digits { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; gap: var(--space-2); }
+.catalog-filter__digits label { min-width: 0; color: var(--color-muted); }
+.catalog-filter__digits > span { padding-bottom: var(--space-2); color: var(--color-muted); }
+.catalog-filter__digits input { display: block; width: 100%; min-width: 0; min-height: 2.5rem; margin-top: var(--space-1); padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-text); font: inherit; appearance: textfield; }
+.catalog-filter__digits input::-webkit-inner-spin-button { appearance: none; }
+.catalog-filter__digits input:hover:not(:disabled) { border-color: var(--color-muted); }
+.catalog-filter__range:disabled { opacity: .45; }
+.catalog-filter__track { position: relative; height: 2rem; margin-top: var(--space-2); --range-start: 0%; --range-to: 100%; }
+.catalog-filter__track::before { content: ''; position: absolute; inset: calc(50% - 2px) .5rem auto; height: 3px; background: linear-gradient(to right, var(--color-border) var(--range-start), var(--color-action) var(--range-start), var(--color-action) var(--range-to), var(--color-border) var(--range-to)); }
+.catalog-filter__track input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; appearance: none; background: transparent; pointer-events: none; }
+.catalog-filter__track input::-webkit-slider-thumb { width: 1.125rem; height: 1.125rem; border: 2px solid var(--color-action); border-radius: 50%; background: var(--color-surface); appearance: none; pointer-events: auto; cursor: ew-resize; }
+.catalog-filter__track input::-moz-range-thumb { width: .9rem; height: .9rem; border: 2px solid var(--color-action); border-radius: 50%; background: var(--color-surface); pointer-events: auto; cursor: ew-resize; }
+.catalog-filter__track input:hover::-webkit-slider-thumb, .catalog-filter__track input:active::-webkit-slider-thumb { background: var(--color-secondary); }
+.catalog-filter__track input:hover::-moz-range-thumb, .catalog-filter__track input:active::-moz-range-thumb { background: var(--color-secondary); }
+.catalog-filter__track input:disabled::-webkit-slider-thumb { cursor: not-allowed; }
+.catalog-filter__track input:disabled::-moz-range-thumb { cursor: not-allowed; }
+.catalog-filter__actions { display: grid; gap: var(--space-2); padding: var(--space-4); border-top: 1px solid var(--color-border); }
+.catalog-filter__actions .button { width: 100%; font-size: var(--text-sm); }
+.catalog-filter-open { width: 100%; margin-bottom: var(--space-4); }
+.catalog-filter-dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; overflow: hidden; color: var(--color-text); }
+.catalog-filter-dialog::backdrop { background: rgb(0 0 0 / 40%); }
+.catalog-filter-dialog__panel { width: min(22rem, calc(100% - 2rem)); height: 100%; height: 100dvh; background: var(--color-surface); overflow-y: auto; overscroll-behavior: contain; padding-bottom: env(safe-area-inset-bottom); transform: translateX(-100%); transition: transform var(--duration-normal); }
+.catalog-filter-dialog.is-visible .catalog-filter-dialog__panel { transform: translateX(0); }
+.catalog-filter-dialog__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); padding: max(var(--space-3), env(safe-area-inset-top)) var(--space-4) var(--space-3); }
+.catalog-filter-dialog__header h2 { margin: 0; font-size: var(--text-base); }
+.catalog-filter-dialog__close { width: var(--layout-control); height: var(--layout-control); flex: none; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); font-size: var(--text-xl); color: var(--color-text); cursor: pointer; }
+.catalog-filter-dialog .catalog-filter { margin: 0; border: 0; }
+.catalog-filter-dialog .catalog-filter__title { display: none; }
+.catalog-filter-dialog .catalog-filter__option { min-height: var(--layout-control); }
+@include a.up(md) { .catalog-filter-open { display: none; } }

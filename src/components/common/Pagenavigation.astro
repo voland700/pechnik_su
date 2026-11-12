@@ -1,0 +1,50 @@
+---
+import Icon from '../ui/Icon.astro';
+import { safeUrl } from '../../utils/url';
+
+interface Props {
+  currentPage?: number;
+  totalPages?: number;
+  /** Explicit visible numbers; null renders a non-interactive ellipsis. */
+  pages?: (number | null)[];
+  /** Omitted URLs link back to the current document for this static demo. */
+  links?: Record<number, string>;
+}
+const { currentPage = 1, totalPages = 5, pages = Array.from({ length: totalPages }, (_, i) => i + 1), links = {} } = Astro.props;
+const pageUrl = (page: number) => safeUrl(links[page]) ?? '';
+---
+<nav class="pagenavigation" aria-label="Постраничная навигация">
+  <ul class="pagenavigation__list" role="list">
+    <li>
+      {currentPage > 1 ? (
+        <a class="pagenavigation__link" href={pageUrl(currentPage - 1)} aria-label="Предыдущая страница" rel="prev">
+          <Icon name="arrow" size={20} class="pagenavigation__arrow--previous" />
+        </a>
+      ) : (
+        <span class="pagenavigation__disabled" aria-disabled="true" aria-label="Предыдущая страница">
+          <Icon name="arrow" size={20} class="pagenavigation__arrow--previous" />
+        </span>
+      )}
+    </li>
+    {pages.map(page => <li>
+      {page === null ? (
+        <span class="pagenavigation__ellipsis" aria-hidden="true">…</span>
+      ) : page === currentPage ? (
+        <span class="pagenavigation__current" aria-current="page" aria-label={`Страница ${page}`}>{page}</span>
+      ) : (
+        <a class="pagenavigation__link" href={pageUrl(page)} aria-label={`Страница ${page}`}>{page}</a>
+      )}
+    </li>)}
+    <li>
+      {currentPage < totalPages ? (
+        <a class="pagenavigation__link" href={pageUrl(currentPage + 1)} aria-label="Следующая страница" rel="next">
+          <Icon name="arrow" size={20} />
+        </a>
+      ) : (
+        <span class="pagenavigation__disabled" aria-disabled="true" aria-label="Следующая страница">
+          <Icon name="arrow" size={20} />
+        </span>
+      )}
+    </li>
+  </ul>
+</nav>

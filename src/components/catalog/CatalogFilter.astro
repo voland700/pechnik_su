@@ -1,0 +1,61 @@
+---
+import Button from '../ui/Button.astro';
+import type { FilterGroup } from '../../types/catalog-filter';
+interface Props { id: string; groups: FilterGroup[]; }
+const { id, groups } = Astro.props;
+---
+<div class="catalog-filter" data-catalog-filter id={id}>
+  <h2 class="catalog-filter__title">Фильтр по параметрам</h2>
+  <form aria-label="Фильтр по параметрам" data-filter-form>
+    {groups.map(group => (
+      <section class="catalog-filter__group">
+        <h3 class="catalog-filter__heading">
+          <button type="button" class="catalog-filter__toggle" aria-expanded={group.type === 'range' && !!group.open ? 'true' : 'false'} aria-controls={`${id}-${group.id}-body`} data-filter-toggle>
+            {group.label}<span class="catalog-filter__chevron" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div id={`${id}-${group.id}-body`} class:list={['catalog-filter__body', { 'is-open': group.type === 'range' && group.open }]} inert={!(group.type === 'range' && group.open)}>
+          <div class="catalog-filter__body-inner">
+            {group.type === 'range' ? (
+              <fieldset class="catalog-filter__range" data-filter-range disabled={group.disabled}>
+                <legend class="visually-hidden">{group.label}</legend>
+                <div class="catalog-filter__digits">
+                  <label>От<input type="number" inputmode="decimal" id={`${id}-${group.id}-min`} name={group.minName} min={group.min} max={group.max} step={group.step ?? 1} value={group.from ?? group.min} data-range-number="min" /></label>
+                  <span aria-hidden="true">—</span>
+                  <label>До<input type="number" inputmode="decimal" id={`${id}-${group.id}-max`} name={group.maxName} min={group.min} max={group.max} step={group.step ?? 1} value={group.to ?? group.max} data-range-number="max" /></label>
+                </div>
+                <div class="catalog-filter__track" data-range-track>
+                  <input type="range" aria-label={`${group.label}: минимум`} min={group.min} max={group.max} step={group.step ?? 1} value={group.from ?? group.min} data-range-slider="min" />
+                  <input type="range" aria-label={`${group.label}: максимум`} min={group.min} max={group.max} step={group.step ?? 1} value={group.to ?? group.max} data-range-slider="max" />
+                </div>
+              </fieldset>
+            ) : (
+              <fieldset class="catalog-filter__values">
+                <legend class="visually-hidden">{group.label}</legend>
+                {group.options.filter(option => !option.hidden).map(option => (
+                  <label class="catalog-filter__option" for={`${id}-${option.id}`}>
+                    <input type={group.type} id={`${id}-${option.id}`} name={option.name ?? group.name} value={option.value} checked={option.checked} disabled={option.disabled} />
+                    <span>{option.label}</span>
+                  </label>
+                ))}
+              </fieldset>
+            )}
+          </div>
+        </div>
+      </section>
+    ))}
+    <div class="catalog-filter__actions">
+      <Button type="button" data-filter-apply>Показать</Button>
+      <Button type="reset" variant="secondary">Сбросить</Button>
+    </div>
+  </form>
+</div>
+<dialog id={`${id}-dialog`} class="catalog-filter-dialog" data-filter-dialog={id} aria-labelledby={`${id}-dialog-title`}>
+  <div class="catalog-filter-dialog__panel">
+    <div class="catalog-filter-dialog__header">
+      <h2 id={`${id}-dialog-title`}>Фильтр товаров</h2>
+      <button type="button" class="catalog-filter-dialog__close" data-filter-close aria-label="Закрыть фильтр">×</button>
+    </div>
+    <div data-filter-mount></div>
+  </div>
+</dialog>

@@ -1,0 +1,20 @@
+---
+import type { DetailProduct } from '../../data/product-detail';
+import { detailImage } from '../../data/product-detail';
+interface Props { product: DetailProduct }
+const { product: p } = Astro.props;
+const images = (p.images ?? []).map(detailImage);
+const badges = [{flag:p.new,label:'Новинка',type:'new'}, {flag:p.hit,label:'Хит',type:'hit'}, {flag:p.sale,label:'Акция',type:'sale'}].filter(b => b.flag === 1);
+---
+<section class="product-gallery" data-product-gallery data-images={JSON.stringify(images)} aria-label="Фотографии товара">
+  <div class="product-gallery__media">
+    {images.length ? <a class="product-gallery__main" href={images[0]} aria-label={`Увеличить фото: ${p.title}`} data-gallery-open><img src={images[0]} alt={p.title} width="600" height="600" data-gallery-image /></a> : <p>Фотографии пока не предоставлены</p>}
+    <div class="product-gallery__badges">{badges.map(b => <span class={`product-card__badge product-card__badge--${b.type}`}>{b.label}</span>)}</div>
+    {p.discount && <span class="product-card__discount product-gallery__discount">{p.discount}</span>}
+  </div>
+  {images.length > 1 && <div class="product-gallery__strip">
+    <button type="button" class="product-gallery__arrow" data-gallery-prev aria-label="Предыдущие миниатюры">‹</button>
+    <div class="swiper product-gallery__thumbs" data-gallery-thumbs><div class="swiper-wrapper">{images.map((src,index) => <div class="swiper-slide"><button type="button" class="product-gallery__thumb" data-gallery-index={index} aria-label={`Фото ${index+1}: ${p.title}`} aria-pressed={index===0 ? 'true':'false'}><img src={src} width="80" height="80" alt={`Вид ${index+1}`} loading="lazy" /></button></div>)}</div></div>
+    <button type="button" class="product-gallery__arrow" data-gallery-next aria-label="Следующие миниатюры">›</button>
+  </div>}
+</section>

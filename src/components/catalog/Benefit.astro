@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  img: string;
+  /** Trusted project HTML; sanitize at the source when connecting a CMS. */
+  text: string;
+  href?: string;
+  alt?: string;
+  listStyle?: 'plain' | 'bulleted';
+}
+
+const { title, img, text, href, alt = title, listStyle = 'plain' } = Astro.props;
+---
+<article class="benefit">
+  <h3 class="benefit__title">
+    {href ? <a class="benefit__title-link" href={href}>{title}</a> : title}
+  </h3>
+  <div class="benefit__content">
+    {href ? (
+      <a class="benefit__image-link" href={href}>
+        <img class="benefit__image" src={img} alt={alt} width="80" height="80" loading="lazy" decoding="async" />
+      </a>
+    ) : <img class="benefit__image" src={img} alt={alt} width="80" height="80" loading="lazy" decoding="async" />}
+    <div class:list={['benefit__description', { 'benefit__description--plain': listStyle === 'plain' }]} set:html={text} />
+  </div>
+</article>

@@ -1,0 +1,122 @@
+[
+  {
+    "currentPage": 1,
+    "width": 1440,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 1,
+    "width": 1024,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 1,
+    "width": 768,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 1,
+    "width": 390,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 1,
+    "width": 320,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 3,
+    "width": 1440,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 3,
+    "width": 1024,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 3,
+    "width": 768,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 3,
+    "width": 390,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 3,
+    "width": 320,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 5,
+    "width": 1440,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 5,
+    "width": 1024,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 5,
+    "width": 768,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 5,
+    "width": 390,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  },
+  {
+    "currentPage": 5,
+    "width": 320,
+    "overflow": false,
+    "oneRow": true,
+    "centered": true,
+    "heights": true
+  }
+]

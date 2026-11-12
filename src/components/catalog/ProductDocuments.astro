@@ -1,0 +1,8 @@
+---
+import type { DetailProduct } from '../../data/product-detail';
+import { documentType } from '../../data/product-detail';
+import sprite from '../../../assets/images/icons/docs_types.png?url';
+interface Props { documents: DetailProduct['documents'] }
+const { documents } = Astro.props;
+---
+{documents?.length > 0 && <section class="product-documents" aria-labelledby="documents-title"><h2 id="documents-title">Техническая документация</h2><ul role="list">{documents.map(d => <li><a href={d.doc_href} target="_blank" rel="noopener noreferrer"><span class={`product_doc_icon product_doc_icon--${documentType(d.doc_href)}`} style={`--document-sprite: url('${sprite}')`} aria-hidden="true"></span><span>{d.doc_name}</span></a></li>)}</ul></section>}

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Benefit from '../../components/catalog/Benefit.astro';
+import { benefits } from '../../data/benefits';
+---
+<BaseLayout title="Преимущества товаров — Benefit — Pechnik.su" description="Подарки и специальные предложения: варианты компонента преимуществ товара.">
+  <section class="container benefits-demo" aria-labelledby="benefits-title">
+    <h1 id="benefits-title">Преимущества товаров — Benefit</h1>
+    <section class="benefits-demo__section benefits-demo__column" aria-labelledby="benefits-all">
+      <h2 id="benefits-all">Несколько преимуществ</h2>
+      {benefits.length > 0 && <div class="benefits-list">{benefits.map(item => <Benefit {...item} />)}</div>}
+    </section>
+    <section class="benefits-demo__section benefits-demo__column" aria-labelledby="benefits-linked">
+      <h2 id="benefits-linked">Преимущество со ссылкой</h2>
+      <Benefit {...benefits[0]} href="#benefits-all" />
+    </section>
+    <section class="benefits-demo__section benefits-demo__narrow" aria-labelledby="benefits-unlinked">
+      <h2 id="benefits-unlinked">Без ссылки, в узкой колонке</h2>
+      <Benefit {...benefits[3]} />
+    </section>
+    <section class="benefits-demo__section benefits-demo__column" aria-labelledby="benefits-description">
+      <h2 id="benefits-description">Абзацы, маркеры и акценты</h2>
+      <Benefit
+        title="Варианты оформления описания"
+        img={benefits[1].img}
+        alt={benefits[1].alt}
+        listStyle="bulleted"
+        text={'<p>Пример оформления: <strong>подарок к покупке</strong> и <span class="benefit__accent">особые условия доставки</span>.</p><p>Длинное описание может занимать несколько строк: подробные условия приобретения, состав комплекта и сроки действия предложения остаются читаемыми в широкой и узкой колонках.</p><ul><li>Маркированный список с <b>выделением условия</b>.</li><li>Дополнительная информация о предложении.</li></ul>'}
+      />
+    </section>
+  </section>
+</BaseLayout>

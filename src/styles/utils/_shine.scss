@@ -1,0 +1,31 @@
+@keyframes shine {
+  from { left: -45%; opacity: 1; }
+  to { left: 100%; opacity: 1; }
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -45%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 25%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .2) 100%);
+    transform: skewX(-25deg);
+  }
+
+  &:hover::before,
+  &:focus-visible::before { animation: shine .4s both; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shine::before { animation: none !important; }
+}

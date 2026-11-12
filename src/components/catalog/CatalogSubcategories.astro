@@ -13,7 +13,7 @@ const images = import.meta.glob<ImageMetadata>('../../../assets/images/categorie
     const image = images[`../../../${item.img}`];
     return <li class="catalog-subcategories__item">
       <a class="catalog-subcategories__link" href={safeUrl(item.url) ?? '#'}>
-        <span class="catalog-subcategories__media">
+        <span class="catalog-subcategories__media shine">
           {image ? <img src={image.src} width={image.width} height={image.height} alt="" loading="lazy" decoding="async" /> : <span class="catalog-subcategories__fallback">Изображение недоступно</span>}
         </span>
         <span class="catalog-subcategories__name">{item.name}</span>

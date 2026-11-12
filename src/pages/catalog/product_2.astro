@@ -1,0 +1,6 @@
+---
+import ProductDetail from '../../components/catalog/ProductDetail.astro';
+import { detailProducts } from '../../data/product-detail';
+const product = detailProducts.find(item => item.file_name === 'product_2')!;
+---
+<ProductDetail product={product} />

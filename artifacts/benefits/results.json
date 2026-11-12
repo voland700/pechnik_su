@@ -1,0 +1,119 @@
+{
+  "report": [
+    {
+      "width": 320,
+      "count": 7,
+      "overflow": false,
+      "blocksOverflow": false,
+      "images": true,
+      "links": [
+        [],
+        [],
+        [],
+        [],
+        [
+          "#benefits-all",
+          "#benefits-all"
+        ],
+        [],
+        []
+      ],
+      "imageFit": true,
+      "plainList": "none",
+      "markedList": "disc"
+    },
+    {
+      "width": 390,
+      "count": 7,
+      "overflow": false,
+      "blocksOverflow": false,
+      "images": true,
+      "links": [
+        [],
+        [],
+        [],
+        [],
+        [
+          "#benefits-all",
+          "#benefits-all"
+        ],
+        [],
+        []
+      ],
+      "imageFit": true,
+      "plainList": "none",
+      "markedList": "disc"
+    },
+    {
+      "width": 768,
+      "count": 7,
+      "overflow": false,
+      "blocksOverflow": false,
+      "images": true,
+      "links": [
+        [],
+        [],
+        [],
+        [],
+        [
+          "#benefits-all",
+          "#benefits-all"
+        ],
+        [],
+        []
+      ],
+      "imageFit": true,
+      "plainList": "none",
+      "markedList": "disc"
+    },
+    {
+      "width": 1024,
+      "count": 7,
+      "overflow": false,
+      "blocksOverflow": false,
+      "images": true,
+      "links": [
+        [],
+        [],
+        [],
+        [],
+        [
+          "#benefits-all",
+          "#benefits-all"
+        ],
+        [],
+        []
+      ],
+      "imageFit": true,
+      "plainList": "none",
+      "markedList": "disc"
+    },
+    {
+      "width": 1440,
+      "count": 7,
+      "overflow": false,
+      "blocksOverflow": false,
+      "images": true,
+      "links": [
+        [],
+        [],
+        [],
+        [],
+        [
+          "#benefits-all",
+          "#benefits-all"
+        ],
+        [],
+        []
+      ],
+      "imageFit": true,
+      "plainList": "none",
+      "markedList": "disc"
+    }
+  ],
+  "focus": {
+    "visible": true,
+    "outline": "solid"
+  },
+  "narrowStacked": true
+}

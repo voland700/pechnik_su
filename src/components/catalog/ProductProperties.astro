@@ -1,0 +1,6 @@
+---
+import type { DetailProduct } from '../../data/product-detail';
+interface Props { properties: DetailProduct['properties'] }
+const { properties } = Astro.props;
+---
+{properties?.length > 0 && <section class="product-properties" aria-labelledby="properties-title"><h2 id="properties-title">Характеристики</h2><dl>{properties.map(p => <div><dt>{p.definition}</dt><dd>{p.value}</dd></div>)}</dl></section>}

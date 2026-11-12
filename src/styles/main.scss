@@ -9,11 +9,16 @@
 @use 'components/mobile-menu';
 @use 'components/ui';
 @use 'components/breadcrumbs';
+@use 'components/pagenavigation';
 @use 'components/catalog';
+@use 'components/catalog-filter';
 @use 'components/catalog-section';
+@use 'components/catalog-sorting';
+@use 'components/catalog-products';
 @use 'components/hero-slider';
 @use 'components/category-showcase';
 @use 'components/product-card';
+@use 'components/benefit';
 @use 'components/featured-products-tabs';
 @use 'components/promotions-showcase';
 @use 'components/advantages';
@@ -21,5 +26,9 @@
 @use 'components/brands-slider';
 @use 'components/articles-list';
 @use 'pages/products-demo';
+@use 'pages/benefits-demo';
 @use 'pages/ui-kit';
 @use 'utils/accessibility';
+@use 'utils/shine';
+
+@use 'components/product-detail';

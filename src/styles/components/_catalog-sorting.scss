@@ -1,0 +1,47 @@
+@use '../abstracts' as a;
+
+.catalog-sorting {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-4);
+  width: 100%;
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+}
+.catalog-sorting__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  max-width: 100%;
+}
+.catalog-sorting__select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: var(--layout-control);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+
+  &:hover:not(:disabled) { border-color: var(--color-muted); }
+  &:focus-visible { outline: 3px solid var(--color-action); outline-offset: 2px; }
+  &:disabled { opacity: .45; cursor: not-allowed; }
+}
+.catalog-sorting__select--order { width: 14rem; }
+
+@include a.up(sm) {
+  .catalog-sorting {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,66 @@
+@use '../abstracts' as a;
+
+.benefit {
+  min-width: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  container-type: inline-size;
+
+  &__title {
+    margin: 0 0 var(--space-2);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
+    overflow-wrap: anywhere;
+  }
+  &__title-link { color: inherit; text-decoration: none; }
+  &__title-link:hover { color: var(--color-action); text-decoration: underline; }
+  &__title-link:focus-visible,
+  &__image-link:focus-visible { outline: 3px solid var(--color-action); outline-offset: 3px; }
+  &__image-link { display: block; border-radius: var(--radius-sm); }
+  &__image-link:hover { outline: 1px solid var(--color-action); outline-offset: 2px; }
+  &__content {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: var(--space-3);
+    align-items: start;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    object-fit: contain;
+  }
+  &__description {
+    min-width: 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-body);
+    overflow-wrap: anywhere;
+  }
+  &__description :where(p, ul, ol) { margin: 0 0 var(--space-2); }
+  &__description :where(ul, ol) { padding-inline-start: var(--space-5); }
+  &__description :where(li + li) { margin-block-start: var(--space-1); }
+  &__description :where(strong, b) { font-weight: 700; }
+  &__description > :last-child { margin-bottom: 0; }
+  &__description--plain :where(ul) { list-style: none; padding-inline-start: 0; }
+  &__description .benefit__accent { color: var(--color-action); font-weight: 700; }
+}
+
+@include a.up(sm) {
+  .benefit { padding: var(--space-4); }
+  .benefit__content { grid-template-columns: 5rem minmax(0, 1fr); }
+  .benefit__image { height: 5rem; }
+}
+
+@container (max-width: 15rem) {
+  .benefit__content { grid-template-columns: minmax(0, 1fr); }
+  .benefit__image-link, .benefit__image { width: 4rem; }
+  .benefit__image { height: 4rem; }
+}
+
+.benefits-list {
+  display: grid;
+  gap: var(--space-3);
+}

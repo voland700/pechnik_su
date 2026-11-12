@@ -1,0 +1,6 @@
+.benefits-demo {
+  padding-block: var(--space-6);
+  &__section { margin-block-start: var(--space-6); }
+  &__column { max-width: var(--layout-reading); }
+  &__narrow { width: 20rem; max-width: 100%; }
+}

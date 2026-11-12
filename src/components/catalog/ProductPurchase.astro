@@ -1,0 +1,24 @@
+---
+import Button from '../ui/Button.astro';
+import type { DetailProduct } from '../../data/product-detail';
+interface Props { product: DetailProduct }
+const { product:p } = Astro.props;
+const enabled = p.canBuy === 1;
+const statuses = ['Нет в наличии', 'В наличии', 'Под заказ'];
+const icons = ['circle-xmark', 'circle-check', 'circle-exclamation'];
+import { detailImage } from '../../data/product-detail';
+---
+<div class="product-purchase">
+  <div class="product-purchase__prices">{p.price ? <>{p.old_price && <s>{p.old_price} ₽</s>}<strong>{p.price} ₽</strong></> : <strong class="product-purchase__request">Цена по запросу</strong>}</div>
+  <p class={`product-purchase__status product-purchase__status--${p.status}`}><img src={detailImage(`assets/images/icons/${icons[p.status]}.svg`)} width="20" height="20" alt="" />{statuses[p.status]}</p>
+  <p class="product-purchase__note">Актуальность стоимости и наличие товара уточняйте у менеджера.</p>
+  <form class="product-purchase__actions" method="dialog" data-product-form data-purchase-enabled={String(enabled)} aria-label="Покупка товара">
+    <div class="product-card__quantity">
+      <button type="button" class="product-card__quantity-button" data-quantity-step="-1" aria-label="Уменьшить количество" disabled={!enabled}>−</button>
+      <input class="product-card__quantity-input" type="number" name="quantity" min="1" max="999" step="1" value="1" inputmode="numeric" aria-label="Количество товара" disabled={!enabled} />
+      <button type="button" class="product-card__quantity-button" data-quantity-step="1" aria-label="Увеличить количество" disabled={!enabled}>+</button>
+    </div>
+    <Button disabled={!enabled}>Купить</Button>
+    <Button variant="secondary" disabled={!enabled}>Быстрая покупка</Button>
+  </form>
+</div>

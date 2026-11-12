@@ -2,10 +2,27 @@
 import CatalogLayout from '../../layouts/CatalogLayout.astro';
 import CatalogNotices from '../../components/catalog/CatalogNotices.astro';
 import CatalogSubcategories from '../../components/catalog/CatalogSubcategories.astro';
+import CatalogSorting from '../../components/catalog/CatalogSorting.astro';
+import CatalogFilter from '../../components/catalog/CatalogFilter.astro';
+import Button from '../../components/ui/Button.astro';
+import { catalogFilterGroups } from '../../data/catalog-filter';
+import ProductCard from '../../components/catalog/ProductCard.astro';
+import Pagenavigation from '../../components/common/Pagenavigation.astro';
+import products from '../../../assets/products.json';
+import type { ProductItem } from '../../types/product';
+import { normalizeFlag } from '../../types/product';
 import { rubtsovskCategories, rubtsovskNotices } from '../../data/rubtsovsk-casting';
 import { showcaseData } from '../../data/showcase';
 const heading = 'Печное литьё Рубцовское';
 const navigation = showcaseData.map(({ name }) => ({ name, url: '#' }));
+const visibleProducts: ProductItem[] = products.slice(0, 32).map(product => ({
+  ...product,
+  new: normalizeFlag(product.new),
+  hit: normalizeFlag(product.hit),
+  sale: normalizeFlag(product.sale),
+  inStock: normalizeFlag(product.inStock),
+  canBuy: normalizeFlag(product.canBuy),
+}));
 ---
 <CatalogLayout
   title={`${heading} — Pechnik.su`}
@@ -18,7 +35,25 @@ const navigation = showcaseData.map(({ name }) => ({ name, url: '#' }));
   ]}
   navigation={navigation}
 >
+  <CatalogFilter slot="filter" id="category-filter" groups={catalogFilterGroups} />
   <CatalogNotices items={rubtsovskNotices} />
   <CatalogSubcategories items={rubtsovskCategories} />
-  <!-- Future product content can follow independently of the optional blocks. -->
+  <CatalogSorting />
+  <Button variant="secondary" class="catalog-filter-open" data-filter-open="category-filter" aria-haspopup="dialog" aria-controls="category-filter-dialog" aria-expanded="false">Фильтр товаров</Button>
+  <div class="catalog-products" role="list" aria-label="Товары раздела">
+    {visibleProducts.map(product => <div class="catalog-products__item" role="listitem"><ProductCard product={product} /></div>)}
+  </div>
+  <Pagenavigation />
+  <div class="catalog-description">
+    <p>Печной Центр «Ясенево» предлагает купить печное литье импортного и отечественного производства. В нашем каталоге представлены высококачественные материалы, соответствующие действующим стандартам. Мы реализуем в Москве печное литье по доступным ценам.</p>
+    <h2>Базовые разновидности</h2>
+    <p><b>Каминные дверцы.</b> Такая фурнитура может быть со стеклянной вставкой либо без нее. Каминные дверцы имеют большие размеры, что позволяет в полной мере насладиться созерцанием пламени. Для производства прозрачных вставок применяется специализированное жаропрочное стекло.</p>
+    <p><b>Печные (топочные) дверцы.</b> По форме они похожи на аналогичное каминное литье, только имеют меньшие габариты. Обычно топочные модели изготавливаются из чугуна и имеют «глухую» конструкцию. Реже в продаже встречается печное литье для топок, оснащенное вставками из жаропрочного стекла.</p>
+    <p><b>Поддувальные дверцы.</b> Они служат для удаления лишней золы и подачи воздуха в камеру сгорания. Такое печное литье изготавливается из чугуна и подавляющем большинстве случаев имеет «глухую» конфигурацию.</p>
+    <p><b>Прочистные дверцы.</b> Они используются в кирпичных печах и обычно устанавливаются вверху видимой части дымохода. Литье данного типа предназначается для организации доступа к дымоходу с целью его очистки.</p>
+    <p><b>Колосниковые решетки.</b> Они монтируются в топке печи. Материалом изготовления служит чугун. Размеры колосниковых решеток варьируются в широком диапазоне. Выбор изделия зависит от внутренней конструкции топочного пространства.</p>
+    <p><b>Задвижки дымохода.</b> Печное литье данного типа устанавливается в дымоходный канал. Оно служит для регулировки интенсивности сгорания (уровня тяги) и, соответственно, тепла в помещении.</p>
+    <p><b>Плиты под казан.</b> Они служат для приготовления пищи. В продаже есть плиты из чугуна, варианты с конфорками и без них. Размеры подбираются индивидуально.</p>
+    <p>Чтобы купить в Москве печное литье с гарантией качества, позвоните специалистам Печного Центра «Ясенево» по телефону: +7 (916) 881-83-99. Также Вы можете оформить покупку онлайн или подъехать в наш офис, расположенный в Москве, 38 км МКАД.</p>
+  </div>
 </CatalogLayout>

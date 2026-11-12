@@ -6,6 +6,12 @@ document.addEventListener('click', (event) => {
 
 async function initialize() {
   const tasks: Promise<unknown>[] = [];
+  if (document.querySelector('[data-product-detail]')) {
+    tasks.push(import('./modules/product-detail').then(({ initProductDetails }) => initProductDetails()));
+  }
+  if (document.querySelector('[data-catalog-filter]')) {
+    tasks.push(import('./modules/catalog-filter').then(({ initCatalogFilters }) => initCatalogFilters()));
+  }
   if (document.querySelector('[data-brands-slider]')) {
     tasks.push(import('./modules/brands-slider').then(({ initBrandsSliders }) => initBrandsSliders()));
   }
@@ -35,3 +41,4 @@ async function initialize() {
   }
 }
 void initialize();
+
