@@ -79,3 +79,21 @@
 @include a.up(xl) {
   .catalog-subcategories { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
+
+// Product recommendations keep image and name stacked on every viewport.
+.catalog-subcategories--related {
+  margin-bottom: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  .catalog-subcategories__link {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .catalog-subcategories__media { max-width: 8rem; }
+  .catalog-subcategories__name { align-self: start; }
+}
+@include a.up(xl) {
+  .catalog-subcategories--related { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

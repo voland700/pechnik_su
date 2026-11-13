@@ -2,13 +2,13 @@
 import type { ImageMetadata } from 'astro';
 import type { CatalogSubcategory } from '../../types/catalog-section';
 import { safeUrl } from '../../utils/url';
-interface Props { items?: CatalogSubcategory[]; }
-const { items = [] } = Astro.props;
+interface Props { items?: CatalogSubcategory[]; variant?: 'default' | 'related'; label?: string; }
+const { items = [], variant = 'default', label = 'Вложенные категории' } = Astro.props;
 const images = import.meta.glob<ImageMetadata>('../../../assets/images/categories/*.{jpg,jpeg,png,webp,avif,svg}', {
   eager: true, import: 'default',
 });
 ---
-{items.length > 0 && <ul class="catalog-subcategories" aria-label="Вложенные категории" role="list">
+{items.length > 0 && <ul class:list={['catalog-subcategories', { 'catalog-subcategories--related': variant === 'related' }]} aria-label={label} role="list">
   {items.map(item => {
     const image = images[`../../../${item.img}`];
     return <li class="catalog-subcategories__item">

@@ -3,19 +3,26 @@ import type { ArticleItem } from '../../../data/articles';
 import { safeUrl } from '../../../utils/url';
 import { articleImage } from './images';
 
-interface Props { item: ArticleItem; }
-const { item } = Astro.props;
-const image = articleImage(item.img);
+interface Props { item: ArticleItem; variant?: 'home' | 'listing' | 'recommended'; eager?: boolean; }
+const { item, variant = 'home', eager = false } = Astro.props;
+const Heading = variant === 'listing' ? 'h2' : 'h3';
+const image = item.img ? articleImage(item.img) : undefined;
+const recommended = variant === 'recommended';
+const href = safeUrl(item.href);
+const recommendationUrl = href && !href.startsWith('#') ? href : undefined;
+const Wrapper = recommended ? 'div' : 'a';
+const Media = recommended ? 'a' : 'div';
 const headingId = `article-${crypto.randomUUID()}`;
 ---
-<article class="article-card">
-  <a class="article-card__link" href={safeUrl(item.href) ?? '#'} aria-labelledby={headingId}>
-    <div class="article-card__media">
-      {image ? <img class="article-card__image" src={image.src} width={image.width} height={image.height} alt="" loading="lazy" decoding="async" /> : <span class="article-card__fallback">Изображение недоступно</span>}
-    </div>
+<article class:list={['article-card', { 'article-card--listing': variant === 'listing', 'article-card--recommended': recommended }]}>
+  <Wrapper class="article-card__link" href={recommended ? undefined : safeUrl(item.href) ?? '#'} aria-labelledby={recommended ? undefined : headingId}>
+    <Media class:list={['article-card__media', { shine: recommended }]} href={recommended ? recommendationUrl ?? '#' : undefined} aria-label={recommended ? item.name : undefined}>
+      {image ? <img class="article-card__image" src={image.src} width={image.width} height={image.height} alt={variant !== 'home' ? item.name : ''} loading={eager ? 'eager' : 'lazy'} decoding="async" /> : <span class="article-card__fallback">Изображение недоступно</span>}
+    </Media>
     <div class="article-card__content">
-      <h3 class="article-card__title" id={headingId}>{item.name}</h3>
+      <Heading class="article-card__title" id={headingId}>{recommended ? <a href={recommendationUrl ?? '#'}>{item.name}</a> : item.name}</Heading>
       <p class="article-card__description">{item.text}</p>
+      {recommended && recommendationUrl && <a class="article-card__more" href={recommendationUrl}>Читать далее<span class="visually-hidden">: {item.name}</span></a>}
     </div>
-  </a>
+  </Wrapper>
 </article>

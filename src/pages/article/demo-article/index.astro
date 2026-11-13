@@ -1,0 +1,87 @@
+---
+import articles from '../../../../assets/articles_list.json';
+import ArticleDetail from '../../../components/articles/ArticleDetail.astro';
+import { showcaseData } from '../../../data/showcase';
+import hero from '../../../../assets/images/articles/1_big_1290_500.jpg';
+import type { ImageMetadata } from 'astro';
+
+const articleTitle = 'Печи Morsø: тепло и уют в доме';
+const seen = new Set<string>();
+const recommendedArticles = articles.filter(item => {
+  const key = item.title.trim();
+  if (key === articleTitle || seen.has(key)) return false;
+  seen.add(key);
+  return true;
+}).slice(0, 4);
+const files = import.meta.glob<ImageMetadata>('../../../../assets/images/gallery/*.jpg', { eager: true, import: 'default' });
+const photo = (name: string) => files[`../../../../assets/images/gallery/${name}.jpg`];
+const descriptions = [
+  'Печь-камин в светлой гостиной', 'Чугунная печь рядом с креслом',
+  'Круглая печь в интерьере с мотоциклом', 'Печь-камин в семейной гостиной',
+  'Печь у большого арочного окна', 'Чугунная печь у кирпичной стены',
+  'Печь в комнате с белыми стенами', 'Печь в солнечной гостиной',
+  'Печь у панорамного окна', 'Печь в праздничном интерьере',
+  'Печь у стены из натурального камня', 'Камин в просторной гостиной',
+  'Печь в столовой с видом на сад', 'Печь рядом с белым комодом',
+  'Печь в современной гостиной', 'Классическая печь рядом с поленницей',
+  'Печь в просторном светлом доме', 'Печь на фоне тёмного кирпича',
+  'Печь в интерьере кухни-гостиной', 'Печь рядом с диваном',
+];
+const gallery = descriptions.map((alt, index) => ({ src: photo(String(index + 1)).src, thumbnail: photo(`prev_${index + 1}`).src, alt, width: photo(`prev_${index + 1}`).width, height: photo(`prev_${index + 1}`).height }));
+const examples = [
+  { heading: 'Печи в интерьере', linked: false, captions: false, text: 'Одна печь может стать центром комнаты, а подборка фотографий помогает сравнить разные способы размещения.' },
+  { heading: 'Рассмотрите детали', linked: true, captions: false, text: 'Откройте фотографию, чтобы рассмотреть интерьер крупнее. Между снимками одной подборки можно переключаться.' },
+  { heading: 'Идеи для загородного дома', linked: false, captions: true, text: 'Короткие подписи помогают обратить внимание на особенности каждого интерьера.' },
+  { heading: 'Фотографии с пояснениями', linked: true, captions: true, text: 'Подборка интерьеров с подписями и возможностью просмотра полноразмерных фотографий.' },
+];
+---
+<ArticleDetail
+  title={articleTitle}
+  recommendedArticles={recommendedArticles}
+  description="Печи и грили Morsø: знакомство с моделями, идеи размещения и фотографии интерьеров."
+  breadcrumbs={[{ label: 'Статьи', href: `${import.meta.env.BASE_URL}article/` }, { label: 'Печи Morsø' }]}
+  navigation={showcaseData.map(({ name }) => ({ name, url: '#' }))}
+  image={{ src: hero.src, width: hero.width, height: hero.height, alt: 'Чугунная печь Morsø в интерьере рядом с поленницей' }}
+  summary="При покупке чугунной банной печи Везувий и комплекта дымохода — дополнительно мы предоставляем скидку до 10% стоимости комплекта дымохода."
+  gallery={gallery}
+  galleryTitle="Галерея: 20 идей для вашего интерьера"
+>
+  <p>Садовый гриль Forno Gas Piccolo от Morsø создан на основе популярной уличной печи Morsø Forno и позволяет готовить различные блюда барбекю на свежем воздухе.</p>
+  <p>Для контроля приготовления Morsø Forno Gas оснащён встроенным датчиком температуры. Корпус выполнен из литого алюминия в форме итальянской каменной печи, а внутренние части — из чугуна. Во время приготовления купол можно держать открытым.</p>
+  <p>Гриль Forno Gas Piccolo удобен в использовании: при весе 12,1 кг он компактен и может легко перемещаться. Для работы требуется подсоединить газовый баллон. Он подходит для встреч с друзьями и семейных посиделок на открытом воздухе.</p>
+  <p>Барбекю Forno Gas можно размещать на ровной невозгораемой поверхности. Для него также предусмотрены столы производителя: Morsø Garden Table, Morsø Terra Outdoor Table и Morsø Tavolo Outdoor Table.</p>
+  <h2>Знакомство с печами и грилями Morsø</h2>
+  <h3>Особенности газового гриля Forno Gas Piccolo</h3>
+  <ul>
+    <li>Топливо: газ.</li><li>Материал корпуса: литой алюминий.</li>
+    <li>Тип газа: сжиженный газ — пропан или бутан.</li>
+    <li>Одна основная горелка и встроенный датчик температуры.</li>
+    <li>Аксессуары для приготовления:<ul><li>Решётки для гриля.</li><li>Кухонная утварь и посуда.</li></ul></li>
+  </ul>
+  <blockquote><p>Компания Morsø предлагает аксессуары для печи Forno: решётки для гриля, кухонную утварь и посуду. Их можно подобрать в разделе «Аксессуары для уличных печей».</p></blockquote>
+  <h3>Особенности печи-камина Morsø 1126</h3>
+  <ol><li>Конвекционная конструкция.</li><li>Двойной дожиг.</li><li>Зольный ящик для уборки золы.</li><li>Чистое стекло при горении.</li><li>Съёмная ручка.</li></ol>
+  <h4>Что подготовить перед выбором</h4>
+  <p><strong>Начните с описания помещения.</strong> Запишите пожелания к размещению и подготовьте фотографии. <em>Параметры конкретного оборудования уточняйте по документации производителя.</em> Посмотрите также <a href={`${import.meta.env.BASE_URL}article/`}>другие статьи Печного Центра</a>.</p>
+  <table>
+    <caption>Пример памятки для консультации, без характеристик конкретных товаров</caption>
+    <thead><tr><th scope="col">Что подготовить</th><th scope="col">Для чего это нужно</th><th scope="col">Формат</th></tr></thead>
+    <tbody><tr><th scope="row">План помещения</th><td>Обсудить возможное расположение печи</td><td>Чертёж или схема</td></tr><tr><th scope="row">Фотографии</th><td>Показать интерьер и место установки</td><td>Несколько снимков</td></tr><tr><th scope="row">Список вопросов</th><td>Учесть пожелания к эксплуатации</td><td>Заметки</td></tr></tbody>
+  </table>
+  {examples.map((example, exampleIndex) => <>
+    <h2>{example.heading}</h2><p>{example.text}</p>
+    {[1, 2, 3].map(count => <div class={`article-content__images article-content__images--${count}`}>
+      {Array.from({ length: count }, (_, index) => {
+        const number = count === 1 ? 1 : count === 2 ? index + 2 : index + 4;
+        const image = photo(String(number));
+        const picture = <img src={image.src} width={image.width} height={image.height} alt={descriptions[number - 1]} loading="lazy" decoding="async" />;
+        const media = example.linked ? <a class="article-content__image-link" href={image.src} data-fancybox={`article-photos-${exampleIndex}`} data-caption={example.captions ? descriptions[number - 1] : undefined} aria-label={`Открыть фото: ${descriptions[number - 1]}`}>{picture}</a> : picture;
+        return example.captions ? <figure>{media}<figcaption>{descriptions[number - 1]}</figcaption></figure> : <div>{media}</div>;
+      })}
+    </div>)}
+  </>)}
+  <hr />
+  <h2>Видео: пример встроенного материала</h2>
+  <p>Демонстрационный ролик «Big Buck Bunny» показывает, как видео размещается внутри статьи. Он не описывает продукцию Morsø.</p>
+  <iframe src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ" title="Big Buck Bunny — демонстрация встроенного видео" width="560" height="315" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</ArticleDetail>

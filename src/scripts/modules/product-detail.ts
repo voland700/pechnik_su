@@ -49,7 +49,11 @@ export function initProductDetails() {
       const button = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-product-information]') : null;
       if (!button) return;
       const template = detail.querySelector<HTMLTemplateElement>(`template[data-product-information-content="${button.dataset.productInformation}"]`);
-      if (template) Fancybox.show([{html:template.innerHTML}], {});
+      if (template) Fancybox.show([{html:template.innerHTML}], {
+        closeButton: true,
+        mainClass: 'product-information-modal',
+        l10n: { CLOSE: 'Закрыть окно' },
+      });
     });
   }
 }

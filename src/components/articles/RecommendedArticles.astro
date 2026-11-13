@@ -1,0 +1,25 @@
+---
+import ArticleCard from '../home/articles/ArticleCard.astro';
+
+export interface RecommendedArticle {
+  title: string;
+  text?: string;
+  img?: string;
+  url?: string;
+}
+interface Props { articles: readonly RecommendedArticle[]; }
+const { articles } = Astro.props;
+const items = articles.slice(0, 4);
+const headingId = `recommended-articles-${crypto.randomUUID()}`;
+---
+{items.length > 0 && <section class="recommended-articles" aria-labelledby={headingId}>
+  <h2 class="recommended-articles__title" id={headingId}>Рекомендуемые статьи</h2>
+  <div class="recommended-articles__grid">
+    {items.map(item => <ArticleCard variant="recommended" item={{
+      name: item.title,
+      text: item.text ?? '',
+      img: (item.img ?? '').replace(/^assets\/images\/(?!articles\/)/, 'assets/images/articles/'),
+      href: item.url,
+    }} />)}
+  </div>
+</section>}

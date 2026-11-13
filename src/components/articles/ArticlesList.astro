@@ -1,0 +1,19 @@
+---
+import ArticleCard from '../home/articles/ArticleCard.astro';
+
+interface Props {
+  items: readonly { title: string; text: string; img: string }[];
+}
+const { items } = Astro.props;
+---
+<ul class="articles-listing" role="list" aria-label="Список статей">
+  {items.map((item, index) => (
+    <li class="articles-listing__item">
+      <ArticleCard
+        variant="listing"
+        eager={index < 2}
+        item={{ name: item.title, text: item.text, img: item.img.replace(/^assets\/images\/(?!articles\/)/, 'assets/images/articles/'), href: '#' }}
+      />
+    </li>
+  ))}
+</ul>

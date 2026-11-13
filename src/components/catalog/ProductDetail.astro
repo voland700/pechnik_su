@@ -5,10 +5,15 @@ import ProductPurchase from './ProductPurchase.astro';
 import ProductProperties from './ProductProperties.astro';
 import ProductDocuments from './ProductDocuments.astro';
 import Benefit from './Benefit.astro';
+import ProductCard from './ProductCard.astro';
+import CatalogSubcategories from './CatalogSubcategories.astro';
+import { relatedBlocks, relatedCategories, selectRelatedProducts } from '../../data/product-related';
 import { detailImage, detailHtml, information, type DetailProduct } from '../../data/product-detail';
 import { showcaseData } from '../../data/showcase';
 interface Props { product: DetailProduct }
 const { product:p } = Astro.props;
+const relatedBlockType = relatedBlocks[p.file_name];
+const relatedProducts = relatedBlockType === 'products' ? selectRelatedProducts(p) : [];
 const navigation = showcaseData.map(({name}) => ({name,url:'#'}));
 const breadcrumbs = p.breadcrumbs.filter((label,index) => !(index===0 && label==='Главная')).map(label => ({label,href:label==='Каталог'?'/catalog/':undefined}));
 ---
@@ -21,12 +26,26 @@ const breadcrumbs = p.breadcrumbs.filter((label,index) => !(index===0 && label==
         {p.brand?.img && p.brand?.name && <a class="product-detail__brand" href={p.brand.href || '#'} aria-label={`Товары производителя ${p.brand.name}`}><img src={detailImage(p.brand.img)} alt={p.brand.name} width="110" height="55" /><span>{p.brand.name}</span></a>}
         <ProductPurchase product={p} />
         {p.benefits?.length > 0 && <section class="product-detail__benefits" aria-labelledby="benefits-title"><h2 id="benefits-title" class="visually-hidden">Преимущества товара</h2>{p.benefits.map(b => <Benefit title={b.benefit_title} text={b.benefit_text} img={detailImage(b.benefit_img)} listStyle="bulleted" />)}</section>}
-        <ProductProperties properties={p.properties} />
         <nav class="product-detail__links" aria-label="Информация для покупателей">{information.map(i => <button type="button" data-product-information={i.file}>{i.title}</button>)}</nav>
       </div>
     </div>
     {p.description && <section class="product-detail__description" aria-labelledby="description-title"><h2 id="description-title">Описание товара</h2><div class="product-detail__content" set:html={detailHtml(p.description)} /></section>}
+    <ProductProperties properties={p.properties} />
     <ProductDocuments documents={p.documents} />
+    {relatedBlockType === 'products' ? (
+      <section class="product-detail__related" aria-labelledby="related-title">
+        <h2 id="related-title">Похожие товары</h2>
+        <div class="catalog-products product-detail__related-products" role="list" aria-label="Похожие товары">
+          {relatedProducts.map(product => <div class="catalog-products__item" role="listitem"><ProductCard product={product} /></div>)}
+        </div>
+      </section>
+    ) : relatedBlockType === 'categories' ? (
+      <section class="product-detail__related" aria-labelledby="related-title">
+        <h2 id="related-title">Сопутствующие товары</h2>
+        <CatalogSubcategories items={relatedCategories} variant="related" label="Сопутствующие товары" />
+      </section>
+    ) : null}
+    <p class="product-detail__offer">Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.</p>
     {information.map(i => <template data-product-information-content={i.file}><div class="product-information product-detail__content" set:html={i.html} /></template>)}
   </article>
 </CatalogLayout>

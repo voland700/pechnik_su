@@ -1,0 +1,17 @@
+---
+export interface GalleryImage {
+  src: string;
+  thumbnail?: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+}
+interface Props { images: readonly GalleryImage[]; group?: string; }
+const { images, group = `article-gallery-${crypto.randomUUID()}` } = Astro.props;
+---
+{images.length > 0 && <div class="article-gallery">
+  {images.map(image => <a class="article-gallery__item" href={image.src} data-fancybox={group} data-caption={image.caption} aria-label={`Открыть фото: ${image.alt}`}>
+    <img src={image.thumbnail ?? image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+  </a>)}
+</div>}

@@ -2,6 +2,35 @@
   "report": [
     {
       "product": 1,
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "В наличии",
+      "disabled": false,
+      "photos": 3,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
+    },
+    {
+      "product": 1,
       "width": 375,
       "overflow": false,
       "h1": 1,
@@ -9,7 +38,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 3,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 1,
@@ -20,7 +67,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 3,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 1,
@@ -31,7 +96,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 3,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 1,
@@ -42,7 +125,54 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 3,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 1,
+      "width": 1200,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "В наличии",
+      "disabled": false,
+      "photos": 3,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 1,
@@ -53,7 +183,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 3,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 1,
@@ -64,7 +212,54 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 3,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 2,
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "В наличии",
+      "disabled": false,
+      "photos": 4,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 2,
@@ -75,7 +270,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 2,
@@ -86,7 +299,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 2,
@@ -97,7 +328,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 2,
@@ -108,7 +357,54 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 2,
+      "width": 1200,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "В наличии",
+      "disabled": false,
+      "photos": 4,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 2,
@@ -119,7 +415,25 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 2,
@@ -130,7 +444,49 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 3,
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "В наличии",
+      "disabled": false,
+      "photos": 14,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 3,
@@ -141,7 +497,20 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 14,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 3,
@@ -152,7 +521,20 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 14,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 3,
@@ -163,7 +545,20 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 14,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 3,
@@ -174,7 +569,44 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 14,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 3,
+      "width": 1200,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "В наличии",
+      "disabled": false,
+      "photos": 14,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 3,
@@ -185,7 +617,20 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 14,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 3,
@@ -196,7 +641,49 @@
       "status": "В наличии",
       "disabled": false,
       "photos": 14,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 4,
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "Под заказ",
+      "disabled": false,
+      "photos": 0,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 4,
@@ -207,7 +694,25 @@
       "status": "Под заказ",
       "disabled": false,
       "photos": 0,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 4,
@@ -218,7 +723,25 @@
       "status": "Под заказ",
       "disabled": false,
       "photos": 0,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 1,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 4,
@@ -229,7 +752,25 @@
       "status": "Под заказ",
       "disabled": false,
       "photos": 0,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 4,
@@ -240,7 +781,54 @@
       "status": "Под заказ",
       "disabled": false,
       "photos": 0,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 4,
+      "width": 1200,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "Под заказ",
+      "disabled": false,
+      "photos": 0,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 4,
@@ -251,7 +839,25 @@
       "status": "Под заказ",
       "disabled": false,
       "photos": 0,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 4,
@@ -262,7 +868,49 @@
       "status": "Под заказ",
       "disabled": false,
       "photos": 0,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Похожие товары",
+        "products": 4,
+        "categories": 0,
+        "names": [
+          "ASTON 12 со стеклянной дверцей",
+          "ЭТНА 18 (ДТ-4) Закрытая каменка",
+          "Эверест \"Steam Master 30 ЧУГУН\" Ламель Талькохлорит, S-20",
+          "Чугунная печь Атмосфера М"
+        ],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 5,
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "Нет в наличии",
+      "disabled": true,
+      "photos": 4,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 5,
@@ -273,7 +921,20 @@
       "status": "Нет в наличии",
       "disabled": true,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 5,
@@ -284,7 +945,20 @@
       "status": "Нет в наличии",
       "disabled": true,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 5,
@@ -295,7 +969,20 @@
       "status": "Нет в наличии",
       "disabled": true,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "start",
+        "after": true
+      }
     },
     {
       "product": 5,
@@ -306,7 +993,44 @@
       "status": "Нет в наличии",
       "disabled": true,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 2,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
+    },
+    {
+      "product": 5,
+      "width": 1200,
+      "overflow": false,
+      "h1": 1,
+      "filter": false,
+      "status": "Нет в наличии",
+      "disabled": true,
+      "photos": 4,
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 5,
@@ -317,7 +1041,20 @@
       "status": "Нет в наличии",
       "disabled": true,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     },
     {
       "product": 5,
@@ -328,7 +1065,20 @@
       "status": "Нет в наличии",
       "disabled": true,
       "photos": 4,
-      "broken": false
+      "broken": false,
+      "related": {
+        "sections": 1,
+        "heading": "Сопутствующие товары",
+        "products": 0,
+        "categories": 4,
+        "names": [],
+        "columns": 4,
+        "images": 4,
+        "broken": false,
+        "offer": "Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.",
+        "align": "right",
+        "after": true
+      }
     }
   ],
   "externalMediaBlocked": true,

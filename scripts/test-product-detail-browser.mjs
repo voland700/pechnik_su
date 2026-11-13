@@ -55,13 +55,42 @@ try {
     await evaluate(`new Promise(resolve=>{let n=0;const t=setInterval(()=>{if(document.querySelector('[data-gallery-open]') && document.querySelector('[data-product-form]')?.noValidate){clearInterval(t);resolve(true)}else if(++n>100){clearInterval(t);resolve(false)}},50)})`);
     await evaluate('document.fonts.ready');
     await evaluate(`Promise.all([...document.querySelectorAll('.product-gallery img')].map(i=>{i.loading='eager';return i.decode()}))`);
-    for(const width of [375,414,768,992,1280,1440]) {
+    for(const width of [320,375,414,768,992,1200,1280,1440]) {
       await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false});
       await evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
       const state=await evaluate(`({overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('h1').length,filter:!!document.querySelector('[data-catalog-filter]'),status:document.querySelector('.product-purchase__status').textContent.trim(),disabled:document.querySelector('[name=quantity]').disabled,photos:document.querySelectorAll('[data-gallery-index]').length,broken:[...document.querySelectorAll('.product-gallery img')].some(i=>!i.naturalWidth)})`);
       assert(!state.overflow,JSON.stringify({product,width,state}));assert.equal(state.h1,1);assert(!state.filter);assert(!state.broken);assert.equal(state.disabled,product===5);
       if(product===4)assert.equal(state.status,'Под заказ');
       if(product===5)assert.equal(state.status,'Нет в наличии');
+      const related = await evaluate(`(async()=>{
+        const section=document.querySelector('.product-detail__related');
+        const grid=section.querySelector('[role="list"]');
+        const images=[...section.querySelectorAll('img')];
+        await Promise.all(images.map(i=>{i.loading='eager';return i.decode()}));
+        const offer=document.querySelector('.product-detail__offer');
+        return {
+          sections:document.querySelectorAll('.product-detail__related').length,
+          heading:section.querySelector('h2').textContent,
+          products:section.querySelectorAll('[data-product-card]').length,
+          categories:section.querySelectorAll('.catalog-subcategories__item').length,
+          names:[...section.querySelectorAll('.product-card__title')].map(e=>e.textContent),
+          columns:getComputedStyle(grid).gridTemplateColumns.split(' ').length,
+          images:images.length,broken:images.some(i=>!i.naturalWidth),
+          offer:offer.textContent,align:getComputedStyle(offer).textAlign,
+          after:!!(section.compareDocumentPosition(offer)&Node.DOCUMENT_POSITION_FOLLOWING)
+        };
+      })()`);
+      const withProducts=[1,2,4].includes(product);
+      assert.equal(related.sections,1);
+      assert.equal(related.heading,withProducts?'Похожие товары':'Сопутствующие товары');
+      assert.equal(related.products,withProducts?4:0);
+      assert.equal(related.categories,withProducts?0:4);
+      assert.equal(new Set(related.names).size,related.names.length);
+      assert.equal(related.columns,width>=1200?4:width>=768?2:withProducts?1:2);
+      assert.equal(related.images,4);assert(!related.broken);assert(related.after);
+      assert.equal(related.offer,'Информация о товаре носит исключительно ознакомительный характер и не является публичной офертой.');
+      assert.equal(related.align,width>=992?'right':'start');
+      state.related=related;
       report.push({product,width,...state});
       if((product===2 && [375,1440].includes(width)) || (product===3 && width===992)) {
         await evaluate("document.querySelector('.page-heading').scrollIntoView()");
@@ -89,14 +118,22 @@ try {
     await evaluate('new Promise(r=>setTimeout(r,400))');
     for(const file of ['shops','delivery','baying','payment','return','install']) {
       await evaluate(`document.querySelector('[data-product-information="${file}"]').click()`);
-      await evaluate('new Promise(r=>setTimeout(r,250))');
+      await evaluate('new Promise(r=>setTimeout(r,500))');
       assert(await evaluate("!!document.querySelector('.fancybox__container .product-information')"),file);
       assert(await evaluate("document.querySelector('.product-information').scrollWidth<=document.querySelector('.product-information').clientWidth"),file);
-      await evaluate("document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))");
-      await evaluate('new Promise(r=>setTimeout(r,350))');
+      assert(await evaluate(`(()=>{const b=document.querySelector('.product-information-modal .is-close-button');if(!b)return false;const r=b.getBoundingClientRect();return r.width>=43&&r.height>=43&&r.top>=0&&r.bottom<=innerHeight&&document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.closest('button')===b})()`),file+' close button visible');
+      const closePoint=await evaluate("(()=>{const r=document.querySelector('.product-information-modal .is-close-button').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()");
+      await send('Input.dispatchMouseEvent',{type:'mousePressed',...closePoint,button:'left',clickCount:1});
+      await send('Input.dispatchMouseEvent',{type:'mouseReleased',...closePoint,button:'left',clickCount:1});
+      await evaluate('new Promise(r=>setTimeout(r,500))');
+      assert(await evaluate("!document.querySelector('.product-information-modal')"),file+' closed');
     }
   }
   assert.equal(errors.filter(e=>e.exceptionId).length,0,JSON.stringify(errors));
   await writeFile('artifacts/product-detail/results.json',JSON.stringify({report,externalMediaBlocked:true,errors},null,2));
-  console.log('Product detail checks passed: five products, six widths, gallery/Fancybox, six modals, quantity, statuses and empty states.');
+  console.log('Product detail checks passed: five products, eight widths, exclusive recommendations, offer, gallery/Fancybox, six modals, quantity, statuses and empty states.');
 } finally {socket?.close();chrome.kill();}
+
+
+
+

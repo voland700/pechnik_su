@@ -1,0 +1,19 @@
+---
+import CatalogLayout from '../../layouts/CatalogLayout.astro';
+import ArticlesList from '../../components/articles/ArticlesList.astro';
+import Pagenavigation from '../../components/common/Pagenavigation.astro';
+import articles from '../../../artifacts/articles_list.json';
+import { showcaseData } from '../../data/showcase';
+
+const navigation = showcaseData.map(({ name }) => ({ name, url: '#' }));
+---
+<CatalogLayout
+  title="Статьи — Pechnik.su"
+  description="Статьи Печного Центра о выборе, строительстве и эксплуатации печей, каминов и дымоходов."
+  heading="Статьи"
+  breadcrumbs={[{ label: 'Статьи' }]}
+  navigation={navigation}
+>
+  <ArticlesList items={articles} />
+  <Pagenavigation currentPage={1} totalPages={5} />
+</CatalogLayout>
