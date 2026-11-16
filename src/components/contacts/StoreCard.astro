@@ -1,0 +1,35 @@
+---
+import locationIcon from '../../../assets/images/icons/location-dot.svg?url';
+import timeIcon from '../../../assets/images/icons/time.svg?url';
+import phoneIcon from '../../../assets/images/icons/mobile-screen.svg?url';
+import type { Store } from '../../types/store';
+interface Props { store: Store; eager?: boolean; }
+const { store, eager = false } = Astro.props;
+---
+<article class="store-card">
+  <a class="store-card__image-link shine" href={store.url}>
+    <img class="store-card__image" src={store.image.src} width={store.image.width} height={store.image.height} alt={store.name} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+  </a>
+  <div class="store-card__content">
+    <h3 class="store-card__title"><a href={store.url}>{store.name}</a></h3>
+    <address class="store-card__address">
+      <img class="store-card__icon" src={locationIcon} width="20" height="20" alt="" aria-hidden="true" />
+      <span>{store.address}</span>
+    </address>
+    <p class="store-card__hours">
+      <img class="store-card__icon" src={timeIcon} width="20" height="20" alt="" aria-hidden="true" />
+      <span>{store.workingHours}</span>
+    </p>
+    <ul class="store-card__contacts" role="list">
+      {store.contacts.map(contact => (
+        <li class="store-card__contact">
+          {contact.department && <span class="store-card__department">{contact.department}</span>}
+          <a class="store-card__phone" href={contact.phoneHref}>
+            <img class="store-card__icon" src={phoneIcon} width="20" height="20" alt="" aria-hidden="true" />
+            {contact.phone}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</article>

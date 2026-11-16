@@ -1,0 +1,59 @@
+---
+import { contactDetail as contact } from '../../data/contact-detail';
+import ContactGallery from './ContactGallery.astro';
+const { scheme, icons } = contact;
+---
+<div class="contact-detail">
+  <a class="contact-detail__scheme" href={scheme.src} data-fancybox="yasenevo-scheme" aria-label="Открыть полноразмерную схему проезда в Печной Центр Ясенево">
+    <img src={scheme.src} width={scheme.width} height={scheme.height} alt="Схема проезда: въезд с внутренней стороны МКАД, парковка, магазин и склады Печного Центра Ясенево" decoding="async" />
+  </a>
+  <div class="contact-detail__description">
+    <section aria-labelledby="scheme-heading">
+      <h2 id="scheme-heading">Схема проезда в Печной Центр «ЯСЕНЕВО»</h2>
+      <p>г. Москва, 38 км МКАД, внутренняя сторона, 4Б стр. 1.<br />Ориентир: садовый центр «ЯСЕНЕВО».</p>
+    </section>
+    <section aria-labelledby="directions-heading">
+      <h2 id="directions-heading">Как добраться до Печного центра «ЯСЕНЕВО»:</h2>
+      <p><strong>На общественном транспорте:</strong> станция метро «Тёплый Стан» — выход из первого вагона из центра направо.</p>
+      <p>Маршрутный автобус № 647 — до конечной остановки «Проезд Одоевского». В пути около 8 минут.</p>
+      <p>Далее от остановки пешком около 200 метров, через детскую площадку на территорию парка. Справа от пруда находится вход на территорию Садового Центра «Ясенево».</p>
+    </section>
+    <section aria-labelledby="warehouses-heading">
+      <h2 id="warehouses-heading">На территории Печного Центра «ЯСЕНЕВО» находятся два склада и магазины:</h2>
+      <ul>
+        <li>Строительные материалы для возведения печей и каминов: печной кирпич, смеси, чугунное печное литьё, термоизоляция, отопительные и банные печи и другие материалы.</li>
+        <li>Торгово-выставочный зал, магазин печей и каминов Jotul, Morso, Scan и сопутствующих материалов: дымоходы Schiedel, комплектующие и аксессуары.</li>
+      </ul>
+      <p>Вы можете напрямую связаться с нашими специалистами и получить консультацию, информацию о товаре и его наличии, согласовать способы и сроки доставки, а также заказать монтаж по следующим телефонам.</p>
+      <div class="contact-detail__phones">
+        {contact.departments.map(department => <div class="contact-detail__department">
+          <p>{department.description}</p>
+          <a href={department.href}>{department.phone}</a>
+        </div>)}
+      </div>
+    </section>
+  </div>
+  <section class="contact-detail__info" aria-label="Подробная контактная информация">
+    <address class="contact-detail__info-row"><img src={icons.location} width="20" height="20" alt="" aria-hidden="true" /><span>{contact.address}</span></address>
+    <div class="contact-detail__info-row"><img src={icons.email} width="20" height="20" alt="" aria-hidden="true" /><div class="contact-detail__emails">{contact.emails.map(email => <a href={`mailto:${email}`}>{email}</a>)}</div></div>
+    <p class="contact-detail__info-row"><img src={icons.time} width="20" height="20" alt="" aria-hidden="true" /><span>{contact.hours}</span></p>
+    <p class="contact-detail__info-row"><img src={icons.navigation} width="20" height="20" alt="" aria-hidden="true" /><span><strong>Для навигатора:</strong> {contact.coordinates}</span></p>
+  </section>
+  <section class="contact-detail__map-links" aria-label="Карты и QR-код для навигатора">
+    {contact.mapLinks.map(({ title, image, href, alt }) => <a class="contact-detail__map-card" href={href} target="_blank" rel="noopener noreferrer" aria-label={`${title}: Печной Центр Ясенево (откроется в новой вкладке)`}>
+      <h2>{title}</h2><img src={image.src} width={image.width} height={image.height} alt={alt} loading="lazy" decoding="async" />
+    </a>)}
+    <div class="contact-detail__map-card"><h2>Для Яндекс Навигатора</h2><img src={contact.qr.src} width={contact.qr.width} height={contact.qr.height} alt="QR-код местоположения Печного Центра Ясенево для Яндекс Навигатора" loading="lazy" decoding="async" /></div>
+  </section>
+  <div class="contact-detail__maps">
+    {['Въезд на территорию', 'Вход в магазин'].map((title, index) => <section class="contact-map" aria-labelledby={`contact-map-${index}`}>
+      <h2 id={`contact-map-${index}`}>{title}</h2>
+      <div class="contact-map__placeholder"><!-- Заменить содержимое картой при интеграции с CMS. --><p>Карта будет доступна после интеграции с CMS</p></div>
+    </section>)}
+  </div>
+  <section class="contact-detail__gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Галерея: {contact.title}</h2>
+    <ContactGallery images={contact.gallery} />
+  </section>
+  <a class="contact-detail__back" href="/about/contacts/">Возврат к списку</a>
+</div>

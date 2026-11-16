@@ -1,0 +1,14 @@
+---
+import type { ImageMetadata } from 'astro';
+interface Props {
+  images: { img: ImageMetadata; preview: ImageMetadata; alt: string }[];
+}
+const { images } = Astro.props;
+---
+<div class="contact-gallery">
+  {images.map(({ img, preview, alt }) => (
+    <a class="contact-gallery__item shine" href={img.src} data-fancybox="yasenevo-gallery" data-caption={alt} aria-label={`Открыть фото: ${alt}`}>
+      <img src={preview.src} width={preview.width} height={preview.height} alt={alt} loading="lazy" decoding="async" />
+    </a>
+  ))}
+</div>

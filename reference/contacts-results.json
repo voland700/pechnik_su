@@ -1,0 +1,961 @@
+[
+  {
+    "width": 320,
+    "overflow": false,
+    "h1": [
+      "Контакты"
+    ],
+    "mainCount": 1,
+    "breadcrumbs": [
+      {
+        "text": "Главная",
+        "href": "/"
+      },
+      {
+        "text": "О печном центре",
+        "href": "/about/"
+      },
+      {
+        "text": "Контакты"
+      }
+    ],
+    "stores": [
+      {
+        "name": "Печной Центр Ясенево - Центральный склад",
+        "address": "117574 г. Москва, дорога МКАД 38 км, владение 4Б, стр.1",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [
+          "Печной кирпич, литьё, смеси",
+          "Печи-камины JOTUL, топки, дымоходы"
+        ],
+        "phones": [
+          {
+            "text": "8 (916) 881-83-99",
+            "href": "tel:+79168818399",
+            "height": 44
+          },
+          {
+            "text": "8 (985) 308-83-16",
+            "href": "tel:+79853088316",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Ясенево - Центральный склад",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": true,
+        "imageWidth": 281,
+        "cardWidth": 281
+      },
+      {
+        "name": "Печной Центр Заокск",
+        "address": "Тульская область, Заокский район, д. Панькино, (Симферопольское шоссе, 112 км. – 10 минут от Серпухова)",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [],
+        "phones": [
+          {
+            "text": "8 (961) 267-38-80",
+            "href": "tel:+79612673880",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Заокск",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": true,
+        "imageWidth": 281,
+        "cardWidth": 281
+      }
+    ],
+    "map": {
+      "width": 281,
+      "height": 288,
+      "text": "Здесь будет размещена карта магазинов"
+    },
+    "remoteMap": false,
+    "icons": [
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg"
+    ]
+  },
+  {
+    "width": 375,
+    "overflow": false,
+    "h1": [
+      "Контакты"
+    ],
+    "mainCount": 1,
+    "breadcrumbs": [
+      {
+        "text": "Главная",
+        "href": "/"
+      },
+      {
+        "text": "О печном центре",
+        "href": "/about/"
+      },
+      {
+        "text": "Контакты"
+      }
+    ],
+    "stores": [
+      {
+        "name": "Печной Центр Ясенево - Центральный склад",
+        "address": "117574 г. Москва, дорога МКАД 38 км, владение 4Б, стр.1",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [
+          "Печной кирпич, литьё, смеси",
+          "Печи-камины JOTUL, топки, дымоходы"
+        ],
+        "phones": [
+          {
+            "text": "8 (916) 881-83-99",
+            "href": "tel:+79168818399",
+            "height": 44
+          },
+          {
+            "text": "8 (985) 308-83-16",
+            "href": "tel:+79853088316",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Ясенево - Центральный склад",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": true,
+        "imageWidth": 336,
+        "cardWidth": 336
+      },
+      {
+        "name": "Печной Центр Заокск",
+        "address": "Тульская область, Заокский район, д. Панькино, (Симферопольское шоссе, 112 км. – 10 минут от Серпухова)",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [],
+        "phones": [
+          {
+            "text": "8 (961) 267-38-80",
+            "href": "tel:+79612673880",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Заокск",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": true,
+        "imageWidth": 336,
+        "cardWidth": 336
+      }
+    ],
+    "map": {
+      "width": 336,
+      "height": 288,
+      "text": "Здесь будет размещена карта магазинов"
+    },
+    "remoteMap": false,
+    "icons": [
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg"
+    ]
+  },
+  {
+    "width": 576,
+    "overflow": false,
+    "h1": [
+      "Контакты"
+    ],
+    "mainCount": 1,
+    "breadcrumbs": [
+      {
+        "text": "Главная",
+        "href": "/"
+      },
+      {
+        "text": "О печном центре",
+        "href": "/about/"
+      },
+      {
+        "text": "Контакты"
+      }
+    ],
+    "stores": [
+      {
+        "name": "Печной Центр Ясенево - Центральный склад",
+        "address": "117574 г. Москва, дорога МКАД 38 км, владение 4Б, стр.1",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [
+          "Печной кирпич, литьё, смеси",
+          "Печи-камины JOTUL, топки, дымоходы"
+        ],
+        "phones": [
+          {
+            "text": "8 (916) 881-83-99",
+            "href": "tel:+79168818399",
+            "height": 44
+          },
+          {
+            "text": "8 (985) 308-83-16",
+            "href": "tel:+79853088316",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Ясенево - Центральный склад",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": true,
+        "imageWidth": 516,
+        "cardWidth": 516
+      },
+      {
+        "name": "Печной Центр Заокск",
+        "address": "Тульская область, Заокский район, д. Панькино, (Симферопольское шоссе, 112 км. – 10 минут от Серпухова)",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [],
+        "phones": [
+          {
+            "text": "8 (961) 267-38-80",
+            "href": "tel:+79612673880",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Заокск",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": true,
+        "imageWidth": 516,
+        "cardWidth": 516
+      }
+    ],
+    "map": {
+      "width": 516,
+      "height": 288,
+      "text": "Здесь будет размещена карта магазинов"
+    },
+    "remoteMap": false,
+    "icons": [
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg"
+    ]
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "h1": [
+      "Контакты"
+    ],
+    "mainCount": 1,
+    "breadcrumbs": [
+      {
+        "text": "Главная",
+        "href": "/"
+      },
+      {
+        "text": "О печном центре",
+        "href": "/about/"
+      },
+      {
+        "text": "Контакты"
+      }
+    ],
+    "stores": [
+      {
+        "name": "Печной Центр Ясенево - Центральный склад",
+        "address": "117574 г. Москва, дорога МКАД 38 км, владение 4Б, стр.1",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [
+          "Печной кирпич, литьё, смеси",
+          "Печи-камины JOTUL, топки, дымоходы"
+        ],
+        "phones": [
+          {
+            "text": "8 (916) 881-83-99",
+            "href": "tel:+79168818399",
+            "height": 44
+          },
+          {
+            "text": "8 (985) 308-83-16",
+            "href": "tel:+79853088316",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Ясенево - Центральный склад",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 696
+      },
+      {
+        "name": "Печной Центр Заокск",
+        "address": "Тульская область, Заокский район, д. Панькино, (Симферопольское шоссе, 112 км. – 10 минут от Серпухова)",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [],
+        "phones": [
+          {
+            "text": "8 (961) 267-38-80",
+            "href": "tel:+79612673880",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Заокск",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 696
+      }
+    ],
+    "map": {
+      "width": 696,
+      "height": 384,
+      "text": "Здесь будет размещена карта магазинов"
+    },
+    "remoteMap": false,
+    "icons": [
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg"
+    ]
+  },
+  {
+    "width": 992,
+    "overflow": false,
+    "h1": [
+      "Контакты"
+    ],
+    "mainCount": 1,
+    "breadcrumbs": [
+      {
+        "text": "Главная",
+        "href": "/"
+      },
+      {
+        "text": "О печном центре",
+        "href": "/about/"
+      },
+      {
+        "text": "Контакты"
+      }
+    ],
+    "stores": [
+      {
+        "name": "Печной Центр Ясенево - Центральный склад",
+        "address": "117574 г. Москва, дорога МКАД 38 км, владение 4Б, стр.1",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [
+          "Печной кирпич, литьё, смеси",
+          "Печи-камины JOTUL, топки, дымоходы"
+        ],
+        "phones": [
+          {
+            "text": "8 (916) 881-83-99",
+            "href": "tel:+79168818399",
+            "height": 44
+          },
+          {
+            "text": "8 (985) 308-83-16",
+            "href": "tel:+79853088316",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Ясенево - Центральный склад",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 936
+      },
+      {
+        "name": "Печной Центр Заокск",
+        "address": "Тульская область, Заокский район, д. Панькино, (Симферопольское шоссе, 112 км. – 10 минут от Серпухова)",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [],
+        "phones": [
+          {
+            "text": "8 (961) 267-38-80",
+            "href": "tel:+79612673880",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Заокск",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 936
+      }
+    ],
+    "map": {
+      "width": 936,
+      "height": 384,
+      "text": "Здесь будет размещена карта магазинов"
+    },
+    "remoteMap": false,
+    "icons": [
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg"
+    ]
+  },
+  {
+    "width": 1200,
+    "overflow": false,
+    "h1": [
+      "Контакты"
+    ],
+    "mainCount": 1,
+    "breadcrumbs": [
+      {
+        "text": "Главная",
+        "href": "/"
+      },
+      {
+        "text": "О печном центре",
+        "href": "/about/"
+      },
+      {
+        "text": "Контакты"
+      }
+    ],
+    "stores": [
+      {
+        "name": "Печной Центр Ясенево - Центральный склад",
+        "address": "117574 г. Москва, дорога МКАД 38 км, владение 4Б, стр.1",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [
+          "Печной кирпич, литьё, смеси",
+          "Печи-камины JOTUL, топки, дымоходы"
+        ],
+        "phones": [
+          {
+            "text": "8 (916) 881-83-99",
+            "href": "tel:+79168818399",
+            "height": 44
+          },
+          {
+            "text": "8 (985) 308-83-16",
+            "href": "tel:+79853088316",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Ясенево - Центральный склад",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 1116
+      },
+      {
+        "name": "Печной Центр Заокск",
+        "address": "Тульская область, Заокский район, д. Панькино, (Симферопольское шоссе, 112 км. – 10 минут от Серпухова)",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [],
+        "phones": [
+          {
+            "text": "8 (961) 267-38-80",
+            "href": "tel:+79612673880",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Заокск",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 1116
+      }
+    ],
+    "map": {
+      "width": 1116,
+      "height": 384,
+      "text": "Здесь будет размещена карта магазинов"
+    },
+    "remoteMap": false,
+    "icons": [
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg"
+    ]
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "h1": [
+      "Контакты"
+    ],
+    "mainCount": 1,
+    "breadcrumbs": [
+      {
+        "text": "Главная",
+        "href": "/"
+      },
+      {
+        "text": "О печном центре",
+        "href": "/about/"
+      },
+      {
+        "text": "Контакты"
+      }
+    ],
+    "stores": [
+      {
+        "name": "Печной Центр Ясенево - Центральный склад",
+        "address": "117574 г. Москва, дорога МКАД 38 км, владение 4Б, стр.1",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [
+          "Печной кирпич, литьё, смеси",
+          "Печи-камины JOTUL, топки, дымоходы"
+        ],
+        "phones": [
+          {
+            "text": "8 (916) 881-83-99",
+            "href": "tel:+79168818399",
+            "height": 44
+          },
+          {
+            "text": "8 (985) 308-83-16",
+            "href": "tel:+79853088316",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Ясенево - Центральный склад",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 1296
+      },
+      {
+        "name": "Печной Центр Заокск",
+        "address": "Тульская область, Заокский район, д. Панькино, (Симферопольское шоссе, 112 км. – 10 минут от Серпухова)",
+        "hours": "с 9.00 до 18.00 (без выходных)",
+        "departments": [],
+        "phones": [
+          {
+            "text": "8 (961) 267-38-80",
+            "href": "tel:+79612673880",
+            "height": 44
+          }
+        ],
+        "links": [
+          "#",
+          "#"
+        ],
+        "images": [
+          {
+            "loaded": true,
+            "alt": "Печной Центр Заокск",
+            "hidden": null
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          },
+          {
+            "loaded": true,
+            "alt": "",
+            "hidden": "true"
+          }
+        ],
+        "fit": "cover",
+        "vertical": false,
+        "imageWidth": 224,
+        "cardWidth": 1296
+      }
+    ],
+    "map": {
+      "width": 1296,
+      "height": 384,
+      "text": "Здесь будет размещена карта магазинов"
+    },
+    "remoteMap": false,
+    "icons": [
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg",
+      "/assets/location-dot-5IbuwMvp.svg",
+      "/assets/time-FXcYenGU.svg",
+      "/assets/mobile-screen-CTZ84F1b.svg"
+    ]
+  }
+]

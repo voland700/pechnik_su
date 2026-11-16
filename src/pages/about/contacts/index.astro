@@ -1,0 +1,24 @@
+---
+import CatalogLayout from '../../../layouts/CatalogLayout.astro';
+import StoreCard from '../../../components/contacts/StoreCard.astro';
+import { stores } from '../../../data/stores';
+---
+<CatalogLayout title="Контакты — Pechnik.su" description="Адреса, телефоны и график работы магазинов Печного Центра Ясенево и Заокск." heading="Контакты" breadcrumbs={[{ label: 'О печном центре', href: '/about/' }, { label: 'Контакты' }]} showSidebar={false}>
+  <div class="contacts-page">
+    <section aria-labelledby="stores-heading">
+      <div class="contacts-page__intro">
+        <h2 id="stores-heading">Наши магазины</h2>
+        <p>Наша компания имеет ряд магазинов на территории Москвы и Московской области. Вы можете обратиться в любую удобную торговую точку, получить консультацию, сведения о наличии необходимого товара, выбрать и купить товар, а также согласовать доставку и монтаж по Вашему адресу.</p>
+      </div>
+      <div class="contacts-page__stores">
+        {stores.map((store, index) => <StoreCard store={store} eager={index === 0} />)}
+      </div>
+    </section>
+    <section class="contacts-map" aria-label="Расположение магазинов на карте">
+      <div class="contacts-map__container">
+        <!-- Здесь будет размещена карта при интеграции с CMS -->
+        <p>Здесь будет размещена карта магазинов</p>
+      </div>
+    </section>
+  </div>
+</CatalogLayout>

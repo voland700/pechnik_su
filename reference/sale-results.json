@@ -1,0 +1,446 @@
+[
+  {
+    "width": 375,
+    "overflow": false,
+    "count": 4,
+    "h1": "Акции",
+    "sidebar": true,
+    "phone": "tel:+79168818399",
+    "items": [
+      {
+        "title": "При покупке банной печи 100 кг. камней - в подарок!",
+        "date": "1 мая 2023",
+        "datetime": "2023-05-01",
+        "text": "В Печном Центре, при покупке чугунной банной печи, Вы получаете 100 кг. Камней для бани габродиобаз – <strong>в подарок</strong>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 336,
+        "cardWidth": 336
+      },
+      {
+        "title": "Дымоходы - полный комплект со скидкой",
+        "date": "5 мая 2021",
+        "datetime": "2021-05-05",
+        "text": "Скидка <span>15%</span> на комплект дымохода из нержавеющей стали - Феникс.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 336,
+        "cardWidth": 336
+      },
+      {
+        "title": "Камины из Европы – скидки и подарки!",
+        "date": "12 марта 2025",
+        "datetime": "2025-03-12",
+        "text": "Камины Европейских производителей - доступны в России.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 336,
+        "cardWidth": 336
+      },
+      {
+        "title": "Банные печи Атмосфера – скидки и подарки!",
+        "date": "16 сентября 2025",
+        "datetime": "2025-09-16",
+        "text": "При покупке банной печи Атмосфера - 140 камней для бани в <strong>подарок</strong>, на дымоход - <span>скидка</span>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 336,
+        "cardWidth": 336
+      }
+    ]
+  },
+  {
+    "width": 576,
+    "overflow": false,
+    "count": 4,
+    "h1": "Акции",
+    "sidebar": true,
+    "phone": "tel:+79168818399",
+    "items": [
+      {
+        "title": "При покупке банной печи 100 кг. камней - в подарок!",
+        "date": "1 мая 2023",
+        "datetime": "2023-05-01",
+        "text": "В Печном Центре, при покупке чугунной банной печи, Вы получаете 100 кг. Камней для бани габродиобаз – <strong>в подарок</strong>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 516,
+        "cardWidth": 516
+      },
+      {
+        "title": "Дымоходы - полный комплект со скидкой",
+        "date": "5 мая 2021",
+        "datetime": "2021-05-05",
+        "text": "Скидка <span>15%</span> на комплект дымохода из нержавеющей стали - Феникс.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 516,
+        "cardWidth": 516
+      },
+      {
+        "title": "Камины из Европы – скидки и подарки!",
+        "date": "12 марта 2025",
+        "datetime": "2025-03-12",
+        "text": "Камины Европейских производителей - доступны в России.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 516,
+        "cardWidth": 516
+      },
+      {
+        "title": "Банные печи Атмосфера – скидки и подарки!",
+        "date": "16 сентября 2025",
+        "datetime": "2025-09-16",
+        "text": "При покупке банной печи Атмосфера - 140 камней для бани в <strong>подарок</strong>, на дымоход - <span>скидка</span>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 516,
+        "cardWidth": 516
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "count": 4,
+    "h1": "Акции",
+    "sidebar": true,
+    "phone": "tel:+79168818399",
+    "items": [
+      {
+        "title": "При покупке банной печи 100 кг. камней - в подарок!",
+        "date": "1 мая 2023",
+        "datetime": "2023-05-01",
+        "text": "В Печном Центре, при покупке чугунной банной печи, Вы получаете 100 кг. Камней для бани габродиобаз – <strong>в подарок</strong>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 448,
+        "cardWidth": 448
+      },
+      {
+        "title": "Дымоходы - полный комплект со скидкой",
+        "date": "5 мая 2021",
+        "datetime": "2021-05-05",
+        "text": "Скидка <span>15%</span> на комплект дымохода из нержавеющей стали - Феникс.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 448,
+        "cardWidth": 448
+      },
+      {
+        "title": "Камины из Европы – скидки и подарки!",
+        "date": "12 марта 2025",
+        "datetime": "2025-03-12",
+        "text": "Камины Европейских производителей - доступны в России.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 448,
+        "cardWidth": 448
+      },
+      {
+        "title": "Банные печи Атмосфера – скидки и подарки!",
+        "date": "16 сентября 2025",
+        "datetime": "2025-09-16",
+        "text": "При покупке банной печи Атмосфера - 140 камней для бани в <strong>подарок</strong>, на дымоход - <span>скидка</span>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": true,
+        "imageWidth": 448,
+        "cardWidth": 448
+      }
+    ]
+  },
+  {
+    "width": 992,
+    "overflow": false,
+    "count": 4,
+    "h1": "Акции",
+    "sidebar": true,
+    "phone": "tel:+79168818399",
+    "items": [
+      {
+        "title": "При покупке банной печи 100 кг. камней - в подарок!",
+        "date": "1 мая 2023",
+        "datetime": "2023-05-01",
+        "text": "В Печном Центре, при покупке чугунной банной печи, Вы получаете 100 кг. Камней для бани габродиобаз – <strong>в подарок</strong>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 688
+      },
+      {
+        "title": "Дымоходы - полный комплект со скидкой",
+        "date": "5 мая 2021",
+        "datetime": "2021-05-05",
+        "text": "Скидка <span>15%</span> на комплект дымохода из нержавеющей стали - Феникс.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 688
+      },
+      {
+        "title": "Камины из Европы – скидки и подарки!",
+        "date": "12 марта 2025",
+        "datetime": "2025-03-12",
+        "text": "Камины Европейских производителей - доступны в России.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 688
+      },
+      {
+        "title": "Банные печи Атмосфера – скидки и подарки!",
+        "date": "16 сентября 2025",
+        "datetime": "2025-09-16",
+        "text": "При покупке банной печи Атмосфера - 140 камней для бани в <strong>подарок</strong>, на дымоход - <span>скидка</span>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 688
+      }
+    ]
+  },
+  {
+    "width": 1200,
+    "overflow": false,
+    "count": 4,
+    "h1": "Акции",
+    "sidebar": true,
+    "phone": "tel:+79168818399",
+    "items": [
+      {
+        "title": "При покупке банной печи 100 кг. камней - в подарок!",
+        "date": "1 мая 2023",
+        "datetime": "2023-05-01",
+        "text": "В Печном Центре, при покупке чугунной банной печи, Вы получаете 100 кг. Камней для бани габродиобаз – <strong>в подарок</strong>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 852
+      },
+      {
+        "title": "Дымоходы - полный комплект со скидкой",
+        "date": "5 мая 2021",
+        "datetime": "2021-05-05",
+        "text": "Скидка <span>15%</span> на комплект дымохода из нержавеющей стали - Феникс.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 852
+      },
+      {
+        "title": "Камины из Европы – скидки и подарки!",
+        "date": "12 марта 2025",
+        "datetime": "2025-03-12",
+        "text": "Камины Европейских производителей - доступны в России.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 852
+      },
+      {
+        "title": "Банные печи Атмосфера – скидки и подарки!",
+        "date": "16 сентября 2025",
+        "datetime": "2025-09-16",
+        "text": "При покупке банной печи Атмосфера - 140 камней для бани в <strong>подарок</strong>, на дымоход - <span>скидка</span>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 852
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "count": 4,
+    "h1": "Акции",
+    "sidebar": true,
+    "phone": "tel:+79168818399",
+    "items": [
+      {
+        "title": "При покупке банной печи 100 кг. камней - в подарок!",
+        "date": "1 мая 2023",
+        "datetime": "2023-05-01",
+        "text": "В Печном Центре, при покупке чугунной банной печи, Вы получаете 100 кг. Камней для бани габродиобаз – <strong>в подарок</strong>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 1032
+      },
+      {
+        "title": "Дымоходы - полный комплект со скидкой",
+        "date": "5 мая 2021",
+        "datetime": "2021-05-05",
+        "text": "Скидка <span>15%</span> на комплект дымохода из нержавеющей стали - Феникс.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 1032
+      },
+      {
+        "title": "Камины из Европы – скидки и подарки!",
+        "date": "12 марта 2025",
+        "datetime": "2025-03-12",
+        "text": "Камины Европейских производителей - доступны в России.",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 1032
+      },
+      {
+        "title": "Банные печи Атмосфера – скидки и подарки!",
+        "date": "16 сентября 2025",
+        "datetime": "2025-09-16",
+        "text": "При покупке банной печи Атмосфера - 140 камней для бани в <strong>подарок</strong>, на дымоход - <span>скидка</span>!",
+        "links": [
+          "#",
+          "#",
+          "#"
+        ],
+        "shine": true,
+        "loaded": true,
+        "vertical": false,
+        "imageWidth": 280,
+        "cardWidth": 1032
+      }
+    ]
+  }
+]

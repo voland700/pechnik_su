@@ -1,0 +1,164 @@
+[
+  {
+    "width": 375,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "columns": 2,
+    "photos": 12,
+    "groups": [
+      "yasenevo-scheme",
+      "yasenevo-gallery"
+    ],
+    "images": true,
+    "phones": [
+      "tel:+79168818399",
+      "tel:+79853088316"
+    ],
+    "emails": [
+      "mailto:info@pechnik.su",
+      "mailto:c9150368017@yandex.ru"
+    ],
+    "maps": [
+      256,
+      256
+    ],
+    "external": true,
+    "remoteMaps": 0
+  },
+  {
+    "width": 576,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "columns": 2,
+    "photos": 12,
+    "groups": [
+      "yasenevo-scheme",
+      "yasenevo-gallery"
+    ],
+    "images": true,
+    "phones": [
+      "tel:+79168818399",
+      "tel:+79853088316"
+    ],
+    "emails": [
+      "mailto:info@pechnik.su",
+      "mailto:c9150368017@yandex.ru"
+    ],
+    "maps": [
+      256,
+      256
+    ],
+    "external": true,
+    "remoteMaps": 0
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "columns": 3,
+    "photos": 12,
+    "groups": [
+      "yasenevo-scheme",
+      "yasenevo-gallery"
+    ],
+    "images": true,
+    "phones": [
+      "tel:+79168818399",
+      "tel:+79853088316"
+    ],
+    "emails": [
+      "mailto:info@pechnik.su",
+      "mailto:c9150368017@yandex.ru"
+    ],
+    "maps": [
+      352,
+      352
+    ],
+    "external": true,
+    "remoteMaps": 0
+  },
+  {
+    "width": 992,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "columns": 3,
+    "photos": 12,
+    "groups": [
+      "yasenevo-scheme",
+      "yasenevo-gallery"
+    ],
+    "images": true,
+    "phones": [
+      "tel:+79168818399",
+      "tel:+79853088316"
+    ],
+    "emails": [
+      "mailto:info@pechnik.su",
+      "mailto:c9150368017@yandex.ru"
+    ],
+    "maps": [
+      352,
+      352
+    ],
+    "external": true,
+    "remoteMaps": 0
+  },
+  {
+    "width": 1200,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "columns": 4,
+    "photos": 12,
+    "groups": [
+      "yasenevo-scheme",
+      "yasenevo-gallery"
+    ],
+    "images": true,
+    "phones": [
+      "tel:+79168818399",
+      "tel:+79853088316"
+    ],
+    "emails": [
+      "mailto:info@pechnik.su",
+      "mailto:c9150368017@yandex.ru"
+    ],
+    "maps": [
+      352,
+      352
+    ],
+    "external": true,
+    "remoteMaps": 0
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "columns": 4,
+    "photos": 12,
+    "groups": [
+      "yasenevo-scheme",
+      "yasenevo-gallery"
+    ],
+    "images": true,
+    "phones": [
+      "tel:+79168818399",
+      "tel:+79853088316"
+    ],
+    "emails": [
+      "mailto:info@pechnik.su",
+      "mailto:c9150368017@yandex.ru"
+    ],
+    "maps": [
+      352,
+      352
+    ],
+    "external": true,
+    "remoteMaps": 0
+  }
+]

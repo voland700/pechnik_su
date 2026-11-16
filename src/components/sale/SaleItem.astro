@@ -1,0 +1,25 @@
+---
+import { promotionImage } from '../home/promotions/images';
+interface Props {
+  item: { title: string; date: string; text: string; img: string };
+  eager?: boolean;
+}
+const { item, eager = false } = Astro.props;
+const image = promotionImage(item.img);
+const months: Record<string, string> = { 'мая': '05', 'марта': '03', 'сентября': '09' };
+const [day, month, year] = item.date.split(' ');
+const datetime = months[month] ? year + '-' + months[month] + '-' + day.padStart(2, '0') : undefined;
+const url = '#';
+---
+<article class="sale-item">
+  <a href={url} class="sale-item__image-link shine">
+    {image && <img class="sale-item__image" src={image.src} width={image.width} height={image.height} alt={item.title} loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+  </a>
+  <div class="sale-item__content">
+    <h2 class="sale-item__title"><a href={url}>{item.title}</a></h2>
+    <time class="sale-item__date" datetime={datetime}>{item.date}</time>
+    {/* Local trusted HTML only; sanitize content when connecting a CMS. */}
+    <p class="sale-item__description" set:html={item.text} />
+    <a class="sale-item__more" href={url}>Подробнее<span class="visually-hidden">: {item.title}</span></a>
+  </div>
+</article>

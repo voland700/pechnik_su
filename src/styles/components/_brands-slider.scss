@@ -12,7 +12,7 @@
 .brands-slider__arrow { display: none; align-items: center; justify-content: center; width: var(--layout-control); height: var(--layout-control); padding: 0; border: 0; background: transparent; color: var(--color-muted); cursor: pointer; transition: color var(--duration-fast); }
 .brands-slider--ready .brands-slider__arrow { display: flex; }
 .brands-slider__arrow--prev .icon { transform: rotate(180deg); }
-.brands-slider__arrow:hover:not(:disabled) { color: var(--color-action); }
+.brands-slider__arrow:hover:not(:disabled) { color: var(--color-action-hover); }
 .brands-slider__arrow:disabled { opacity: .35; cursor: default; }
 .brands-slider__arrow.swiper-button-lock { visibility: hidden; }
 .brands-slider__viewport:not(.swiper-initialized) { overflow-x: auto; }

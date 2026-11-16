@@ -54,7 +54,7 @@
   color: var(--color-text);
   text-decoration: none;
   transition: color var(--duration-fast), background-color var(--duration-fast);
-  &:hover { color: var(--color-action); text-decoration: underline; }
+  &:hover { color: var(--color-action-hover); text-decoration: underline; }
 }
 .catalog-sidebar__link:hover { background: var(--color-background); }
 
@@ -73,3 +73,5 @@
   .catalog-layout { grid-template-columns: 15rem minmax(0, 1fr); }
   .catalog-category { grid-template-columns: 6rem minmax(0, 1fr); padding: var(--space-5); }
 }
+
+.catalog-layout--full { grid-template-columns: minmax(0, 1fr); }

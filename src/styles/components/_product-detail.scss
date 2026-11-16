@@ -55,7 +55,17 @@
   &__status { display: flex; align-items: center; gap: var(--space-2); margin-block: var(--space-3); font-weight: 700; font-size: var(--text-sm); }
   &__status--0 { color: var(--color-muted); } &__status--1 { color: var(--color-store-open); } &__status--2 { color: var(--color-brand-slate); }
   &__note { color: var(--color-muted); font-size: .75rem; }
-  &__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); .product-card__quantity { min-height: 44px; } .product-card__quantity-button { width: 32px; } .button { flex: 1; } }
+  &__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); .product-card__quantity { min-height: 44px; } .product-card__quantity-button { width: 32px; } .button { flex: 1; background: var(--color-surface); border-color: var(--color-border); color: var(--color-text); } .button:hover:not(:disabled) { background: var(--color-secondary); color: var(--color-text); } }
+  &__actions .button:not(.button--secondary):not(:disabled) {
+    border-color: var(--color-action);
+    background-color: var(--color-action);
+    color: #fff;
+    transition: background-color var(--duration-fast), border-color var(--duration-fast), color var(--duration-fast), transform var(--duration-fast);
+  }
+  &__actions .button:not(.button--secondary):hover:not(:disabled) {
+    border-color: var(--color-action-hover);
+    background-color: var(--color-action-hover);
+  }
 }
 .product-properties { width: 100%; min-width: 0; margin-block: var(--space-5); font-size: var(--text-sm); dl { margin: 0; } dl>div { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--space-4); padding-block: var(--space-2); border-bottom: 1px dotted var(--color-border); } dt { color: var(--color-muted); font-weight: 400; } dd { margin: 0; text-align: right; } dt,dd { overflow-wrap: anywhere; } }
 .product-documents { ul { list-style: none; padding: 0; } li+li { margin-top: var(--space-4); } a { display: flex; align-items: center; gap: var(--space-3); } }
@@ -72,7 +82,7 @@
   --f-button-width: 44px;
   --f-button-height: 44px;
   --f-button-color: var(--color-text);
-  --f-button-hover-color: var(--color-action);
+  --f-button-hover-color: var(--color-action-hover);
   --f-button-bg: var(--color-surface);
   --f-button-hover-bg: var(--color-secondary);
   --f-button-border-radius: var(--radius-sm);
@@ -91,7 +101,7 @@
       transition: color .3s ease-out, text-decoration .3s ease-out;
 
       &:hover {
-        color: var(--color-action);
+        color: var(--color-action-hover);
         text-decoration: underline;
       }
     }

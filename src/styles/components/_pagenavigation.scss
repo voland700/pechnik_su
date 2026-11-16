@@ -31,7 +31,7 @@
   text-decoration: none;
   transition: background-color var(--duration-fast), border-color var(--duration-fast), color var(--duration-fast);
 
-  &:hover { background: var(--color-secondary); border-color: var(--color-muted); color: var(--color-action); }
+  &:hover { background: var(--color-secondary); border-color: var(--color-muted); color: var(--color-action-hover); }
   &:focus-visible { outline: 3px solid var(--color-action); outline-offset: 2px; }
 }
 .pagenavigation__current { background: var(--color-secondary); border-color: var(--color-muted); color: var(--color-text); font-weight: 700; }

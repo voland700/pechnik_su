@@ -1,0 +1,26 @@
+@use '../abstracts' as a;
+
+.contacts-page__intro { max-width: 65rem; margin-bottom: var(--space-6); }
+.contacts-page__intro h2 { font-size: var(--text-xl); }
+.contacts-page__intro p { margin: 0; }
+.contacts-page__stores { border-top: 1px solid var(--color-border); }
+.store-card { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: var(--space-5); padding-block: var(--space-6); border-bottom: 1px solid var(--color-border); }
+.store-card__image-link { display: block; }
+.store-card__image { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.store-card__content { min-width: 0; overflow-wrap: anywhere; }
+.store-card__title { margin-bottom: var(--space-3); font-size: var(--text-lg); line-height: 1.4; }
+.store-card__title a { color: var(--color-text); text-decoration: none; transition: color var(--duration-fast); }
+.store-card__title a:hover { color: var(--color-action-hover); text-decoration: underline; }
+.store-card__address, .store-card__hours { display: flex; align-items: flex-start; gap: var(--space-2); margin: 0 0 var(--space-3); font-style: normal; }
+.store-card__icon { flex: 0 0 1.25rem; width: 1.25rem; height: 1.25rem; object-fit: contain; margin-top: .2em; }
+.store-card__contacts { display: grid; gap: var(--space-3); margin: var(--space-4) 0 0; padding: 0; list-style: none; }
+.store-card__department { display: block; color: var(--color-muted); font-size: var(--text-sm); }
+.store-card__phone { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--layout-control); font-weight: 600; white-space: nowrap; }
+.store-card__phone .store-card__icon { margin-top: 0; }
+.contacts-map { margin-top: var(--space-7); }
+.contacts-map__container { display: grid; place-items: center; min-height: 18rem; padding: var(--space-5); border: 1px solid var(--color-border); background: var(--color-secondary); color: var(--color-muted); text-align: center; }
+.contacts-map__container p { margin: 0; }
+@include a.up(md) {
+  .store-card { grid-template-columns: 14rem minmax(0, 1fr); gap: var(--space-6); }
+  .contacts-map__container { min-height: 24rem; }
+}

@@ -16,7 +16,7 @@
 .catalog-filter__values { max-height: 14rem; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
 .catalog-filter__option { display: flex; align-items: center; gap: var(--space-2); min-height: 2rem; padding-block: var(--space-1); cursor: pointer; overflow-wrap: anywhere; }
 .catalog-filter__option input { flex: none; width: 1rem; height: 1rem; margin: 0; accent-color: var(--color-action); cursor: inherit; }
-.catalog-filter__option:hover { color: var(--color-action); }
+.catalog-filter__option:hover { color: var(--color-action-hover); }
 .catalog-filter__option:has(:disabled) { opacity: .45; cursor: not-allowed; }
 .catalog-filter__digits { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; gap: var(--space-2); }
 .catalog-filter__digits label { min-width: 0; color: var(--color-muted); }

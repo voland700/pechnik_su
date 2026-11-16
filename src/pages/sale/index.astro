@@ -1,0 +1,15 @@
+---
+import CatalogLayout from '../../layouts/CatalogLayout.astro';
+import SaleItem from '../../components/sale/SaleItem.astro';
+import items from '../../data/sale.json';
+import { showcaseData } from '../../data/showcase';
+const navigation = showcaseData.map(({ name }) => ({ name, url: '#' }));
+---
+<CatalogLayout title="Акции — Pechnik.su" description="Акции и скидки Печного Центра на печи, камины и дымоходы, выгодные условия доставки и монтажа." heading="Акции" breadcrumbs={[{ label: 'Акции' }]} navigation={navigation}>
+  <div class="sale-list">
+    <p class="sale-list__intro">В Печном Центре проводятся акции и скидки на некоторые группы товаров. Вы можете купить печи, дымоходы со скидкой, а так же получить выгодные условия доставки и монтажа. Узнать подробнее об условиях акций можно по телефону: <a href="tel:+79168818399">8 (916) 881-83-99</a>.</p>
+    <div class="sale-list__items">
+      {items.map((item, index) => <SaleItem item={item} eager={index === 0} />)}
+    </div>
+  </div>
+</CatalogLayout>

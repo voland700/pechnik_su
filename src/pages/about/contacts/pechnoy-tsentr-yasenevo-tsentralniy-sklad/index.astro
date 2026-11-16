@@ -1,0 +1,8 @@
+---
+import CatalogLayout from '../../../../layouts/CatalogLayout.astro';
+import ContactDetail from '../../../../components/contacts/ContactDetail.astro';
+import { contactDetail } from '../../../../data/contact-detail';
+---
+<CatalogLayout title={`${contactDetail.title} — Pechnik.su`} description="Адрес, схема проезда, телефоны отделов и фотографии Печного Центра Ясенево — Центрального склада. Работаем ежедневно с 9:00 до 18:00." heading={contactDetail.title} breadcrumbs={[{ label: 'О печном центре', href: '/about/' }, { label: 'Контакты', href: '/about/contacts/' }, { label: contactDetail.title }]} showSidebar={false}>
+  <ContactDetail />
+</CatalogLayout>

@@ -8,5 +8,5 @@
 .store-contacts__label { display: block; margin-bottom: var(--space-1); }
 .store-contacts__phones { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); }
 .store-contacts__phones a { color: var(--color-text); font-weight: 700; white-space: nowrap; text-decoration: none; }
-.store-contacts__phones a:hover { color: var(--color-action); text-decoration: underline; }
+.store-contacts__phones a:hover { color: var(--color-action-hover); text-decoration: underline; }
 .store-contacts__additional { margin: var(--space-2) 0 0; }

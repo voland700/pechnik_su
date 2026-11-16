@@ -18,9 +18,9 @@
   .article-card__more { align-self: flex-end; margin-top: auto; padding-top: var(--space-4); color: var(--color-action); font-size: var(--text-sm); text-underline-offset: .2em; }
   .article-card__title a, .article-card__more { transition: color var(--duration-fast); }
   .article-card__link:hover { border-color: var(--color-border); }
-  .article-card__link:hover .article-card__title { color: var(--color-text); }
-  .article-card__title a:hover, .article-card__title a:focus-visible { color: var(--color-action); text-decoration: none; }
-  .article-card__more:hover { color: var(--color-text); text-decoration: underline; }
+  .article-card__link:hover .article-card__title { color: var(--color-action-hover); }
+  .article-card__title a:hover, .article-card__title a:focus-visible { color: var(--color-action-hover); text-decoration: none; }
+  .article-card__more:hover { color: var(--color-action-hover); text-decoration: underline; }
 }
 .article-detail__back { margin: var(--space-5) 0 0; }
 

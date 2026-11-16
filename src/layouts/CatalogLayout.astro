@@ -9,9 +9,10 @@ interface Props {
   description: string;
   heading: string;
   breadcrumbs: BreadcrumbItem[];
-  navigation: CatalogNavigationItem[];
+  navigation?: CatalogNavigationItem[];
+  showSidebar?: boolean;
 }
-const { title, description, heading, breadcrumbs, navigation } = Astro.props;
+const { title, description, heading, breadcrumbs, navigation = [], showSidebar = true } = Astro.props;
 ---
 <BaseLayout title={title} description={description}>
   <div class="page-heading">
@@ -21,10 +22,10 @@ const { title, description, heading, breadcrumbs, navigation } = Astro.props;
     </div>
   </div>
   <div class="container">
-    <div class="catalog-layout">
-      <CatalogSidebar items={navigation}>
+    <div class:list={['catalog-layout', { 'catalog-layout--full': !showSidebar }]}>
+      {showSidebar && <CatalogSidebar items={navigation}>
         <slot name="filter" slot="filter" />
-      </CatalogSidebar>
+      </CatalogSidebar>}
       <div class="catalog-layout__content"><slot /></div>
     </div>
   </div>
