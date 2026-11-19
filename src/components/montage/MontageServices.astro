@@ -1,0 +1,12 @@
+---
+import { services } from '../../data/montage';
+---
+<section class="montage-services" aria-labelledby="montage-services-heading">
+  <h2 id="montage-services-heading">Мы выполняем работы</h2>
+  <div class="montage-services__grid">
+    {services.map(({ img, title }, i) => <article class="montage-service-card">
+      <img class="montage-service-card__image" src={img.src} width={img.width} height={img.height} alt={title} loading={i < 3 ? 'eager' : 'lazy'} decoding="async" />
+      <h3 class="montage-service-card__title">{title}</h3>
+    </article>)}
+  </div>
+</section>

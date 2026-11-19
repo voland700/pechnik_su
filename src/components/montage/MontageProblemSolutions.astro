@@ -1,0 +1,16 @@
+---
+import { problemSolutions } from '../../data/montage';
+---
+<section class="montage-solutions" aria-labelledby="montage-solutions-heading">
+  <h2 id="montage-solutions-heading">Проблемы клиентов и способы их решения</h2>
+  <div class="montage-solutions__headings" aria-hidden="true">
+    <h3>80% клиентов сталкиваются со следующими проблемами:</h3>
+    <h3>Как мы решаем эти проблемы:</h3>
+  </div>
+  <ul class="montage-solutions__list">
+    {problemSolutions.map(({ problem, solution }) => <li class="montage-solutions__row">
+      <div class="montage-solutions__problem"><span class="montage-solutions__label"><span aria-hidden="true">−</span> Проблема</span><p>{problem}</p></div>
+      <div class="montage-solutions__solution"><span class="montage-solutions__label"><span aria-hidden="true">✓</span> Решение</span><p>{solution}</p></div>
+    </li>)}
+  </ul>
+</section>

@@ -1,0 +1,20 @@
+.back-to-top {
+  position: fixed;
+  right: max(var(--space-4), env(safe-area-inset-right));
+  bottom: max(var(--space-4), env(safe-area-inset-bottom));
+  z-index: var(--z-header);
+  display: inline-grid;
+  place-items: center;
+  width: var(--layout-control);
+  height: var(--layout-control);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-secondary);
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+
+  &[hidden] { display: none; }
+  &:hover { background: var(--color-surface); color: var(--color-text); }
+}

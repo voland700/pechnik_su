@@ -1,0 +1,11 @@
+---
+import { experience } from '../../data/montage';
+---
+<section class="montage-experience" aria-labelledby="montage-experience-heading">
+  <h2 id="montage-experience-heading">Наш опыт и возможности</h2>
+  <ul class="montage-experience__grid">
+    {experience.map(({ img, text }) => <li class="montage-experience__item">
+      <img src={img.src} width={img.width} height={img.height} alt="" loading="lazy" decoding="async" /><p>{text}</p>
+    </li>)}
+  </ul>
+</section>

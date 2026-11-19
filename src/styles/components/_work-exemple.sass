@@ -1,0 +1,92 @@
+@use '../abstracts' as a
+.work_item
+    margin-bottom: 3rem
+.work_title
+    margin-bottom: 1.5rem
+.work_title_link
+    color: var(--color-text)
+    text-decoration: none
+    tranition: color .3s ease-in-out
+    &:hover
+        color: var(--color-action-hover)
+.work_gallery_wrap
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 1.5rem
+.work_img_link
+    width: calc( 50% - 2px)
+    margin: 1px
+    padding: 4px
+    background-color: #fff
+    border: 1px solid var(--color-border)
+    border-radius: 4px
+    position: relative
+    transition: filter .3s ease-in-out
+    &::before
+        contant: ''
+        display: block
+        position: absolute
+        padding-top: 100%
+    &:hover
+        .work_img
+            filter: brightness(80%)
+        
+.work_img
+    width: 100%
+    object-fit: contain
+    transition: filter .3s ease-in-out
+.work_description
+
+
+.aboutus_img-wrap
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 1.5rem
+.aboutus_img-link
+    width: 100%
+    margin: 1px
+    padding: 4px
+    background-color: #fff
+    box-sizing: border-box
+    border: 1px solid var(--color-border)
+    border-radius: 4px
+    position: relative
+    transition: filter .3s ease-in-out
+    &:hover
+        .aboutus_img
+            filter: brightness(90%)
+.aboutus_img
+    width: 100%
+    height: auto
+    object-fit: contain
+    transition: filter .3s ease-in-out
+
+
+
+
+
+
+@include a.up(sm)
+    .work_img_link
+        width: calc( 25% - 2px)
+    .aboutus_img-link
+        width: calc( 50% - 2px)
+
+@include a.up(md) 
+    .work_img_link
+        width: calc( 20% - 2px)
+
+@include a.up(lg) 
+    .work_img_link
+        width: calc( 16.66% - 2px)
+    .aboutus_img-link
+        width: calc( 25% - 2px)
+
+@include a.up(xl) 
+    .work_img_link
+        width: calc( 12.5% - 2px)
+    
+
+@include a.up(xxl) 
+    .work_img_link
+        width: calc( 11.11% - 2px)

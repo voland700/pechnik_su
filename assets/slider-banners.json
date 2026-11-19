@@ -1,0 +1,6 @@
+[
+  { "name": "Грили и мангалы", "text": "От производителя", "img": "assets/images/banners/grill.jpg" },
+  { "name": "Каминные топки", "text": "Тепло и уют <br>для Ваших близких", "img": "assets/images/banners/fireplace.jpg" },
+  { "name": "Печи-камины", "text": "Для отопления дома и дачи", "img": "assets/images/banners/stove.jpg" },
+  { "name": "Банные печи", "text": "Печи для бани <br>чугунные и стальные", "img": "assets/images/banners/sauna.jpg" }
+]

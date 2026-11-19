@@ -7,6 +7,7 @@ export function initHeroSliders(root: ParentNode = document) {
   root.querySelectorAll<HTMLElement>('[data-hero-slider]').forEach(element => {
     if (instances.has(element)) return;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const speed = Number(element.dataset.heroSpeed) || 700;
     const multiple = element.querySelectorAll('.hero-slider__slide').length > 1;
     const toggle = element.querySelector<HTMLButtonElement>('[data-hero-toggle]');
     let wantsAutoplay = element.dataset.autoplay === 'true' && multiple;
@@ -30,7 +31,7 @@ export function initHeroSliders(root: ParentNode = document) {
       modules: [A11y, Navigation, Pagination, Parallax, Autoplay, EffectFade],
       effect: 'fade',
       fadeEffect: { crossFade: true },
-      speed: motion.matches ? 0 : 700,
+      speed: motion.matches ? 0 : speed,
       loop: multiple && element.dataset.loop === 'true',
       watchOverflow: true,
       parallax: !motion.matches,
@@ -49,11 +50,16 @@ export function initHeroSliders(root: ParentNode = document) {
         firstSlideMessage: 'Первый слайд', lastSlideMessage: 'Последний слайд',
         slideLabelMessage: '{{index}} из {{slidesLength}}', paginationBulletMessage: 'Перейти к слайду {{index}}',
       },
-      on: { init: focusSlides, slideChangeTransitionEnd: focusSlides, sliderFirstMove: stop },
+      on: {
+        init: focusSlides, slideChangeTransitionEnd: focusSlides, sliderFirstMove: stop,
+        slideChangeTransitionStart(swiper) {
+          if (element.classList.contains('hero-slider--showcase')) focusSlides(swiper);
+        },
+      },
     });
     instances.set(element, swiper);
     const updateMotion = () => {
-      swiper.params.speed = motion.matches ? 0 : 700;
+      swiper.params.speed = motion.matches ? 0 : speed;
       if (typeof swiper.params.parallax === 'object') swiper.params.parallax.enabled = !motion.matches;
       element.querySelectorAll<HTMLElement>('[data-swiper-parallax], [data-swiper-parallax-opacity]').forEach(layer => {
         layer.style.removeProperty('transform'); layer.style.removeProperty('opacity'); layer.style.removeProperty('transition-duration');

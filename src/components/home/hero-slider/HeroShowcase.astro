@@ -1,0 +1,12 @@
+---
+import HeroSlider from './HeroSlider.astro';
+import HeroBanner from './HeroBanner.astro';
+import type { Props as HeroBannerProps } from './HeroBanner.astro';
+import type { HeroSlideData } from '../../../types/hero-slider';
+interface Props { slides: HeroSlideData[]; banners?: HeroBannerProps[]; autoplay?: boolean; }
+const { slides = [], banners = [], autoplay = true } = Astro.props;
+---
+<div class:list={['container hero-showcase', { 'hero-showcase--slider-only': banners.length === 0 }]}>
+  <div class="hero-showcase__slider"><HeroSlider slides={slides} autoplay={autoplay} variant="showcase" /></div>
+  {banners.map(banner => <div class="hero-showcase__banner"><HeroBanner {...banner} /></div>)}
+</div>

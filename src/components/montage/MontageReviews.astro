@@ -1,0 +1,15 @@
+---
+import { reviews } from '../../data/montage';
+---
+<section class="montage-reviews" aria-labelledby="montage-reviews-heading">
+  <h2 id="montage-reviews-heading">Отзывы наших клиентов</h2>
+  <div class="montage-reviews__grid">
+    {reviews.map(({ avatar, name, text }) => <article class="montage-review">
+      <header class="montage-review__header">
+        <img class="montage-review__avatar" src={avatar.src} width={avatar.width} height={avatar.height} alt="" loading="lazy" decoding="async" />
+        <h3 class="montage-review__name">{name}</h3>
+      </header>
+      <blockquote class="montage-review__text"><p>{text}</p></blockquote>
+    </article>)}
+  </div>
+</section>

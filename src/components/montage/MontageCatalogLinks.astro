@@ -1,0 +1,9 @@
+---
+import { catalogLinks } from '../../data/montage';
+---
+<section class="montage-catalog" aria-labelledby="montage-catalog-heading">
+  <h2 id="montage-catalog-heading">Товары для монтажа печей и каминов</h2>
+  <ul class="montage-catalog__grid">
+    {catalogLinks.map(({ title, href }) => <li><a class="button button--secondary" href={href}>{title}</a></li>)}
+  </ul>
+</section>

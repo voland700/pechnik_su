@@ -1,0 +1,23 @@
+---
+import CatalogLayout from '../../layouts/CatalogLayout.astro';
+import MontageCatalogLinks from '../../components/montage/MontageCatalogLinks.astro';
+import MontageServices from '../../components/montage/MontageServices.astro';
+import MontageProblemSolutions from '../../components/montage/MontageProblemSolutions.astro';
+import MontageAdvantages from '../../components/montage/MontageAdvantages.astro';
+import MontageExperience from '../../components/montage/MontageExperience.astro';
+import MontageGallery from '../../components/montage/MontageGallery.astro';
+import MontageReviews from '../../components/montage/MontageReviews.astro';
+import MontageWorkflow from '../../components/montage/MontageWorkflow.astro';
+---
+<CatalogLayout title="Монтаж — Pechnik.su" description="Монтаж, ремонт и реставрация печей, каминов и дымоходов. Виды работ, опыт Печного Центра, примеры до и после, отзывы клиентов и этапы работы." heading="Монтаж" breadcrumbs={[{ label: 'Монтаж' }]} showSidebar={false}>
+  <div class="montage-page">
+    <MontageCatalogLinks />
+    <MontageServices />
+    <MontageProblemSolutions />
+    <MontageAdvantages />
+    <MontageExperience />
+    <MontageGallery />
+    <MontageReviews />
+    <MontageWorkflow />
+  </div>
+</CatalogLayout>

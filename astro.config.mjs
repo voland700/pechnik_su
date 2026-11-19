@@ -2,6 +2,14 @@ import { defineConfig } from 'astro/config';
 import webfont from 'vite-svg-2-webfont';
 import { fileURLToPath } from 'node:url';
 
+function assetFileNames(asset) {
+  if (asset.names.some((name) => name.endsWith('.css'))) return 'css/style.css';
+  if (asset.names.some((name) => /\.(woff2?|ttf|otf|eot)$/i.test(name))) {
+    return 'fonts/[name]-[hash][extname]';
+  }
+  return 'assets/[name]-[hash][extname]';
+}
+
 export default defineConfig({
   output: 'static',
   build: { inlineStylesheets: 'never' },
@@ -9,8 +17,7 @@ export default defineConfig({
     environments: { client: { build: { rollupOptions: { output: {
       entryFileNames: 'js/main.js',
       chunkFileNames: 'js/[name]-[hash].js',
-      assetFileNames: (asset) => asset.names?.some((name) => name.endsWith('.css'))
-        ? 'css/style.css' : 'assets/[name]-[hash][extname]',
+      assetFileNames,
     } } } } },
     plugins: [webfont({
       context: fileURLToPath(new URL('./src/assets/icons/font', import.meta.url)),
@@ -28,8 +35,7 @@ export default defineConfig({
       cssMinify: false,
       assetsInlineLimit: 0,
       rollupOptions: { output: {
-        assetFileNames: (asset) => asset.names?.some((name) => name.endsWith('.css'))
-          ? 'css/style.css' : 'assets/[name]-[hash][extname]',
+        assetFileNames,
       } },
     },
   },

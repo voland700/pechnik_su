@@ -1,0 +1,72 @@
+@use '../abstracts' as a;
+
+.montage-page {
+  display: grid;
+  gap: var(--space-7);
+  padding-bottom: var(--space-7);
+  overflow-wrap: anywhere;
+  h2 { margin-bottom: var(--space-5); font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  p:last-child { margin-bottom: 0; }
+}
+.montage-catalog__grid, .montage-services__grid, .montage-advantages__grid,
+.montage-experience__grid, .montage-gallery__grid, .montage-reviews__grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1fr);
+}
+.montage-catalog__grid .button { width: 100%; height: 100%; }
+.montage-advantages__grid, .montage-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.montage-service-card {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.montage-service-card__image { width: 100%; aspect-ratio: 4 / 4; object-fit: cover; }
+.montage-service-card__title { padding: 1.25rem; margin: 0; font-size: 1rem; line-height: 1.35; font-weight: 400;}
+.montage-solutions__headings { display: none; }
+.montage-solutions__row { display: grid; gap: var(--space-5); padding-block: var(--space-5); border-top: 1px solid var(--color-border); }
+.montage-solutions__label { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); font-weight: 700; margin-bottom: var(--space-2); }
+.montage-solutions__label span { display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border: 1px solid currentColor; border-radius: 50%; }
+.montage-solutions__label p {padding-left: 2rem;}
+.montage-solutions__problem .montage-solutions__label { color: var(--color-store-closed); }
+.montage-solutions__solution .montage-solutions__label { color: var(--color-store-open); }
+.montage-advantages__item { text-align: center; padding: var(--space-2); }
+.montage-advantages__item img { width: 100px; height: 100px; object-fit: contain; margin-bottom: var(--space-4); }
+.montage-advantages__item h3 { font-size: var(--text-base); line-height: var(--leading-body); }
+.montage-advantages__item p { color: var(--color-muted); }
+.montage-experience { padding-block: var(--space-6); border-block: 1px solid var(--color-border); }
+.montage-experience__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.montage-experience__item { text-align: center; font-size: var(--text-sm); }
+.montage-experience__item img { width: 100px; height: 100px; object-fit: contain; margin-bottom: var(--space-4); }
+.montage-gallery__item { display: grid; align-items: center; border-radius: var(--radius-sm); }
+.montage-gallery__item img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+.montage-review { padding: var(--space-5); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.montage-review__header { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); }
+.montage-review__avatar { width: 64px; height: 64px; flex: 0 0 64px; border-radius: 50%; object-fit: cover; }
+.montage-review__name { margin: 0; font-size: var(--text-lg); line-height: var(--leading-body); }
+.montage-review__text { margin: 0; line-height: var(--leading-body); }
+.montage-workflow__image { display: block; width: fit-content; max-width: 100%; border-radius: var(--radius-sm); }
+.montage-workflow__image img { max-width: 100%; height: auto; }
+.montage-workflow__hint { margin-top: var(--space-3); font-size: var(--text-sm); color: var(--color-muted); }
+.red-title {color: var(--color-store-closed);}
+.gren-title {color: var(--color-store-open);}
+
+@include a.up(sm) {
+  .montage-catalog__grid, .montage-services__grid, .montage-advantages__grid,
+  .montage-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@include a.up(md) {
+  .montage-page { gap: var(--space-8); }
+  .montage-experience__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .montage-reviews__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .montage-solutions__headings, .montage-solutions__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
+  .montage-solutions__headings h3 { font-size: var(--text-lg); line-height: var(--leading-body); }
+  .montage-review { padding: var(--space-6); }
+}
+@include a.up(lg) {
+  .montage-catalog__grid, .montage-gallery__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .montage-services__grid, .montage-advantages__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .montage-experience__grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}

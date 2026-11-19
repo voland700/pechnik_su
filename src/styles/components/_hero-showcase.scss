@@ -1,0 +1,36 @@
+@use '../abstracts' as a;
+
+.hero-showcase {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 24px;
+  &__slider, &__banner { min-width: 0; min-height: 0; }
+  .hero-slider--showcase { width: 100%; max-width: none; margin: 0; --hero-slider-inset: 1.25rem; }
+  .hero-slider--showcase .hero-slider__content { min-height: 38rem; }
+  // Fade blends backgrounds; keep the outgoing copy from overlapping the incoming copy.
+  .hero-slider--showcase.swiper-initialized .hero-slider__slide:not(.swiper-slide-active) .hero-slider__text { visibility: hidden; }
+}
+@include a.up(md) {
+  .hero-showcase { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-showcase__slider { grid-column: 1 / -1; }
+  .hero-showcase .hero-slider--showcase .hero-slider__content { min-height: 27rem; gap: 1rem; }
+}
+@include a.up(xl) {
+  .hero-showcase {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3.2fr) minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    &__slider { grid-column: 2; grid-row: 1 / 3; }
+    &__banner:nth-child(2) { grid-column: 1; grid-row: 1; }
+    &__banner:nth-child(3) { grid-column: 1; grid-row: 2; }
+    &__banner:nth-child(4) { grid-column: 3; grid-row: 1; }
+    &__banner:nth-child(5) { grid-column: 3; grid-row: 2; }
+    &__banner:nth-child(n + 6) { grid-column: auto; grid-row: auto; }
+    .hero-banner { aspect-ratio: auto; }
+    .hero-banner__content { padding: .8rem; }
+    .hero-banner__text { font-size: .9rem; }
+    .hero-slider--showcase .hero-slider__content { min-height: 28rem; padding-block: 2rem 5rem; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+    .hero-slider--showcase .hero-slider__title { font-size: 1.65rem; margin-bottom: 1rem; }
+    .hero-slider--showcase .hero-slider__description { font-size: 1rem; }
+    .hero-slider--showcase .hero-slider__image { height: 18rem; }
+  }
+}
+.hero-showcase--slider-only { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; }
+.hero-showcase--slider-only .hero-showcase__slider { grid-column: 1; grid-row: 1; }

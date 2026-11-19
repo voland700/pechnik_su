@@ -1,0 +1,12 @@
+---
+import { advantages } from '../../data/montage';
+---
+<section class="montage-advantages" aria-labelledby="montage-advantages-heading">
+  <h2 id="montage-advantages-heading">Почему именно наша строительно-монтажная компания</h2>
+  <ul class="montage-advantages__grid">
+    {advantages.map(({ img, title, text }) => <li class="montage-advantages__item">
+      <img src={img.src} width={img.width} height={img.height} alt="" loading="lazy" decoding="async" />
+      <h3>{title}</h3><p>{text}</p>
+    </li>)}
+  </ul>
+</section>

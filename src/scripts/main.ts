@@ -6,6 +6,9 @@ document.addEventListener('click', (event) => {
 
 async function initialize() {
   const tasks: Promise<unknown>[] = [];
+  if (document.querySelector('[data-back-to-top]')) {
+    tasks.push(import('./modules/back-to-top').then(({ initBackToTop }) => initBackToTop()));
+  }
   if (document.querySelector('[data-product-detail]')) {
     tasks.push(import('./modules/product-detail').then(({ initProductDetails }) => initProductDetails()));
   }

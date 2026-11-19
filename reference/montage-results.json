@@ -1,0 +1,380 @@
+[
+  {
+    "width": 320,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 1,
+      "services": 1,
+      "advantages": 2,
+      "experience": 2,
+      "gallery": 2,
+      "reviews": 1,
+      "pairs": 1
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 375,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 1,
+      "services": 1,
+      "advantages": 2,
+      "experience": 2,
+      "gallery": 2,
+      "reviews": 1,
+      "pairs": 1
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 1,
+      "services": 1,
+      "advantages": 2,
+      "experience": 2,
+      "gallery": 2,
+      "reviews": 1,
+      "pairs": 1
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 576,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 2,
+      "services": 2,
+      "advantages": 2,
+      "experience": 2,
+      "gallery": 2,
+      "reviews": 1,
+      "pairs": 1
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 2,
+      "services": 2,
+      "advantages": 2,
+      "experience": 3,
+      "gallery": 2,
+      "reviews": 2,
+      "pairs": 2
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 992,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 4,
+      "services": 3,
+      "advantages": 3,
+      "experience": 6,
+      "gallery": 4,
+      "reviews": 2,
+      "pairs": 2
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 1200,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 4,
+      "services": 3,
+      "advantages": 3,
+      "experience": 6,
+      "gallery": 4,
+      "reviews": 2,
+      "pairs": 2
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 4,
+      "services": 3,
+      "advantages": 3,
+      "experience": 6,
+      "gallery": 4,
+      "reviews": 2,
+      "pairs": 2
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  },
+  {
+    "width": 1920,
+    "overflow": false,
+    "h1": 1,
+    "main": 1,
+    "sections": 8,
+    "services": 6,
+    "pairs": 5,
+    "advantages": 6,
+    "experience": 6,
+    "photos": 4,
+    "reviews": 6,
+    "reviewLengths": [
+      384,
+      481,
+      543,
+      468,
+      518,
+      428
+    ],
+    "images": true,
+    "columns": {
+      "catalog": 4,
+      "services": 3,
+      "advantages": 3,
+      "experience": 6,
+      "gallery": 4,
+      "reviews": 2,
+      "pairs": 2
+    },
+    "links": [
+      "/catalog/pechnoy-kirpich/",
+      "/catalog/pechnye-smesi/",
+      "/catalog/kaminnoe-i-pechnoe-litye-chugun/",
+      "/catalog/izolyatsiya-dlya-pechey-i-kaminov/"
+    ],
+    "groups": [
+      "montage-gallery",
+      "montage-plan"
+    ],
+    "sidebar": false
+  }
+]

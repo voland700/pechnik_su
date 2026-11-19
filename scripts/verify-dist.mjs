@@ -11,6 +11,9 @@ assert(entries.includes('css/style.css'));
 assert(entries.includes('css/style.min.css'));
 assert(entries.includes('js/main.js'));
 assert.equal(entries.filter((p) => p.endsWith('.css')).length, 2, 'Unexpected CSS splitting');
+const fontExtension = /\.(woff2?|ttf|otf|eot)$/i;
+const fontFiles = entries.filter((p) => fontExtension.test(p));
+assert(fontFiles.every((p) => p.startsWith('fonts/')), 'Font files must be emitted in dist/fonts');
 assert(entries.some((p) => /pechnik-icons.*\.woff2$/.test(p)), 'No WOFF2 icon font');
 assert(entries.some((p) => /pechnik-icons.*\.woff$/.test(p)), 'No WOFF fallback');
 assert(entries.some((p) => /manrope-cyrillic-300.*\.woff2$/.test(p)), 'No local text font');
@@ -18,7 +21,10 @@ const css = await readFile(resolve(root, 'css/style.css'), 'utf8');
 assert(css.includes('.p-icon-search') && css.includes('.p-icon-cart') && css.includes('.p-icon-arrow'));
 let checked = 0;
 // Only these intentionally unimplemented CMS page routes may lack local HTML.
-const plannedRoutes = new Set(['/about/', '/articles/', '/installation/', '/works/', '/delivery/', '/contacts/', '/offers/', '/catalog/', '/cart/', '/personal/', '/login/', '/search/']);
+const plannedRoutes = new Set(['/about/', '/articles/', '/works/', '/delivery/', '/contacts/', '/offers/', '/catalog/', '/cart/', '/personal/', '/login/', '/search/',
+  '/catalog/pechnoy-kirpich/', '/catalog/pechnye-smesi/',
+  '/catalog/kaminnoe-i-pechnoe-litye-chugun/', '/catalog/izolyatsiya-dlya-pechey-i-kaminov/',
+]);
 for (const entry of files) {
   const path = resolve(root, entry);
   const text = await readFile(path, 'utf8');
@@ -38,6 +44,9 @@ for (const entry of files) {
     const clean = decodeURIComponent(ref.split(/[?#]/)[0]);
     if (!clean) continue;
     let target = clean.startsWith('/') ? resolve(root, `.${clean}`) : resolve(dirname(path), clean);
+    if (entry.endsWith('.css') && fontExtension.test(clean)) {
+      assert(fontFiles.includes(relative(root, target).replaceAll('\\', '/')), `Invalid font reference: ${entry} → ${ref}`);
+    }
     assert(!relative(root, target).startsWith('..'), `Outside dist: ${ref}`);
     if (clean.endsWith('/')) target = resolve(target, 'index.html');
     await access(target).catch(() => { throw new Error(`Missing resource: ${entry} → ${ref}`); });

@@ -1,0 +1,24 @@
+---
+import { descriptionHtml, safeUrl } from './content';
+export interface Props {
+  name: string;
+  text?: string;
+  img: string;
+  link?: string;
+  objectPosition?: string;
+}
+const { name, text, img, link, objectPosition = 'center' } = Astro.props;
+const images = import.meta.glob<string>('../../../../assets/images/banners/*', {
+  eager: true, query: '?url', import: 'default',
+});
+const source = images[`../../../../${img}`] ?? safeUrl(img);
+const href = safeUrl(link) || '#';
+---
+<a class="hero-banner" href={href} aria-label={name}>
+  {source && <img class="hero-banner__image" src={source} alt="" width="600" height="400" style={{ objectPosition }} decoding="async" />}
+  <div class="hero-banner__overlay" aria-hidden="true"></div>
+  <div class="hero-banner__content">
+    <h3 class="hero-banner__title">{name}</h3>
+    {text && <div class="hero-banner__text" set:html={descriptionHtml(text)} />}
+  </div>
+</a>

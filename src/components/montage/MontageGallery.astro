@@ -1,0 +1,11 @@
+---
+import { gallery } from '../../data/montage';
+---
+<section class="montage-gallery" aria-labelledby="montage-gallery-heading">
+  <h2 id="montage-gallery-heading">Наши работы — до и после</h2>
+  <div class="montage-gallery__grid">
+    {gallery.map(({ img, alt }) => <a class="montage-gallery__item" href={img.src} data-fancybox="montage-gallery" data-caption={alt} aria-label={`Увеличить: ${alt}`}>
+      <img src={img.src} width={img.width} height={img.height} alt={alt} loading="lazy" decoding="async" />
+    </a>)}
+  </div>
+</section>

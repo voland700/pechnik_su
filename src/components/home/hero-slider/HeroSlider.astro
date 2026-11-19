@@ -11,12 +11,14 @@ interface Props {
   showNavigation?: boolean;
   showPagination?: boolean;
   defaultOverlay?: string;
+  variant?: 'default' | 'showcase';
 }
 const { slides = [], autoplay = false, delay = 6000, loop = true, showNavigation = true, showPagination = true, defaultOverlay = defaultHeroOverlay } = Astro.props;
 const multiple = slides.length > 1;
+const showcase = Astro.props.variant === 'showcase';
 ---
-{slides.length > 0 && <section class="container swiper hero-slider" data-hero-slider data-autoplay={autoplay} data-delay={Math.max(6000, delay)} data-loop={loop} role="region" aria-label="Акции и предложения" aria-roledescription="карусель">
-  <div class="swiper-wrapper">{slides.map((slide, index) => <HeroSlide slide={slide} index={index} defaultOverlay={defaultOverlay} />)}</div>
+{slides.length > 0 && <section class:list={['container swiper hero-slider', { 'hero-slider--showcase': showcase }]} data-hero-slider data-hero-speed={showcase ? 1000 : undefined} data-autoplay={autoplay} data-delay={Math.max(6000, delay)} data-loop={loop} role="region" aria-label="Акции и предложения" aria-roledescription="карусель">
+  <div class="swiper-wrapper">{slides.map((slide, index) => <HeroSlide slide={slide} index={index} defaultOverlay={defaultOverlay} showcase={showcase} />)}</div>
   {multiple && <div class="hero-slider__controls">
     {showNavigation && <div class="hero-slider__navigation">
       <button type="button" class="hero-slider__arrow hero-slider__arrow--prev" data-hero-prev aria-label="Предыдущий слайд"><Icon name="arrow" size={20} /></button>

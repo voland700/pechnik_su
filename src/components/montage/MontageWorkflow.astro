@@ -1,0 +1,11 @@
+---
+import { montageImage } from '../../data/montage';
+const img = montageImage('plan.jpg');
+---
+<section class="montage-workflow" aria-labelledby="montage-workflow-heading">
+  <h2 id="montage-workflow-heading">Схема работы с нами</h2>
+  <a class="montage-workflow__image" href={img.src} data-fancybox="montage-plan" aria-label="Увеличить схему работы с нами">
+    <img src={img.src} width={img.width} height={img.height} alt="Этапы работы: замер и консультация, подготовка и согласование проекта и сметы, договор и предоплата, доставка, монтаж, сдача объекта и готовый результат" loading="lazy" decoding="async" />
+  </a>
+  <p class="montage-workflow__hint">Нажмите на схему, чтобы рассмотреть все этапы.</p>
+</section>
